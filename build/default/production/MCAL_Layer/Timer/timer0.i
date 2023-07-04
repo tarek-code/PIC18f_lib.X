@@ -4813,5 +4813,11 @@ typedef struct {
     timer0_Prescaler_t timer0_Prescaler_type;
 
 }timer0_t;
+
+
+Std_ReturnType timer0_int();
+Std_ReturnType timer0_deint();
+Std_ReturnType timer0_write();
+Std_ReturnType timer0_read();
 # 1 "MCAL_Layer/Timer/timer0.c" 2
 

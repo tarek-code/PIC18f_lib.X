@@ -82,7 +82,10 @@ typedef struct {
 }timer0_t;
 /*Section function declaration  */
 
-
+Std_ReturnType timer0_int();
+Std_ReturnType timer0_deint();
+Std_ReturnType timer0_write();
+Std_ReturnType timer0_read();
 
 
 #endif	/* TIMER0_H */
