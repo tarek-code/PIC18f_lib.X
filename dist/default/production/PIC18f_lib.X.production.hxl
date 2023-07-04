@@ -1,7 +1,7 @@
 ### HEXMate logfile and output summary ###
 
 ### Command-line arguments ###
- C:\Users\Unlimited\AppData\Local\Temp\xcBsnmg.1\driver_tmp_3.o
+ C:\Users\Unlimited\AppData\Local\Temp\xcAs56c.\driver_tmp_3.o
  -Odist/default/production\PIC18f_lib.X.production.hex
  -logfile=dist/default/production\PIC18f_lib.X.production.hxl
  -addressing=1
@@ -9,25 +9,25 @@
 
 ### Memory Usage ###
  Input file ranges:
-  0h - 3h		(C:\Users\Unlimited\AppData\Local\Temp\xcBsnmg.1\driver_tmp_3.o)
-  8h - 11h		(C:\Users\Unlimited\AppData\Local\Temp\xcBsnmg.1\driver_tmp_3.o)
-  1000h - 1014h		(C:\Users\Unlimited\AppData\Local\Temp\xcBsnmg.1\driver_tmp_3.o)
-  1016h - 2D94h		(C:\Users\Unlimited\AppData\Local\Temp\xcBsnmg.1\driver_tmp_3.o)
-  2D96h - 2EAFh		(C:\Users\Unlimited\AppData\Local\Temp\xcBsnmg.1\driver_tmp_3.o)
-  200000h - 200007h		(C:\Users\Unlimited\AppData\Local\Temp\xcBsnmg.1\driver_tmp_3.o)
-  300000h - 30000Dh		(C:\Users\Unlimited\AppData\Local\Temp\xcBsnmg.1\driver_tmp_3.o)
+  0h - 3h		(C:\Users\Unlimited\AppData\Local\Temp\xcAs56c.\driver_tmp_3.o)
+  8h - 11h		(C:\Users\Unlimited\AppData\Local\Temp\xcAs56c.\driver_tmp_3.o)
+  1000h - 1014h		(C:\Users\Unlimited\AppData\Local\Temp\xcAs56c.\driver_tmp_3.o)
+  1016h - 2DB4h		(C:\Users\Unlimited\AppData\Local\Temp\xcAs56c.\driver_tmp_3.o)
+  2DB6h - 2ED3h		(C:\Users\Unlimited\AppData\Local\Temp\xcAs56c.\driver_tmp_3.o)
+  200000h - 200007h		(C:\Users\Unlimited\AppData\Local\Temp\xcAs56c.\driver_tmp_3.o)
+  300000h - 30000Dh		(C:\Users\Unlimited\AppData\Local\Temp\xcAs56c.\driver_tmp_3.o)
  Unused ranges:
   4h - 7h
   12h - FFFh
   1015h - 1015h
-  2D95h - 2D95h
-  2EB0h - 1FFFFFh
+  2DB5h - 2DB5h
+  2ED4h - 1FFFFFh
   200008h - 2FFFFFh
 
 ### Hex Memory Map ###
  Legend:
   -- = Unused memory
-  H1 = Input file             (C:\Users\Unlimited\AppData\Local\Temp\xcBsnmg.1\driver_tmp_3.o)
+  H1 = Input file             (C:\Users\Unlimited\AppData\Local\Temp\xcAs56c.\driver_tmp_3.o)
 ----------------------------------------------------------
          | 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
 ----------------------------------------------------------
@@ -507,9 +507,9 @@
 00002D60 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 00002D70 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 00002D80 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
-00002D90 | H1 H1 H1 H1 H1 -- H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+00002D90 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 00002DA0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
-00002DB0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+00002DB0 | H1 H1 H1 H1 H1 -- H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 00002DC0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 00002DD0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 00002DE0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
@@ -525,6 +525,9 @@
 00002E80 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 00002E90 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 00002EA0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+00002EB0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+00002EC0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+00002ED0 | H1 H1 H1 H1 -- -- -- -- -- -- -- -- -- -- -- --
 ----------------------------------------------------------
 00200000 | H1 H1 H1 H1 H1 H1 H1 H1 -- -- -- -- -- -- -- --
 ----------------------------------------------------------

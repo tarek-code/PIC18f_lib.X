@@ -31,5 +31,8 @@ void RB7_ISR(uint8 flage);
 
 /*ADC*/
 void ADC_ISR(void);
+
+/*TIMER0*/
+void TIMER0_ISR(void);
 #endif	/* INTERRUPT_MANAGMENT_H */
 

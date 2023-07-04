@@ -4806,6 +4806,9 @@ typedef enum{
 
 
 typedef struct {
+
+    void (* timer0_callback)(void);
+
     uint8 timer0_select_sourse :1;
     uint8 timer0_select_edge :1;
     uint8 timer0_prescaler_statuse :1;
@@ -4815,9 +4818,74 @@ typedef struct {
 }timer0_t;
 
 
-Std_ReturnType timer0_int();
-Std_ReturnType timer0_deint();
-Std_ReturnType timer0_write();
-Std_ReturnType timer0_read();
+Std_ReturnType timer0_int(const timer0_t *ptr);
+Std_ReturnType timer0_deint(const timer0_t* ptr);
+Std_ReturnType timer0_write(const timer0_t *ptr,uint16 data);
+Std_ReturnType timer0_read(const timer0_t *ptr,uint16 *data);
 # 1 "MCAL_Layer/Timer/timer0.c" 2
 
+
+
+
+   static void (* timer0_callback_ptr)(void)=((void*)0);
+
+
+
+
+   Std_ReturnType timer0_int(const timer0_t *ptr){
+    Std_ReturnType returt_statuse=(0x01u);
+    if(((void*)0)!=ptr){
+
+
+
+    }
+    else{
+
+    }
+    return returt_statuse;
+}
+
+Std_ReturnType timer0_deint(const timer0_t* ptr){
+   Std_ReturnType returt_statuse=(0x01u);
+    if(((void*)0)!=ptr){
+
+
+
+    }
+    else{
+
+    }
+    return returt_statuse;
+}
+
+Std_ReturnType timer0_write(const timer0_t *ptr,uint16 data){
+    Std_ReturnType returt_statuse=(0x01u);
+    if(((void*)0)!=ptr){
+
+    }
+    else{
+
+    }
+    return returt_statuse;
+}
+
+Std_ReturnType timer0_read(const timer0_t *ptr,uint16 *data){
+    Std_ReturnType returt_statuse=(0x01u);
+    if(((void*)0)!=ptr){
+
+    }
+    else{
+
+    }
+    return returt_statuse;
+}
+
+
+
+void TIMER0_ISR(void){
+    (INTCONbits.TMR0IF=0);
+
+    if(timer0_callback_ptr){
+        timer0_callback_ptr();
+    }
+}

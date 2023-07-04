@@ -4849,7 +4849,6 @@ typedef struct{
 }adc_t;
 
 Std_ReturnType adc_int(const adc_t *adc);
-Std_ReturnType timer0();
 Std_ReturnType adc_start(const adc_t *adc);
 Std_ReturnType adc_reading_value(const adc_t *adc,uint16 *value);
 Std_ReturnType adc_is_conversion_done(const adc_t *adc,uint8 *statuse);
@@ -4896,7 +4895,7 @@ Std_ReturnType adc_int(const adc_t *adc){
 
         adc_reading_mode_cfg(adc);
 # 55 "MCAL_Layer/ADC/ADC.c"
-ADC_Interrupt_handler=adc->ADC_callback;
+        ADC_Interrupt_handler=adc->ADC_callback;
             (PIE1bits.ADIE=0);
             (PIR1bits.ADIF=0);
 # 70 "MCAL_Layer/ADC/ADC.c"

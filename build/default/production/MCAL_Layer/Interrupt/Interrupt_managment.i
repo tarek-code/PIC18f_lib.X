@@ -4738,6 +4738,9 @@ void RB7_ISR(uint8 flage);
 
 
 void ADC_ISR(void);
+
+
+void TIMER0_ISR(void);
 # 1 "MCAL_Layer/Interrupt/Interrupt_managment.c" 2
 
 
@@ -4803,4 +4806,11 @@ if((INTCONbits.RBIE==1 && INTCONbits.RBIF==1)&& (PORTBbits.RB7==1)&&(flage_7==1)
     if((PIE1bits.ADIE==1) && (PIR1bits.ADIF==1)){
         ADC_ISR();
 }
+
+
+
+    if((INTCONbits.TMR0IE==1) && (INTCONbits.TMR0IF==1)){
+        TIMER0_ISR();
+        }
+
 }

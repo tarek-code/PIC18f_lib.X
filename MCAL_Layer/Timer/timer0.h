@@ -73,6 +73,9 @@ typedef enum{
 
 
 typedef struct {
+    #if TIMER0_ENABLE_FEATURE==ENABLE_FEATURE
+    void (* timer0_callback)(void);
+    #endif
     uint8 timer0_select_sourse :1;
     uint8 timer0_select_edge :1;
     uint8 timer0_prescaler_statuse :1;
@@ -82,10 +85,10 @@ typedef struct {
 }timer0_t;
 /*Section function declaration  */
 
-Std_ReturnType timer0_int();
-Std_ReturnType timer0_deint();
-Std_ReturnType timer0_write();
-Std_ReturnType timer0_read();
+Std_ReturnType timer0_int(const timer0_t *ptr);
+Std_ReturnType timer0_deint(const timer0_t* ptr);
+Std_ReturnType timer0_write(const timer0_t *ptr,uint16 data);
+Std_ReturnType timer0_read(const timer0_t *ptr,uint16 *data);
 
 
 #endif	/* TIMER0_H */

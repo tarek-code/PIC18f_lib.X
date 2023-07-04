@@ -30,6 +30,25 @@
 #endif
 #endif
 
+
+// INTERNAL INTERRUPT FOR TIMER0
+#if TIMER0_ENABLE_FEATURE==ENABLE_FEATURE
+
+#define TIMER0_Interrupt_CLEAR_Flag_bit() (INTCONbits.TMR0IF=0)
+#define TIMER0_Interrupt_READ_Flag_bit() (INTCONbits.TMR0IF)
+
+#define TIMER0_INRERRUPT_ENABLE()  (INTCONbits.TMR0IE=1)
+#define TIMER0_INRERRUPT_DISABLE()  (INTCONbits.TMR0IE=0)
+
+#if INTERRUPT_PRIORITY_FEATURE == ENABLE_FEATURE
+#define TIMER0_ENABLE_HIGH_PRIORITY()    (IPR1bits.ADIP=1)
+#define TIMER0_ENABLE_LOW_PRIORITY()    (IPR1bits.ADIP=0)
+
+#endif
+#endif
+
+
+
 /*Section macros function  */
 
 /*Section Data type */
