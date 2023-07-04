@@ -31,7 +31,7 @@
 #define TIMER0_LOW_HIGH_EDGE    (0)
 
 #define TIMER0_PRESCALER_ON     (0)
-#define TIMER0_PRESCALER_OFFh    (1)
+#define TIMER0_PRESCALER_OFF    (1)
 
 
 /*Analog configration*/
