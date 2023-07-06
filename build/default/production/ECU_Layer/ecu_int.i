@@ -5132,7 +5132,48 @@ Std_ReturnType adc_select_channel(const adc_t *adc,analog_channel_select_t analo
 Std_ReturnType adc_get_conversion_blocking(const adc_t *adc,uint16 *value,analog_channel_select_t analog_channel_select);
 Std_ReturnType adc_start_conversion_interrupt(const adc_t *adc,analog_channel_select_t analog_channel_select);
 # 22 "ECU_Layer/ecu_int.h" 2
-# 32 "ECU_Layer/ecu_int.h"
+
+# 1 "ECU_Layer/../MCAL_Layer/Timer/timer0.h" 1
+# 65 "ECU_Layer/../MCAL_Layer/Timer/timer0.h"
+typedef enum{
+    TIMER0_DIV_BY_2 =0,
+            TIMER0_DIV_BY_4,
+            TIMER0_DIV_BY_8,
+            TIMER0_DIV_BY_16,
+            TIMER0_DIV_BY_32,
+            TIMER0_DIV_BY_64,
+            TIMER0_DIV_BY_128,
+            TIMER0_DIV_BY_256
+}timer0_Prescaler_t;
+
+
+typedef struct {
+
+    void (* timer0_callback)(void);
+
+
+
+
+
+    uint8 timer0_reservid:4;
+
+timer0_Prescaler_t timer0_Prescaler_type;
+uint16 timer0_preload_value;
+    uint8 timer0_select_sourse :1;
+    uint8 timer0_select_edge :1;
+    uint8 timer0_prescaler_statuse :1;
+    uint8 timer0_select_mode_bits :1;
+
+
+}timer0_t;
+
+
+Std_ReturnType timer0_int(const timer0_t *ptr);
+Std_ReturnType timer0_deint(const timer0_t* ptr);
+Std_ReturnType timer0_write(const timer0_t *ptr,uint16 data);
+Std_ReturnType timer0_read(const timer0_t *ptr,uint16 *data);
+# 23 "ECU_Layer/ecu_int.h" 2
+# 33 "ECU_Layer/ecu_int.h"
 void ecu_Int(void);
 # 1 "ECU_Layer/ecu_int.c" 2
 

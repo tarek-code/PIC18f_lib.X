@@ -17,6 +17,8 @@
 #include "../../MCAL_Layer/Interrupt/Interrupt_internal.h"
 
 /*Section macros */
+#define TIMER0_PREORITY_HIGH (1)
+#define TIMER0_PREORITY_LOW (0)
 
 #define TIMER0_ON       (1)
 #define TIMER0_OFF      (0)
@@ -40,8 +42,8 @@
 
 /*Section macros function  */
 
-#define TIMER0_ON()     (T0CONbits.TMR0ON=1)
-#define TIMER0_OFF()    (T0CONbits.TMR0ON=0)
+#define TIMER0_ON_CFG()     (T0CONbits.TMR0ON=1)
+#define TIMER0_OFF_CFG()    (T0CONbits.TMR0ON=0)
 
 
 #define TIMER0_8_BIT_MODE_CFG()   (T0CONbits.T08BIT=1)  
@@ -76,11 +78,19 @@ typedef struct {
     #if TIMER0_ENABLE_FEATURE==ENABLE_FEATURE
     void (* timer0_callback)(void);
     #endif
+    #if INTERRUPT_PRIORITY_FEATURE == ENABLE_FEATURE
+    uint8 timer0_priority:1;
+    uint8 timer0_reservid:3;
+    #else
+    uint8 timer0_reservid:4;
+    #endif
+timer0_Prescaler_t timer0_Prescaler_type;
+uint16 timer0_preload_value;
     uint8 timer0_select_sourse :1;
     uint8 timer0_select_edge :1;
     uint8 timer0_prescaler_statuse :1;
     uint8 timer0_select_mode_bits :1;
-    timer0_Prescaler_t timer0_Prescaler_type;
+    
     
 }timer0_t;
 /*Section function declaration  */

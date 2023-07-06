@@ -4792,7 +4792,7 @@ typedef enum{
 
 # 1 "MCAL_Layer/Timer/../../MCAL_Layer/Interrupt/Interrupt_internal.h" 1
 # 17 "MCAL_Layer/Timer/timer0.h" 2
-# 63 "MCAL_Layer/Timer/timer0.h"
+# 65 "MCAL_Layer/Timer/timer0.h"
 typedef enum{
     TIMER0_DIV_BY_2 =0,
             TIMER0_DIV_BY_4,
@@ -4809,11 +4809,19 @@ typedef struct {
 
     void (* timer0_callback)(void);
 
+
+
+
+
+    uint8 timer0_reservid:4;
+
+timer0_Prescaler_t timer0_Prescaler_type;
+uint16 timer0_preload_value;
     uint8 timer0_select_sourse :1;
     uint8 timer0_select_edge :1;
     uint8 timer0_prescaler_statuse :1;
     uint8 timer0_select_mode_bits :1;
-    timer0_Prescaler_t timer0_Prescaler_type;
+
 
 }timer0_t;
 
@@ -4829,53 +4837,144 @@ Std_ReturnType timer0_read(const timer0_t *ptr,uint16 *data);
 
    static void (* timer0_callback_ptr)(void)=((void*)0);
 
+   static uint16 timer0_preload=(0x00);
+
+
+
 
 
 
    Std_ReturnType timer0_int(const timer0_t *ptr){
     Std_ReturnType returt_statuse=(0x01u);
     if(((void*)0)!=ptr){
+        timer0_preload=ptr->timer0_preload_value;
+
+        (T0CONbits.TMR0ON=0);
+
+        if(ptr->timer0_select_mode_bits ==(1)){
+            (T0CONbits.T08BIT=1);
+            TMR0L =ptr->timer0_preload_value;
+        }
+        else{
+            (T0CONbits.T08BIT=0);
+            TMR0H=ptr->timer0_preload_value>>8;
+            TMR0L =(uint8)ptr->timer0_preload_value;
+        }
+
+        if(ptr->timer0_prescaler_statuse== (0)){
+            (T0CONbits.PSA=0);
+            (T0CONbits.T0PS=ptr->timer0_Prescaler_type);
+        }
+        else{
+            (T0CONbits.PSA=1);
+        }
+
+        if(ptr->timer0_select_sourse == (1)){
+            (T0CONbits.T0CS=0);
+
+            if(ptr->timer0_select_edge==(1)){
+                (T0CONbits.T0SE=1);
+            }
+            else{
+                (T0CONbits.T0SE=0);
+            }
+        }
+        else{
+            (T0CONbits.T0CS=0);
+        }
 
 
 
+
+
+        (INTCONbits.TMR0IE=0);
+        (INTCONbits.TMR0IF=0);
+        timer0_callback_ptr=ptr->timer0_callback;
+# 72 "MCAL_Layer/Timer/timer0.c"
+        (INTCONbits.GIE=1);
+        (INTCONbits.PEIE=1);
+
+        (INTCONbits.TMR0IE=1);
+
+
+        (T0CONbits.TMR0ON=1);
+         returt_statuse=(0x00u);
     }
     else{
-
+         returt_statuse=(0x01u);
     }
     return returt_statuse;
 }
+
+
+
+
+
 
 Std_ReturnType timer0_deint(const timer0_t* ptr){
    Std_ReturnType returt_statuse=(0x01u);
     if(((void*)0)!=ptr){
+        (T0CONbits.TMR0ON=0);
 
+   (INTCONbits.TMR0IE=0);
 
-
+ returt_statuse=(0x00u);
     }
     else{
-
+         returt_statuse=(0x01u);
     }
     return returt_statuse;
 }
+
+
+
+
+
+
 
 Std_ReturnType timer0_write(const timer0_t *ptr,uint16 data){
     Std_ReturnType returt_statuse=(0x01u);
     if(((void*)0)!=ptr){
-
+        timer0_preload=data;
+        if(ptr->timer0_select_mode_bits==(1)){
+            TMR0L =data;
+        }
+        else{
+            TMR0H=data>>8;
+            TMR0L =(uint8)data;
+        }
+         returt_statuse=(0x00u);
     }
     else{
-
+        returt_statuse=(0x01u);
     }
     return returt_statuse;
 }
 
+
+
+
+
+
+
 Std_ReturnType timer0_read(const timer0_t *ptr,uint16 *data){
     Std_ReturnType returt_statuse=(0x01u);
     if(((void*)0)!=ptr){
+       if(ptr->timer0_select_mode_bits==(1)){
 
+            *data=TMR0L;
+        }
+        else{
+           uint8 high;
+           uint8 low;
+           low=TMR0L;
+           high=TMR0H;
+           *data=(uint16)(low + (high<<8));
+        }
+        returt_statuse=(0x00u);
     }
     else{
-
+         returt_statuse=(0x01u);
     }
     return returt_statuse;
 }
@@ -4884,7 +4983,8 @@ Std_ReturnType timer0_read(const timer0_t *ptr,uint16 *data){
 
 void TIMER0_ISR(void){
     (INTCONbits.TMR0IF=0);
-
+    TMR0H=timer0_preload>>8;
+    TMR0L =(uint8)timer0_preload;
     if(timer0_callback_ptr){
         timer0_callback_ptr();
     }
