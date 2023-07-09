@@ -556,8 +556,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e $ ! == -> . *U _ptr 4 `i -> 1 `i 281  ]
 {
 "40
-[; ;MCAL_Layer/Timer/timer0.c: 40:             (T0CONbits.T0CS=0);
-[e = . . _T0CONbits 0 3 -> -> 0 `i `uc ]
+[; ;MCAL_Layer/Timer/timer0.c: 40:             (T0CONbits.T0CS=1);
+[e = . . _T0CONbits 0 3 -> -> 1 `i `uc ]
 "42
 [; ;MCAL_Layer/Timer/timer0.c: 42:             if(ptr->timer0_select_edge==(1)){
 [e $ ! == -> . *U _ptr 5 `i -> 1 `i 282  ]

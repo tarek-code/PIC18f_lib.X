@@ -4816,7 +4816,7 @@ typedef struct {
     uint8 timer0_reservid:4;
 
 timer0_Prescaler_t timer0_Prescaler_type;
-uint16 timer0_preload_value;
+    uint16 timer0_preload_value;
     uint8 timer0_select_sourse :1;
     uint8 timer0_select_edge :1;
     uint8 timer0_prescaler_statuse :1;
@@ -4870,7 +4870,7 @@ Std_ReturnType timer0_read(const timer0_t *ptr,uint16 *data);
         }
 
         if(ptr->timer0_select_sourse == (1)){
-            (T0CONbits.T0CS=0);
+            (T0CONbits.T0CS=1);
 
             if(ptr->timer0_select_edge==(1)){
                 (T0CONbits.T0SE=1);

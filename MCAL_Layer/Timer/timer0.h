@@ -50,7 +50,7 @@
 #define TIMER0_16_BIT_MODE_CFG()  (T0CONbits.T08BIT=0)
 
 #define TIMER0_TIMER_CFG()        (T0CONbits.T0CS=0)
-#define TIMER0_COUNTER_CFG()      (T0CONbits.T0CS=0)    
+#define TIMER0_COUNTER_CFG()      (T0CONbits.T0CS=1)    
 
 #define TIMER0_HIGH_LOW_EDGE_CFG()    (T0CONbits.T0SE=1)
 #define TIMER0_LOW_HIGH_EDGE_CFG()    (T0CONbits.T0SE=0)
@@ -85,7 +85,7 @@ typedef struct {
     uint8 timer0_reservid:4;
     #endif
 timer0_Prescaler_t timer0_Prescaler_type;
-uint16 timer0_preload_value;
+    uint16 timer0_preload_value;
     uint8 timer0_select_sourse :1;
     uint8 timer0_select_edge :1;
     uint8 timer0_prescaler_statuse :1;

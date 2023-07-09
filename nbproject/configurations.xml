@@ -58,8 +58,11 @@
           <itemPath>MCAL_Layer/Interrupt/Interrupt_cfg.h</itemPath>
           <itemPath>MCAL_Layer/Interrupt/interrupt_gen_cfg.h</itemPath>
         </logicalFolder>
-        <logicalFolder name="Timer" displayName="Timer" projectFiles="true">
+        <logicalFolder name="Timer" displayName="Timer0" projectFiles="true">
           <itemPath>MCAL_Layer/Timer/timer0.h</itemPath>
+        </logicalFolder>
+        <logicalFolder name="Timer1" displayName="Timer1" projectFiles="true">
+          <itemPath>MCAL_Layer/Timer1/timer1.h</itemPath>
         </logicalFolder>
         <itemPath>MCAL_Layer/mcal_std.h</itemPath>
         <itemPath>MCAL_Layer/std_lib.h</itemPath>
@@ -119,8 +122,11 @@
           <itemPath>MCAL_Layer/Interrupt/Interrupt_internal.c</itemPath>
           <itemPath>MCAL_Layer/Interrupt/Interrupt_external.c</itemPath>
         </logicalFolder>
-        <logicalFolder name="Timer" displayName="Timer" projectFiles="true">
+        <logicalFolder name="Timer" displayName="Timer0" projectFiles="true">
           <itemPath>MCAL_Layer/Timer/timer0.c</itemPath>
+        </logicalFolder>
+        <logicalFolder name="Timer1" displayName="Timer1" projectFiles="true">
+          <itemPath>MCAL_Layer/Timer1/timer1.c</itemPath>
         </logicalFolder>
         <itemPath>MCAL_Layer/device_config.c</itemPath>
       </logicalFolder>

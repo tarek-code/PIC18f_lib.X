@@ -5166,7 +5166,7 @@ typedef struct {
     uint8 timer0_reservid:4;
 
 timer0_Prescaler_t timer0_Prescaler_type;
-uint16 timer0_preload_value;
+    uint16 timer0_preload_value;
     uint8 timer0_select_sourse :1;
     uint8 timer0_select_edge :1;
     uint8 timer0_prescaler_statuse :1;
@@ -5203,19 +5203,26 @@ led_cfg_t led1={
   .port_name=PORTC_INDX
 };
 
+pin_cfg_t pin1={
+  .direction=GPIO_INPUT,
+  .level=GPIO_LOW,
+  .pin=GPIO_PIN4,
+  .port=PORTA_INDX
+};
 
-void timer0(){
+
+void timer0_ISR(){
     led_toggel(&led1);
 }
 
-timer0_t timer0_module={
+timer0_t timer0={
   .timer0_select_edge=(1),
-.timer0_callback =timer0,
+.timer0_callback =timer0_ISR,
   .timer0_select_mode_bits=(0),
-  .timer0_select_sourse=(0),
-  .timer0_prescaler_statuse=(0),
-  .timer0_Prescaler_type=TIMER0_DIV_BY_8,
-  .timer0_preload_value=3036
+  .timer0_select_sourse=(1),
+  .timer0_prescaler_statuse=(1),
+  .timer0_Prescaler_type=TIMER0_DIV_BY_16,
+  .timer0_preload_value=0,
 
 };
 
@@ -5230,8 +5237,7 @@ timer0_int(&timer0);
 
     while (1) {
 
-        led_toggel(&led1);
-        _delay((unsigned long)((500)*(8000000UL/4000.0)));
+
     }
     return (0);
 }
