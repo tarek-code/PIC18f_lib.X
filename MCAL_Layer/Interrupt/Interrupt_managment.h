@@ -34,5 +34,8 @@ void ADC_ISR(void);
 
 /*TIMER0*/
 void TIMER0_ISR(void);
+
+/*TIMER1*/
+void TIMER1_ISR(void);
 #endif	/* INTERRUPT_MANAGMENT_H */
 

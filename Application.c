@@ -13,27 +13,25 @@ led_cfg_t led1={
   .port_name=PORTC_INDX
 };
 
-pin_cfg_t pin1={
-  .direction=GPIO_INPUT,
-  .level=GPIO_LOW,
-  .pin=GPIO_PIN4,
-  .port=PORTA_INDX
-};
 
 
-void timer0_ISR(){
+
+void timer1_ISR(){
     led_toggel(&led1);
 }
 
-timer0_t timer0={
-  .timer0_select_edge=TIMER0_HIGH_LOW_EDGE,
-.timer0_callback  =timer0_ISR,
-  .timer0_select_mode_bits=TIMER0_16_BIT_MODE,
-  .timer0_select_sourse=TIMER0_COUNTER,
-  .timer0_prescaler_statuse=TIMER0_PRESCALER_OFF,
-  .timer0_Prescaler_type=TIMER0_DIV_BY_16,
-  .timer0_preload_value=0,
-          
+
+timer1_t timer1={
+  
+.timer1_callback  =timer1_ISR, 
+ .timer1_select_sourse=TIMER1_COUNTER,
+.timer1_select_mode_16_bits=TIMER1_16_BIT_MODE_SEPERATED,
+.timer1_osc_statuse=TIMER1_OSCILLATOR_OFF,
+.timer1_syn_mode=TIMER1_COUNTER_ASYN,
+
+  .timer1_Prescaler_type=TIMER1_DIV_BY_8,
+  .timer1_preload_value=0,
+
 };
 
 
@@ -41,8 +39,8 @@ timer0_t timer0={
 
 int main() {
  // gpio_pin_direction_int(&pin1);
-led_int(&led1);
-timer0_int(&timer0);
+//led_int(&led1);
+timer1_int(&timer1);
 
     
     while (1) {

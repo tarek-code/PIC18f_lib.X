@@ -29,4 +29,5 @@ ECU_Layer/../MCAL_Layer/Internal_EEPROM/Internal_EEPROM.h  \
 ECU_Layer/../MCAL_Layer/ADC/ADC.h  \
 ECU_Layer/../MCAL_Layer/ADC/../../MCAL_Layer/Interrupt/Interrupt_internal.h  \
 ECU_Layer/../MCAL_Layer/ADC/ADC_cfg.h  \
-ECU_Layer/../MCAL_Layer/Timer/timer0.h 
+ECU_Layer/../MCAL_Layer/Timer/timer0.h  \
+ECU_Layer/../MCAL_Layer/Timer1/timer1.h 

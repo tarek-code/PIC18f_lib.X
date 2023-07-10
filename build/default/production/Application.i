@@ -5181,7 +5181,46 @@ Std_ReturnType timer0_deint(const timer0_t* ptr);
 Std_ReturnType timer0_write(const timer0_t *ptr,uint16 data);
 Std_ReturnType timer0_read(const timer0_t *ptr,uint16 *data);
 # 23 "./ECU_Layer/ecu_int.h" 2
-# 33 "./ECU_Layer/ecu_int.h"
+
+# 1 "./ECU_Layer/../MCAL_Layer/Timer1/timer1.h" 1
+# 69 "./ECU_Layer/../MCAL_Layer/Timer1/timer1.h"
+typedef enum{
+    TIMER1_PRESCALER_OFF =0,
+            TIMER1_DIV_BY_2,
+            TIMER1_DIV_BY_4,
+            TIMER1_DIV_BY_8
+}timer1_Prescaler_t;
+
+
+typedef struct {
+
+    void (* timer1_callback)(void);
+
+
+
+
+
+    uint8 timer1_reservid:4;
+
+    timer1_Prescaler_t timer1_Prescaler_type;
+    uint16 timer1_preload_value;
+    uint8 timer1_select_sourse :1;
+
+    uint8 timer1_osc_statuse:1;
+    uint8 timer1_syn_mode:1;
+    uint8 timer1_select_mode_16_bits :1;
+
+
+}timer1_t;
+
+
+Std_ReturnType timer1_int(const timer1_t *ptr);
+Std_ReturnType timer1_deint(const timer1_t* ptr);
+Std_ReturnType timer1_write(const timer1_t *ptr,uint16 data);
+Std_ReturnType timer1_read(const timer1_t *ptr,uint16 *data);
+Std_ReturnType timer1_read_System_Clock_Status(const timer1_t *ptr,uint8 *statuse);
+# 24 "./ECU_Layer/ecu_int.h" 2
+# 34 "./ECU_Layer/ecu_int.h"
 void ecu_Int(void);
 # 13 "./Application.h" 2
 
@@ -5203,26 +5242,24 @@ led_cfg_t led1={
   .port_name=PORTC_INDX
 };
 
-pin_cfg_t pin1={
-  .direction=GPIO_INPUT,
-  .level=GPIO_LOW,
-  .pin=GPIO_PIN4,
-  .port=PORTA_INDX
-};
 
 
-void timer0_ISR(){
+
+void timer1_ISR(){
     led_toggel(&led1);
 }
 
-timer0_t timer0={
-  .timer0_select_edge=(1),
-.timer0_callback =timer0_ISR,
-  .timer0_select_mode_bits=(0),
-  .timer0_select_sourse=(1),
-  .timer0_prescaler_statuse=(1),
-  .timer0_Prescaler_type=TIMER0_DIV_BY_16,
-  .timer0_preload_value=0,
+
+timer1_t timer1={
+
+.timer1_callback =timer1_ISR,
+ .timer1_select_sourse=(1),
+.timer1_select_mode_16_bits=(0),
+.timer1_osc_statuse=(0),
+.timer1_syn_mode=(1),
+
+  .timer1_Prescaler_type=TIMER1_DIV_BY_8,
+  .timer1_preload_value=0,
 
 };
 
@@ -5231,8 +5268,8 @@ timer0_t timer0={
 
 int main() {
 
-led_int(&led1);
-timer0_int(&timer0);
+
+timer1_int(&timer1);
 
 
     while (1) {

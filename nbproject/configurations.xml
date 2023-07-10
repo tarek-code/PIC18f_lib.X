@@ -64,6 +64,8 @@
         <logicalFolder name="Timer1" displayName="Timer1" projectFiles="true">
           <itemPath>MCAL_Layer/Timer1/timer1.h</itemPath>
         </logicalFolder>
+        <logicalFolder name="Timer2" displayName="Timer2" projectFiles="true">
+        </logicalFolder>
         <itemPath>MCAL_Layer/mcal_std.h</itemPath>
         <itemPath>MCAL_Layer/std_lib.h</itemPath>
         <itemPath>MCAL_Layer/Compiler.h</itemPath>
@@ -127,6 +129,8 @@
         </logicalFolder>
         <logicalFolder name="Timer1" displayName="Timer1" projectFiles="true">
           <itemPath>MCAL_Layer/Timer1/timer1.c</itemPath>
+        </logicalFolder>
+        <logicalFolder name="Timer2" displayName="Timer2" projectFiles="true">
         </logicalFolder>
         <itemPath>MCAL_Layer/device_config.c</itemPath>
       </logicalFolder>

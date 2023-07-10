@@ -47,7 +47,21 @@
 #endif
 #endif
 
+// INTERNAL INTERRUPT FOR TIMER1
+#if TIMER1_ENABLE_FEATURE==ENABLE_FEATURE
 
+#define TIMER1_Interrupt_CLEAR_Flag_bit() (PIR1bits.TMR1IF=0)
+#define TIMER1_Interrupt_READ_Flag_bit() (PIR1bits.TMR1IF)
+
+#define TIMER1_INRERRUPT_ENABLE()  (PIE1bits.TMR1IE=1)
+#define TIMER1_INRERRUPT_DISABLE()  (PIE1bits.TMR1IE=0)
+
+#if INTERRUPT_PRIORITY_FEATURE == ENABLE_FEATURE
+#define TIMER1_ENABLE_HIGH_PRIORITY()    (IPR1bits.TMR1IP=1)
+#define TIMER1_ENABLE_LOW_PRIORITY()    (IPR1bits.TMR1IP=0)
+
+#endif
+#endif
 
 /*Section macros function  */
 

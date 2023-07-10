@@ -5173,7 +5173,46 @@ Std_ReturnType timer0_deint(const timer0_t* ptr);
 Std_ReturnType timer0_write(const timer0_t *ptr,uint16 data);
 Std_ReturnType timer0_read(const timer0_t *ptr,uint16 *data);
 # 23 "ECU_Layer/ecu_int.h" 2
-# 33 "ECU_Layer/ecu_int.h"
+
+# 1 "ECU_Layer/../MCAL_Layer/Timer1/timer1.h" 1
+# 69 "ECU_Layer/../MCAL_Layer/Timer1/timer1.h"
+typedef enum{
+    TIMER1_PRESCALER_OFF =0,
+            TIMER1_DIV_BY_2,
+            TIMER1_DIV_BY_4,
+            TIMER1_DIV_BY_8
+}timer1_Prescaler_t;
+
+
+typedef struct {
+
+    void (* timer1_callback)(void);
+
+
+
+
+
+    uint8 timer1_reservid:4;
+
+    timer1_Prescaler_t timer1_Prescaler_type;
+    uint16 timer1_preload_value;
+    uint8 timer1_select_sourse :1;
+
+    uint8 timer1_osc_statuse:1;
+    uint8 timer1_syn_mode:1;
+    uint8 timer1_select_mode_16_bits :1;
+
+
+}timer1_t;
+
+
+Std_ReturnType timer1_int(const timer1_t *ptr);
+Std_ReturnType timer1_deint(const timer1_t* ptr);
+Std_ReturnType timer1_write(const timer1_t *ptr,uint16 data);
+Std_ReturnType timer1_read(const timer1_t *ptr,uint16 *data);
+Std_ReturnType timer1_read_System_Clock_Status(const timer1_t *ptr,uint8 *statuse);
+# 24 "ECU_Layer/ecu_int.h" 2
+# 34 "ECU_Layer/ecu_int.h"
 void ecu_Int(void);
 # 1 "ECU_Layer/ecu_int.c" 2
 

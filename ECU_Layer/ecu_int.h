@@ -21,6 +21,7 @@
 #include "../MCAL_Layer/Internal_EEPROM/Internal_EEPROM.h"
 #include "../MCAL_Layer/ADC/ADC.h"
 #include "../MCAL_Layer/Timer/timer0.h"
+#include "../MCAL_Layer/Timer1/timer1.h"
 /*Section macros */
 
 

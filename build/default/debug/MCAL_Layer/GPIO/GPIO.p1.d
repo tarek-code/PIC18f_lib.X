@@ -1,4 +1,4 @@
-build/default/production/MCAL_Layer/GPIO/GPIO.p1:  \
+build/default/debug/MCAL_Layer/GPIO/GPIO.p1:  \
 MCAL_Layer/GPIO/GPIO.c  \
 MCAL_Layer/GPIO/GPIO.h  \
 MCAL_Layer/GPIO/../mcal_std.h  \
