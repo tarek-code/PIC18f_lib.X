@@ -18,7 +18,7 @@ led_cfg_t led1={
 
 uint32 cc=0;
 void timer3_ISR(){
-    led_toggel(&led1);
+    //led_toggel(&led1);
     cc++;
 }
 
@@ -26,26 +26,26 @@ void timer3_ISR(){
 timer3_t timer2={
   
 .ccp_mode=TIMER3_CCP_OFF,
-.timer3_Prescaler_value=TIMER1_DIV_BY_8,
+.timer3_Prescaler_value=TIMER1_PRESCALER_OFF,
 .timer3_callback=timer3_ISR,
-.timer3_mode=TIMER3_TIMER,
-.timer3_preload_value=3036,
-.timer3_syn_mode=TIMER3_COUNTER_SYN
+.timer3_mode=TIMER3_COUNTER,
+.timer3_preload_value=0,
+.timer3_syn_mode=TIMER3_COUNTER_ASYN
 
 };
 
 
 
-
+uint16 timer3_counter=0;
 int main() {
  // gpio_pin_direction_int(&pin1);
-led_int(&led1);
+//led_int(&led1);
 timer3_int(&timer2);
 
 //led_on(&led1);
     while (1) {
 
-       
+       timer3_read(&timer2,&timer3_counter);
     }
     return (EXIT_SUCCESS);
 }
