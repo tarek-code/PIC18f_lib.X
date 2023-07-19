@@ -101,7 +101,7 @@ Std_ReturnType timer3_write(const timer3_t *ptr,uint16 data){
 Std_ReturnType timer3_read(const timer3_t *ptr,uint16 *data){
     Std_ReturnType returt_statuse=E_NOT_OK;
     if(NULL!=ptr && NULL!=data){
-    
+        
            *data=TMR3;
         
         returt_statuse=E_OK;
