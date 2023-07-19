@@ -136,5 +136,17 @@ if((INTCONbits.RBIE==1 && INTCONbits.RBIF==1)&& (PORTBbits.RB7==1)&&(flage_7==1)
         TIMER1_ISR();
         }
 
+/*TIMER2*/
+    
+    if((PIE1bits.TMR2IE==1) && (PIR1bits.TMR2IF==1)){
+        TIMER2_ISR();
+        }
+
+/*TIMER3*/
+    
+    if((PIE2bits.TMR3IE==1) && (PIR2bits.TMR3IF==1)){
+        TIMER3_ISR();
+        }
+
 }
 #endif

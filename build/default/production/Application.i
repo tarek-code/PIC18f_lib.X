@@ -5220,7 +5220,99 @@ Std_ReturnType timer1_write(const timer1_t *ptr,uint16 data);
 Std_ReturnType timer1_read(const timer1_t *ptr,uint16 *data);
 Std_ReturnType timer1_read_System_Clock_Status(const timer1_t *ptr,uint8 *statuse);
 # 24 "./ECU_Layer/ecu_int.h" 2
-# 34 "./ECU_Layer/ecu_int.h"
+
+# 1 "./ECU_Layer/../MCAL_Layer/Timer2/timer2.h" 1
+# 42 "./ECU_Layer/../MCAL_Layer/Timer2/timer2.h"
+typedef enum{
+    TIMER2_PRE_DIV_BY_1 =0,
+            TIMER2_PRE_DIV_BY_4,
+
+            TIMER2_PRE_DIV_BY_16
+
+}timer2_Prescaler_t;
+
+typedef enum{
+    TIMER2_DIV_BY_1 =0,
+            TIMER2_DIV_BY_2,
+            TIMER2_DIV_BY_3,
+            TIMER2_DIV_BY_4,
+            TIMER2_DIV_BY_5,
+            TIMER2_DIV_BY_6,
+            TIMER2_DIV_BY_7,
+            TIMER2_DIV_BY_8,
+            TIMER2_DIV_BY_9,
+            TIMER2_DIV_BY_10,
+            TIMER2_DIV_BY_11,
+            TIMER2_DIV_BY_12,
+            TIMER2_DIV_BY_13,
+            TIMER2_DIV_BY_14,
+            TIMER2_DIV_BY_15,
+            TIMER2_DIV_BY_16
+}timer2_Postscale_t;
+
+
+typedef struct {
+
+    void (* timer2_callback)(void);
+
+
+
+
+
+
+
+ uint8 timer2_preload_value;
+timer2_Postscale_t timer2_Postscale_value;
+timer2_Prescaler_t timer2_Prescaler_value;
+
+}timer2_t;
+
+
+Std_ReturnType timer2_int(const timer2_t *ptr);
+Std_ReturnType timer2_deint(const timer2_t* ptr);
+Std_ReturnType timer2_write(const timer2_t *ptr,uint8 data);
+Std_ReturnType timer2_read(const timer2_t *ptr,uint8 *data);
+# 25 "./ECU_Layer/ecu_int.h" 2
+
+# 1 "./ECU_Layer/../MCAL_Layer/Timer3/timer3.h" 1
+# 57 "./ECU_Layer/../MCAL_Layer/Timer3/timer3.h"
+typedef enum{
+    TIMER3_PRESCALER_OFF =0,
+            TIMER3_DIV_BY_2,
+            TIMER3_DIV_BY_4,
+            TIMER3_DIV_BY_8
+}timer3_Prescaler_t;
+
+
+typedef enum{
+    TIMER3_CCP_OFF =0,
+            TIMER3_CCP2_CCP1,
+            TIMER3_CCP_on
+}timer3_ccp_mode_t;
+
+typedef struct {
+
+    void (* timer3_callback)(void);
+
+
+
+
+
+
+
+ uint8 timer3_preload_value;
+timer3_Prescaler_t timer3_Prescaler_value;
+    timer3_ccp_mode_t ccp_mode;
+    uint8 timer3_syn_mode:1;
+    uint8 timer3_mode:1;
+}timer3_t;
+
+Std_ReturnType timer3_int(const timer3_t *ptr);
+Std_ReturnType timer3_deint(const timer3_t* ptr);
+Std_ReturnType timer3_write(const timer3_t *ptr,uint16 data);
+Std_ReturnType timer3_read(const timer3_t *ptr,uint16 *data);
+# 26 "./ECU_Layer/ecu_int.h" 2
+# 36 "./ECU_Layer/ecu_int.h"
 void ecu_Int(void);
 # 13 "./Application.h" 2
 
@@ -5236,6 +5328,7 @@ void application_Int();
 
 
 
+
 led_cfg_t led1={
   .led_status=LED_OFF,
 .pin_number= GPIO_PIN0,
@@ -5244,22 +5337,21 @@ led_cfg_t led1={
 
 
 
-
-void timer1_ISR(){
+uint32 cc=0;
+void timer3_ISR(){
     led_toggel(&led1);
+    cc++;
 }
 
 
-timer1_t timer1={
+timer3_t timer2={
 
-.timer1_callback =timer1_ISR,
- .timer1_select_sourse=(1),
-.timer1_select_mode_16_bits=(0),
-.timer1_osc_statuse=(0),
-.timer1_syn_mode=(1),
-
-  .timer1_Prescaler_type=TIMER1_DIV_BY_8,
-  .timer1_preload_value=0,
+.ccp_mode=TIMER3_CCP_OFF,
+.timer3_Prescaler_value=TIMER1_DIV_BY_8,
+.timer3_callback=timer3_ISR,
+.timer3_mode=(0),
+.timer3_preload_value=3036,
+.timer3_syn_mode=(0)
 
 };
 
@@ -5268,8 +5360,8 @@ timer1_t timer1={
 
 int main() {
 
-
-timer1_int(&timer1);
+led_int(&led1);
+timer3_int(&timer2);
 
 
     while (1) {

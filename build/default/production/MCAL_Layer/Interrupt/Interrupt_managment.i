@@ -4744,6 +4744,12 @@ void TIMER0_ISR(void);
 
 
 void TIMER1_ISR(void);
+
+
+void TIMER2_ISR(void);
+
+
+void TIMER3_ISR(void);
 # 1 "MCAL_Layer/Interrupt/Interrupt_managment.c" 2
 
 
@@ -4820,6 +4826,18 @@ if((INTCONbits.RBIE==1 && INTCONbits.RBIF==1)&& (PORTBbits.RB7==1)&&(flage_7==1)
 
     if((PIE1bits.TMR1IE==1) && (PIR1bits.TMR1IF==1)){
         TIMER1_ISR();
+        }
+
+
+
+    if((PIE1bits.TMR2IE==1) && (PIR1bits.TMR2IF==1)){
+        TIMER2_ISR();
+        }
+
+
+
+    if((PIE2bits.TMR3IE==1) && (PIR2bits.TMR3IF==1)){
+        TIMER3_ISR();
         }
 
 }

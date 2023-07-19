@@ -37,5 +37,11 @@ void TIMER0_ISR(void);
 
 /*TIMER1*/
 void TIMER1_ISR(void);
+
+/*TIMER2*/
+void TIMER2_ISR(void);
+
+/*TIMER3*/
+void TIMER3_ISR(void);
 #endif	/* INTERRUPT_MANAGMENT_H */
 
