@@ -95,6 +95,40 @@
 
 #endif
 #endif
+
+
+// INTERNAL INTERRUPT FOR CCP1
+#if CCP1_ENABLE_FEATURE==ENABLE_FEATURE
+
+#define CCP1_Interrupt_CLEAR_Flag_bit() (PIR1bits.CCP1IF=0)
+#define CCP1_Interrupt_READ_Flag_bit() (PIR1bits.CCP1IF)
+
+#define CCP1_INRERRUPT_ENABLE()  (PIE1bits.CCP1IE=1)
+#define CCP1_INRERRUPT_DISABLE()  (PIE1bits.CCP1IE=0)
+
+#if INTERRUPT_PRIORITY_FEATURE == ENABLE_FEATURE
+#define CCP1_ENABLE_HIGH_PRIORITY()    (IPR1bits.CCP1IP=1)
+#define CCP1_ENABLE_LOW_PRIORITY()    (IPR1bits.CCP1IP=0)
+
+#endif
+#endif
+
+
+// INTERNAL INTERRUPT FOR CCP2
+#if CCP2_ENABLE_FEATURE==ENABLE_FEATURE
+
+#define CCP2_Interrupt_CLEAR_Flag_bit() (PIR2bits.CCP2IF=0)
+#define CCP2_Interrupt_READ_Flag_bit() (PIR2bits.CCP2IF)
+
+#define CCP2_INRERRUPT_ENABLE()  (PIE2bits.CCP2IE=1)
+#define CCP2_INRERRUPT_DISABLE()  (PIE2bits.CCP2IE=0)
+
+#if INTERRUPT_PRIORITY_FEATURE == ENABLE_FEATURE
+#define CCP2_ENABLE_HIGH_PRIORITY()    (IPR2bits.CCP2IP=1)
+#define CCP2_ENABLE_LOW_PRIORITY()    (IPR2bits.CCP2IP=0)
+
+#endif
+#endif
 /*Section macros function  */
 
 /*Section Data type */

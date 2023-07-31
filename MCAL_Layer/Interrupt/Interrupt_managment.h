@@ -43,5 +43,11 @@ void TIMER2_ISR(void);
 
 /*TIMER3*/
 void TIMER3_ISR(void);
+
+/*CCP1*/
+void CCP1_ISR(void);
+
+/*CCP2*/
+void CCP2_ISR(void);
 #endif	/* INTERRUPT_MANAGMENT_H */
 

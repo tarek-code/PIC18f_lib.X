@@ -4858,20 +4858,21 @@ Std_ReturnType timer2_int(const timer2_t *ptr){
         (T2CONbits.TMR2ON=0);
         (T2CONbits.T2CKPS=ptr->timer2_Prescaler_value);
         (T2CONbits.TOUTPS=ptr->timer2_Postscale_value);
+         TMR2=ptr->timer2_preload_value;
+        timer2_preload=ptr->timer2_preload_value;
 
 
 
         (PIE1bits.TMR2IE=0);
         (PIR1bits.TMR2IF=0);
         timer2_callback_ptr=ptr->timer2_callback;
-# 34 "MCAL_Layer/Timer2/timer2.c"
+# 36 "MCAL_Layer/Timer2/timer2.c"
         (INTCONbits.GIE=1);
         (INTCONbits.PEIE=1);
 
         (PIE1bits.TMR2IE=1);
 
-        timer2_preload=ptr->timer2_preload_value;
-        TMR2=ptr->timer2_preload_value;
+
         (T2CONbits.TMR2ON=1);
 
         returt_statuse=(0x00u);

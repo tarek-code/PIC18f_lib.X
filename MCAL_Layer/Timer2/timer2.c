@@ -13,7 +13,9 @@ Std_ReturnType timer2_int(const timer2_t *ptr){
         TIMER2_OFF_CFG();
         TIMER2_SET_PRESCALER(ptr->timer2_Prescaler_value);
         TIMER2_SET_Postscale(ptr->timer2_Postscale_value);
-        //PR2=ptr->timer2_preload_value;
+         TMR2=ptr->timer2_preload_value;
+        timer2_preload=ptr->timer2_preload_value;
+       
          //if interrupt enable
         #if TIMER2_ENABLE_FEATURE==ENABLE_FEATURE
         TIMER2_INRERRUPT_DISABLE();
@@ -36,8 +38,7 @@ Std_ReturnType timer2_int(const timer2_t *ptr){
         #endif
         TIMER2_INRERRUPT_ENABLE();
         #endif
-        timer2_preload=ptr->timer2_preload_value;
-        TMR2=ptr->timer2_preload_value;
+        
         TIMER2_ON_CFG();
         
         returt_statuse=E_OK;

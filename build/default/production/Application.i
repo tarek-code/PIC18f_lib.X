@@ -5312,7 +5312,57 @@ Std_ReturnType timer3_deint(const timer3_t* ptr);
 Std_ReturnType timer3_write(const timer3_t *ptr,uint16 data);
 Std_ReturnType timer3_read(const timer3_t *ptr,uint16 *data);
 # 26 "./ECU_Layer/ecu_int.h" 2
-# 36 "./ECU_Layer/ecu_int.h"
+
+# 1 "./ECU_Layer/../MCAL_Layer/ccp1/ccp1.h" 1
+# 18 "./ECU_Layer/../MCAL_Layer/ccp1/ccp1.h"
+# 1 "./ECU_Layer/../MCAL_Layer/ccp1/ccp1_cfg.h" 1
+# 18 "./ECU_Layer/../MCAL_Layer/ccp1/ccp1.h" 2
+# 50 "./ECU_Layer/../MCAL_Layer/ccp1/ccp1.h"
+typedef enum{
+    CCP1_COMPARE_MODE_SELECTED =0,
+            CCP1_CAPTURE_MODE_SELECTED,
+            CCP1_PWM_MODE_SELECTED
+}ccp1_modes_t;
+
+typedef union {
+    struct{
+        uint8 ccp1_reg_low;
+        uint8 ccp1_reg_high ;
+    };
+    struct{
+        uint16 ccp1_16_reg;
+    };
+}ccp1_reg_t;
+
+
+typedef struct {
+    ccp1_modes_t ccp1_mode;
+    uint8 ccp1_sub_mode;
+    pin_cfg_t ccp1_pin;
+
+    void (* ccp1_callback)(void);
+
+
+
+
+
+
+    uint32 pwm_frq;
+    timer2_Prescaler_t timer2_pre;
+    timer2_Postscale_t timer2_post;
+
+}ccp1_t;
+
+
+
+Std_ReturnType ccp1_int(const ccp1_t *ptr);
+Std_ReturnType ccp1_deint(const ccp1_t *ptr);
+# 101 "./ECU_Layer/../MCAL_Layer/ccp1/ccp1.h"
+    Std_ReturnType ccp1_pwm_set_duty(uint8 duty );
+    Std_ReturnType ccp1_pwm_start(void );
+    Std_ReturnType ccp1_pwm_stop(void);
+# 27 "./ECU_Layer/ecu_int.h" 2
+# 37 "./ECU_Layer/ecu_int.h"
 void ecu_Int(void);
 # 13 "./Application.h" 2
 
@@ -5325,48 +5375,43 @@ void ecu_Int(void);
 
 void application_Int();
 # 7 "Application.c" 2
+# 19 "Application.c"
+ccp1_t ccp1={
+  .ccp1_callback=((void*)0),
+.ccp1_mode=CCP1_PWM_MODE_SELECTED,
+.ccp1_pin.port=PORTC_INDX,
+.ccp1_pin.pin=GPIO_PIN2,
+.ccp1_pin.direction=GPIO_OUTPUT,
 
+.ccp1_sub_mode=((uint8)(0x0C)),
+.pwm_frq=20000,
+.timer2_post=1,
+.timer2_pre=1
+};
 
-
-
-led_cfg_t led1={
-  .led_status=LED_OFF,
-.pin_number= GPIO_PIN0,
-  .port_name=PORTC_INDX
+timer2_t timer2={
+  .timer2_Postscale_value=TIMER2_DIV_BY_1,
+.timer2_Prescaler_value=TIMER2_PRE_DIV_BY_1,
+.timer2_callback=((void*)0),
+.timer2_preload_value=0
 };
 
 
-
-uint32 cc=0;
-void timer3_ISR(){
-
-    cc++;
-}
-
-
-timer3_t timer2={
-
-.ccp_mode=TIMER3_CCP_OFF,
-.timer3_Prescaler_value=TIMER1_PRESCALER_OFF,
-.timer3_callback=timer3_ISR,
-.timer3_mode=(1),
-.timer3_preload_value=0,
-.timer3_syn_mode=(1)
-
-};
-
-
-
-uint16 timer3_counter=0;
 int main() {
 
 
-timer3_int(&timer2);
 
+
+
+ccp1_int(&ccp1);
+ timer2_int(&timer2);
+
+ccp1_pwm_set_duty(98);
+ccp1_pwm_start();
 
     while (1) {
 
-       timer3_read(&timer2,&timer3_counter);
+
     }
     return (0);
 }

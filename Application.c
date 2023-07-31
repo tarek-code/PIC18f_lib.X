@@ -8,44 +8,50 @@
 
 
 
-led_cfg_t led1={
-  .led_status=LED_OFF,
-.pin_number=  GPIO_PIN0,
-  .port_name=PORTC_INDX
+
+
+
+
+
+
+
+
+ccp1_t ccp1={
+  .ccp1_callback=NULL,
+.ccp1_mode=CCP1_PWM_MODE_SELECTED,
+.ccp1_pin.port=PORTC_INDX,
+.ccp1_pin.pin=GPIO_PIN2,
+.ccp1_pin.direction=GPIO_OUTPUT,
+
+.ccp1_sub_mode=CCP1_PWM_MODE,
+.pwm_frq=20000,
+.timer2_post=1,
+.timer2_pre=1
+};
+
+timer2_t timer2={
+  .timer2_Postscale_value=TIMER2_DIV_BY_1,
+.timer2_Prescaler_value=TIMER2_PRE_DIV_BY_1,
+.timer2_callback=NULL,
+.timer2_preload_value=0  
 };
 
 
-
-uint32 cc=0;
-void timer3_ISR(){
-    //led_toggel(&led1);
-    cc++;
-}
-
-
-timer3_t timer2={
-  
-.ccp_mode=TIMER3_CCP_OFF,
-.timer3_Prescaler_value=TIMER1_PRESCALER_OFF,
-.timer3_callback=timer3_ISR,
-.timer3_mode=TIMER3_COUNTER,
-.timer3_preload_value=0,
-.timer3_syn_mode=TIMER3_COUNTER_ASYN
-
-};
-
-
-
-uint16 timer3_counter=0;
 int main() {
- // gpio_pin_direction_int(&pin1);
-//led_int(&led1);
-timer3_int(&timer2);
 
-//led_on(&led1);
+   //TRISC2 = 0;		/* Set CCP1 pin as output for PWM out */
+   //CCPR1L = 40;	/* load duty cycle value */
+   
+  // CCP1CON = 0x0C;	/* Set PWM mode and no decimal for PWM */
+ccp1_int(&ccp1);
+ timer2_int(&timer2);
+
+ccp1_pwm_set_duty(98);
+ccp1_pwm_start();
+     
     while (1) {
 
-       timer3_read(&timer2,&timer3_counter);
+      
     }
     return (EXIT_SUCCESS);
 }

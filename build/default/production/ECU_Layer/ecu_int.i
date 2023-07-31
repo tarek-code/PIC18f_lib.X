@@ -5304,7 +5304,57 @@ Std_ReturnType timer3_deint(const timer3_t* ptr);
 Std_ReturnType timer3_write(const timer3_t *ptr,uint16 data);
 Std_ReturnType timer3_read(const timer3_t *ptr,uint16 *data);
 # 26 "ECU_Layer/ecu_int.h" 2
-# 36 "ECU_Layer/ecu_int.h"
+
+# 1 "ECU_Layer/../MCAL_Layer/ccp1/ccp1.h" 1
+# 18 "ECU_Layer/../MCAL_Layer/ccp1/ccp1.h"
+# 1 "ECU_Layer/../MCAL_Layer/ccp1/ccp1_cfg.h" 1
+# 18 "ECU_Layer/../MCAL_Layer/ccp1/ccp1.h" 2
+# 50 "ECU_Layer/../MCAL_Layer/ccp1/ccp1.h"
+typedef enum{
+    CCP1_COMPARE_MODE_SELECTED =0,
+            CCP1_CAPTURE_MODE_SELECTED,
+            CCP1_PWM_MODE_SELECTED
+}ccp1_modes_t;
+
+typedef union {
+    struct{
+        uint8 ccp1_reg_low;
+        uint8 ccp1_reg_high ;
+    };
+    struct{
+        uint16 ccp1_16_reg;
+    };
+}ccp1_reg_t;
+
+
+typedef struct {
+    ccp1_modes_t ccp1_mode;
+    uint8 ccp1_sub_mode;
+    pin_cfg_t ccp1_pin;
+
+    void (* ccp1_callback)(void);
+
+
+
+
+
+
+    uint32 pwm_frq;
+    timer2_Prescaler_t timer2_pre;
+    timer2_Postscale_t timer2_post;
+
+}ccp1_t;
+
+
+
+Std_ReturnType ccp1_int(const ccp1_t *ptr);
+Std_ReturnType ccp1_deint(const ccp1_t *ptr);
+# 101 "ECU_Layer/../MCAL_Layer/ccp1/ccp1.h"
+    Std_ReturnType ccp1_pwm_set_duty(uint8 duty );
+    Std_ReturnType ccp1_pwm_start(void );
+    Std_ReturnType ccp1_pwm_stop(void);
+# 27 "ECU_Layer/ecu_int.h" 2
+# 37 "ECU_Layer/ecu_int.h"
 void ecu_Int(void);
 # 1 "ECU_Layer/ecu_int.c" 2
 

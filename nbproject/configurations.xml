@@ -42,6 +42,14 @@
           <itemPath>MCAL_Layer/ADC/ADC_cfg.h</itemPath>
           <itemPath>MCAL_Layer/ADC/ADC.h</itemPath>
         </logicalFolder>
+        <logicalFolder name="ccp1" displayName="ccp1" projectFiles="true">
+          <itemPath>MCAL_Layer/ccp1/ccp1_cfg.h</itemPath>
+          <itemPath>MCAL_Layer/ccp1/ccp1.h</itemPath>
+        </logicalFolder>
+        <logicalFolder name="ccp2" displayName="ccp2" projectFiles="true">
+          <itemPath>MCAL_Layer/ccp2/ccp2_cfg.h</itemPath>
+          <itemPath>MCAL_Layer/ccp2/ccp2.h</itemPath>
+        </logicalFolder>
         <logicalFolder name="GPIO" displayName="GPIO" projectFiles="true">
           <itemPath>MCAL_Layer/GPIO/GPIO.h</itemPath>
           <itemPath>MCAL_Layer/GPIO/gpio_cfg.h</itemPath>
@@ -115,6 +123,12 @@
         <logicalFolder name="ADC" displayName="ADC" projectFiles="true">
           <itemPath>MCAL_Layer/ADC/ADC.c</itemPath>
         </logicalFolder>
+        <logicalFolder name="ccp1" displayName="ccp1" projectFiles="true">
+          <itemPath>MCAL_Layer/ccp1/ccp1.c</itemPath>
+        </logicalFolder>
+        <logicalFolder name="ccp2" displayName="ccp2" projectFiles="true">
+          <itemPath>MCAL_Layer/ccp2/ccp2.c</itemPath>
+        </logicalFolder>
         <logicalFolder name="GPIO" displayName="GPIO" projectFiles="true">
           <itemPath>MCAL_Layer/GPIO/GPIO.c</itemPath>
         </logicalFolder>
@@ -153,6 +167,7 @@
   <sourceRootList>
     <Elem>MCAL_Layer</Elem>
     <Elem>ECU_Layer</Elem>
+    <Elem>../../Record_203/MCAL_Layer/Timer2</Elem>
   </sourceRootList>
   <projectmakefile>Makefile</projectmakefile>
   <confs>
