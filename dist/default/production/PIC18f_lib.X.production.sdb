@@ -264,52 +264,8 @@ TIMER3_DIV_BY_2 1
 TIMER3_DIV_BY_4 2
 TIMER3_DIV_BY_8 3
 ]
-"18 D:\Ahmed_addulghafar\02_Part 2_Microcontroller_Interfacing\PIC18f_lib.X\Application.c
-[e E3450 . `uc
-CCP1_COMPARE_MODE_SELECTED 0
-CCP1_CAPTURE_MODE_SELECTED 1
-CCP1_PWM_MODE_SELECTED 2
-]
-[e E3444 . `uc
-DEFAULT 0
-CCP1_CCP2_TIMER3 0
-CCP1_TIMER1_CCP2_TIMER3 1
-CCP1_CCP2_TIMER1 2
-]
-[e E2978 . `uc
-GPIO_OUTPUT 0
-GPIO_INPUT 1
-]
-[e E2982 . `uc
-GPIO_PIN0 0
-GPIO_PIN1 1
-GPIO_PIN2 2
-GPIO_PIN3 3
-GPIO_PIN4 4
-GPIO_PIN5 5
-GPIO_PIN6 6
-GPIO_PIN7 7
-]
-[e E2992 . `uc
-PORTA_INDX 0
-PORTB_INDX 1
-PORTC_INDX 2
-PORTD_INDX 3
-PORTE_INDX 4
-]
-"33
-[e E3420 . `uc
-TIMER3_DIV_BY_1 0
-TIMER3_DIV_BY_2 1
-TIMER3_DIV_BY_4 2
-TIMER3_DIV_BY_8 3
-]
-"41
+"13 D:\Ahmed_addulghafar\02_Part 2_Microcontroller_Interfacing\PIC18f_lib.X\Application.c
 [v _main main `(i  1 e 2 0 ]
-"67
-[v _ccp1_calling ccp1_calling `(v  1 e 1 0 ]
-"86
-[v _timer3_calling timer3_calling `(v  1 e 1 0 ]
 "4 E:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\fleq.c
 [v ___fleq __fleq `(b  1 e 0 0 ]
 "62 E:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\float.c
@@ -378,12 +334,7 @@ TIMER3_DIV_BY_8 3
 [v _adc_reading_mode_cfg adc_reading_mode_cfg `T(v  1 s 1 adc_reading_mode_cfg ]
 "322
 [v _ADC_ISR ADC_ISR `(v  1 e 1 0 ]
-"11 D:\Ahmed_addulghafar\02_Part 2_Microcontroller_Interfacing\PIC18f_lib.X\MCAL_Layer/ccp1/ccp1.c
-[v _ccp1_int ccp1_int `(uc  1 e 1 0 ]
-"202
-[v _ccp1_compare_set_value ccp1_compare_set_value `(uc  1 e 1 0 ]
-[v i2_ccp1_compare_set_value ccp1_compare_set_value `(uc  1 e 1 0 ]
-"262
+"262 D:\Ahmed_addulghafar\02_Part 2_Microcontroller_Interfacing\PIC18f_lib.X\MCAL_Layer/ccp1/ccp1.c
 [v _CCP1_ISR CCP1_ISR `(v  1 e 1 0 ]
 "261 D:\Ahmed_addulghafar\02_Part 2_Microcontroller_Interfacing\PIC18f_lib.X\MCAL_Layer/ccp2/ccp2.c
 [v _CCP2_ISR CCP2_ISR `(v  1 e 1 0 ]
@@ -437,29 +388,8 @@ TIMER3_DIV_BY_8 3
 [v _TIMER1_ISR TIMER1_ISR `(v  1 e 1 0 ]
 "99 D:\Ahmed_addulghafar\02_Part 2_Microcontroller_Interfacing\PIC18f_lib.X\MCAL_Layer/Timer2/timer2.c
 [v _TIMER2_ISR TIMER2_ISR `(v  1 e 1 0 ]
-"9 D:\Ahmed_addulghafar\02_Part 2_Microcontroller_Interfacing\PIC18f_lib.X\MCAL_Layer/Timer3/timer3.c
-[v _timer3_int timer3_int `(uc  1 e 1 0 ]
-"79
-[v _timer3_write timer3_write `(uc  1 e 1 0 ]
-"109
+"109 D:\Ahmed_addulghafar\02_Part 2_Microcontroller_Interfacing\PIC18f_lib.X\MCAL_Layer/Timer3/timer3.c
 [v _TIMER3_ISR TIMER3_ISR `(v  1 e 1 0 ]
-"10 D:\Ahmed_addulghafar\02_Part 2_Microcontroller_Interfacing\PIC18f_lib.X\Application.c
-[v _flage flage `VEuc  1 e 1 0 ]
-[s S24 . 1 `uc 1 direction 1 0 :1:0 
-`uc 1 level 1 0 :1:1 
-`uc 1 pin 1 0 :3:2 
-`uc 1 port 1 0 :3:5 
-]
-"18
-[s S1133 . 6 `E3084 1 ccp1_mode 1 0 `uc 1 ccp1_sub_mode 1 1 `S24 1 ccp1_pin 1 2 `E3078 1 ccp1_capture_compare_timer 1 3 `*.37(v 1 ccp1_callback 2 4 ]
-[v _ccp1 ccp1 `S1133  1 e 6 0 ]
-[s S2866 . 5 `*.37(v 1 timer3_callback 2 0 `uc 1 timer3_preload_value 1 2 `E3038 1 timer3_Prescaler_value 1 3 `uc 1 timer3_syn_mode 1 4 :1:0 
-`uc 1 timer3_mode 1 4 :1:1 
-]
-"33
-[v _timer3 timer3 `S2866  1 e 5 0 ]
-"66
-[v _kk kk `VEuc  1 e 1 0 ]
 "53 E:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4620.h
 [v _PORTA PORTA `VEuc  1 e 1 @3968 ]
 "190
@@ -946,56 +876,10 @@ TIMER3_DIV_BY_8 3
 [v _timer3_callback_ptr timer3_callback_ptr `*.37(v  1 s 2 timer3_callback_ptr ]
 "7
 [v _timer3_preload timer3_preload `us  1 s 2 timer3_preload ]
-"41 D:\Ahmed_addulghafar\02_Part 2_Microcontroller_Interfacing\PIC18f_lib.X\Application.c
+"13 D:\Ahmed_addulghafar\02_Part 2_Microcontroller_Interfacing\PIC18f_lib.X\Application.c
 [v _main main `(i  1 e 2 0 ]
 {
-"60
-} 0
-"9 D:\Ahmed_addulghafar\02_Part 2_Microcontroller_Interfacing\PIC18f_lib.X\MCAL_Layer/Timer3/timer3.c
-[v _timer3_int timer3_int `(uc  1 e 1 0 ]
-{
-[s S2866 . 5 `*.37(v 1 timer3_callback 2 0 `uc 1 timer3_preload_value 1 2 `E3038 1 timer3_Prescaler_value 1 3 `uc 1 timer3_syn_mode 1 4 :1:0 
-`uc 1 timer3_mode 1 4 :1:1 
-]
-[v timer3_int@ptr ptr `*.39CS2866  1 p 2 6 ]
-"64
-} 0
-"11 D:\Ahmed_addulghafar\02_Part 2_Microcontroller_Interfacing\PIC18f_lib.X\MCAL_Layer/ccp1/ccp1.c
-[v _ccp1_int ccp1_int `(uc  1 e 1 0 ]
-{
-[s S24 . 1 `uc 1 direction 1 0 :1:0 
-`uc 1 level 1 0 :1:1 
-`uc 1 pin 1 0 :3:2 
-`uc 1 port 1 0 :3:5 
-]
-[s S1133 . 6 `E3084 1 ccp1_mode 1 0 `uc 1 ccp1_sub_mode 1 1 `S24 1 ccp1_pin 1 2 `E3078 1 ccp1_capture_compare_timer 1 3 `*.37(v 1 ccp1_callback 2 4 ]
-[v ccp1_int@ptr ptr `*.39CS1133  1 p 2 14 ]
-"137
-} 0
-"14 D:\Ahmed_addulghafar\02_Part 2_Microcontroller_Interfacing\PIC18f_lib.X\MCAL_Layer/GPIO/GPIO.c
-[v _gpio_pin_direction_int gpio_pin_direction_int `(uc  1 e 1 0 ]
-{
-[s S24 . 1 `uc 1 direction 1 0 :1:0 
-`uc 1 level 1 0 :1:1 
-`uc 1 pin 1 0 :3:2 
-`uc 1 port 1 0 :3:5 
-]
-[v gpio_pin_direction_int@pin_cfg pin_cfg `*.39CS24  1 p 2 6 ]
-"38
-} 0
-"202 D:\Ahmed_addulghafar\02_Part 2_Microcontroller_Interfacing\PIC18f_lib.X\MCAL_Layer/ccp1/ccp1.c
-[v _ccp1_compare_set_value ccp1_compare_set_value `(uc  1 e 1 0 ]
-{
-[s S1325 . 2 `uc 1 ccp1_reg_low 1 0 `uc 1 ccp1_reg_high 1 1 ]
-"205
-[s S1328 . 2 `us 1 ccp1_16_reg 2 0 ]
-[u S1330 . 2 `S1325 1 . 2 0 `S1328 1 . 2 0 ]
-[v ccp1_compare_set_value@ccp1_reg ccp1_reg `S1330  1 a 2 8 ]
-"202
-[v ccp1_compare_set_value@value value `us  1 p 2 6 ]
-"204
-[v ccp1_compare_set_value@F3132 F3132 `S1330  1 s 2 F3132 ]
-"214
+"22
 } 0
 "69 D:\Ahmed_addulghafar\02_Part 2_Microcontroller_Interfacing\PIC18f_lib.X\MCAL_Layer/Interrupt/Interrupt_managment.c
 [v _InterruptManagmentHigh InterruptManagmentHigh `IIH(v  1 e 1 0 ]
@@ -1006,11 +890,6 @@ TIMER3_DIV_BY_8 3
 [v _TIMER3_ISR TIMER3_ISR `(v  1 e 1 0 ]
 {
 "117
-} 0
-"86 D:\Ahmed_addulghafar\02_Part 2_Microcontroller_Interfacing\PIC18f_lib.X\Application.c
-[v _timer3_calling timer3_calling `(v  1 e 1 0 ]
-{
-"88
 } 0
 "99 D:\Ahmed_addulghafar\02_Part 2_Microcontroller_Interfacing\PIC18f_lib.X\MCAL_Layer/Timer2/timer2.c
 [v _TIMER2_ISR TIMER2_ISR `(v  1 e 1 0 ]
@@ -1083,33 +962,6 @@ TIMER3_DIV_BY_8 3
 [v _CCP1_ISR CCP1_ISR `(v  1 e 1 0 ]
 {
 "268
-} 0
-"67 D:\Ahmed_addulghafar\02_Part 2_Microcontroller_Interfacing\PIC18f_lib.X\Application.c
-[v _ccp1_calling ccp1_calling `(v  1 e 1 0 ]
-{
-"83
-} 0
-"202 D:\Ahmed_addulghafar\02_Part 2_Microcontroller_Interfacing\PIC18f_lib.X\MCAL_Layer/ccp1/ccp1.c
-[v i2_ccp1_compare_set_value ccp1_compare_set_value `(uc  1 e 1 0 ]
-{
-[s S1325 . 2 `uc 1 ccp1_reg_low 1 0 `uc 1 ccp1_reg_high 1 1 ]
-"205
-[s S1328 . 2 `us 1 ccp1_16_reg 2 0 ]
-[u S1330 . 2 `S1325 1 . 2 0 `S1328 1 . 2 0 ]
-[v i2ccp1_compare_set_value@ccp1_reg ccp1_reg `S1330  1 a 2 2 ]
-"202
-[v i2ccp1_compare_set_value@value value `us  1 p 2 0 ]
-"214
-} 0
-"79 D:\Ahmed_addulghafar\02_Part 2_Microcontroller_Interfacing\PIC18f_lib.X\MCAL_Layer/Timer3/timer3.c
-[v _timer3_write timer3_write `(uc  1 e 1 0 ]
-{
-[s S2866 . 5 `*.37(v 1 timer3_callback 2 0 `uc 1 timer3_preload_value 1 2 `E3038 1 timer3_Prescaler_value 1 3 `uc 1 timer3_syn_mode 1 4 :1:0 
-`uc 1 timer3_mode 1 4 :1:1 
-]
-[v timer3_write@ptr ptr `*.39CS2866  1 p 2 0 ]
-[v timer3_write@data data `us  1 p 2 2 ]
-"90
 } 0
 "322 D:\Ahmed_addulghafar\02_Part 2_Microcontroller_Interfacing\PIC18f_lib.X\MCAL_Layer/ADC/ADC.c
 [v _ADC_ISR ADC_ISR `(v  1 e 1 0 ]

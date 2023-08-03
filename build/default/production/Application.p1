@@ -1,75 +1,5 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"18 Application.c
-[; ;Application.c: 18: ccp1_t ccp1={
-[c E3450 0 1 2 .. ]
-[n E3450 . CCP1_COMPARE_MODE_SELECTED CCP1_CAPTURE_MODE_SELECTED CCP1_PWM_MODE_SELECTED  ]
-"85 ./ECU_Layer/../MCAL_Layer/ccp2/../GPIO/GPIO.h
-[s S273 :1 `uc 1 :1 `uc 1 :3 `uc 1 :3 `uc 1 ]
-[n S273 . direction level pin port ]
-"18 Application.c
-[; ;Application.c: 18: ccp1_t ccp1={
-[c E3444 0 0 1 2 .. ]
-[n E3444 . DEFAULT CCP1_CCP2_TIMER3 CCP1_TIMER1_CCP2_TIMER3 CCP1_CCP2_TIMER1  ]
-[v F3470 `(v ~T0 @X0 0 tf ]
-"75 ./ECU_Layer/../MCAL_Layer/ccp1/ccp1.h
-[; ;./ECU_Layer/../MCAL_Layer/ccp1/ccp1.h: 75: typedef struct {
-[s S292 `E3450 1 `uc 1 `S273 1 `E3444 1 `*F3470 1 ]
-[n S292 . ccp1_mode ccp1_sub_mode ccp1_pin ccp1_capture_compare_timer ccp1_callback ]
-"18 Application.c
-[; ;Application.c: 18: ccp1_t ccp1={
-[c E2978 0 1 .. ]
-[n E2978 . GPIO_OUTPUT GPIO_INPUT  ]
-[c E2982 0 1 2 3 4 5 6 7 .. ]
-[n E2982 . GPIO_PIN0 GPIO_PIN1 GPIO_PIN2 GPIO_PIN3 GPIO_PIN4 GPIO_PIN5 GPIO_PIN6 GPIO_PIN7  ]
-[c E2992 0 1 2 3 4 .. ]
-[n E2992 . PORTA_INDX PORTB_INDX PORTC_INDX PORTD_INDX PORTE_INDX  ]
-"12
-[; ;Application.c: 12: void ccp1_calling(void);
-[v _ccp1_calling `(v ~T0 @X0 0 ef ]
-[v F3428 `(v ~T0 @X0 0 tf ]
-"33
-[; ;Application.c: 33: timer3_t timer3={
-[c E3420 0 1 2 3 .. ]
-[n E3420 . TIMER3_DIV_BY_1 TIMER3_DIV_BY_2 TIMER3_DIV_BY_4 TIMER3_DIV_BY_8  ]
-"68 ./ECU_Layer/../MCAL_Layer/Timer3/timer3.h
-[; ;./ECU_Layer/../MCAL_Layer/Timer3/timer3.h: 68: typedef struct {
-[s S288 `*F3428 1 `uc 1 `E3420 1 :1 `uc 1 :1 `uc 1 ]
-[n S288 . timer3_callback timer3_preload_value timer3_Prescaler_value timer3_syn_mode timer3_mode ]
-"15 Application.c
-[; ;Application.c: 15: void timer3_calling(void);
-[v _timer3_calling `(v ~T0 @X0 0 ef ]
 [p mainexit ]
-"109 ./ECU_Layer/../MCAL_Layer/ccp1/ccp1.h
-[; ;./ECU_Layer/../MCAL_Layer/ccp1/ccp1.h: 109:     Std_ReturnType ccp1_compare_set_value(uint16 value );
-[v _ccp1_compare_set_value `(uc ~T0 @X0 0 ef1`us ]
-"99
-[; ;./ECU_Layer/../MCAL_Layer/ccp1/ccp1.h: 99: Std_ReturnType ccp1_int(const ccp1_t *ptr);
-[v _ccp1_int `(uc ~T0 @X0 0 ef1`*CS292 ]
-"84 ./ECU_Layer/../MCAL_Layer/Timer3/timer3.h
-[; ;./ECU_Layer/../MCAL_Layer/Timer3/timer3.h: 84: Std_ReturnType timer3_int(const timer3_t *ptr);
-[v _timer3_int `(uc ~T0 @X0 0 ef1`*CS288 ]
-"86
-[; ;./ECU_Layer/../MCAL_Layer/Timer3/timer3.h: 86: Std_ReturnType timer3_write(const timer3_t *ptr,uint16 data);
-[v _timer3_write `(uc ~T0 @X0 0 ef2`*CS288`us ]
-"4262 E:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4620.h
-[; ;E:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4620.h: 4262:     struct {
-[s S163 :4 `uc 1 :2 `uc 1 :2 `uc 1 ]
-[n S163 . CCP1M DC1B P1M ]
-"4267
-[; ;E:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4620.h: 4267:     struct {
-[s S164 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S164 . CCP1M0 CCP1M1 CCP1M2 CCP1M3 CCP1Y CCP1X P1M0 P1M1 ]
-"4277
-[; ;E:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4620.h: 4277:     struct {
-[s S165 :4 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S165 . . DC1B0 DC1B1 ]
-"4261
-[; ;E:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4620.h: 4261: typedef union {
-[u S162 `S163 1 `S164 1 `S165 1 ]
-[n S162 . . . . ]
-"4283
-[; ;E:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4620.h: 4283: extern volatile CCP1CONbits_t CCP1CONbits __attribute__((address(0xFBD)));
-[v _CCP1CONbits `VS162 ~T0 @X0 0 e@4029 ]
 "55 E:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4620.h
 [; ;E:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4620.h: 55: __asm("PORTA equ 0F80h");
 [; <" PORTA equ 0F80h ;# ">
@@ -481,153 +411,38 @@ Version 4.0 HI-TECH Software Intermediate Code
 "6716
 [; ;E:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4620.h: 6716: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
-"10 Application.c
-[; ;Application.c: 10: volatile uint8 flage=0;
-[v _flage `Vuc ~T0 @X0 1 e ]
-[i _flage
--> -> 0 `i `uc
-]
-"18
-[; ;Application.c: 18: ccp1_t ccp1={
-[v _ccp1 `S292 ~T0 @X0 1 e ]
-[i _ccp1
-:U ..
-:U ..
-. `E3450 0
--> -> 9 `i `uc
-:U ..
-:U ..
--> . `E2978 0 `uc
--> -> 0 `i `uc
--> . `E2982 2 `uc
--> . `E2992 2 `uc
-..
-..
-. `E3444 1
-&U _ccp1_calling
-..
-..
-]
-"33
-[; ;Application.c: 33: timer3_t timer3={
-[v _timer3 `S288 ~T0 @X0 1 e ]
-[i _timer3
-:U ..
-:U ..
-&U _timer3_calling
--> -> 0 `i `uc
-. `E3420 1
--> -> 0 `i `uc
--> -> 0 `i `uc
-..
-..
-]
 [v $root$_main `(v ~T0 @X0 0 e ]
-"41
-[; ;Application.c: 41: int main() {
+"13 Application.c
+[; ;Application.c: 13: int main() {
 [v _main `(i ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"43
-[; ;Application.c: 43:   ccp1_compare_set_value(37500);
-[e ( _ccp1_compare_set_value (1 -> -> 37500 `l `us ]
-"44
-[; ;Application.c: 44:   ccp1_int(&ccp1);
-[e ( _ccp1_int (1 -> &U _ccp1 `*CS292 ]
-"47
-[; ;Application.c: 47: timer3_int(&timer3);
-[e ( _timer3_int (1 -> &U _timer3 `*CS288 ]
-"55
-[; ;Application.c: 55:     while (1) {
+"17
+[; ;Application.c: 17:     while (1) {
 [e :U 299 ]
 {
-"58
-[; ;Application.c: 58:     }
+"20
+[; ;Application.c: 20:     }
 }
 [e :U 298 ]
 [e $U 299  ]
 [e :U 300 ]
-"59
-[; ;Application.c: 59:     return (0);
+"21
+[; ;Application.c: 21:     return (0);
 [e ) -> 0 `i ]
 [e $UE 297  ]
-"60
-[; ;Application.c: 60: }
+"22
+[; ;Application.c: 22: }
 [e :UE 297 ]
 }
-"62
-[; ;Application.c: 62: void application_Int() {
+"24
+[; ;Application.c: 24: void application_Int() {
 [v _application_Int `(v ~T0 @X0 1 ef ]
 {
 [e :U _application_Int ]
 [f ]
-"64
-[; ;Application.c: 64: }
+"26
+[; ;Application.c: 26: }
 [e :UE 301 ]
-}
-"66
-[; ;Application.c: 66: volatile uint8 kk=0;
-[v _kk `Vuc ~T0 @X0 1 e ]
-[i _kk
--> -> 0 `i `uc
-]
-"67
-[; ;Application.c: 67: void ccp1_calling(void){
-[v _ccp1_calling `(v ~T0 @X0 1 ef ]
-{
-[e :U _ccp1_calling ]
-[f ]
-"68
-[; ;Application.c: 68:      kk++;
-[e ++ _kk -> -> 1 `i `Vuc ]
-"69
-[; ;Application.c: 69:      timer3_write(&timer3,0);
-[e ( _timer3_write (2 , -> &U _timer3 `*CS288 -> -> 0 `i `us ]
-"70
-[; ;Application.c: 70:     if(1==kk){
-[e $ ! == -> 1 `i -> _kk `i 303  ]
-{
-"71
-[; ;Application.c: 71:          ccp1_compare_set_value(12500);
-[e ( _ccp1_compare_set_value (1 -> -> 12500 `i `us ]
-"72
-[; ;Application.c: 72:          (CCP1CONbits.CCP1M=((uint8) (0x08)));
-[e = . . _CCP1CONbits 0 0 -> -> 8 `i `uc ]
-"74
-[; ;Application.c: 74:     }
-}
-[e $U 304  ]
-"75
-[; ;Application.c: 75:     else if(2==kk){
-[e :U 303 ]
-[e $ ! == -> 2 `i -> _kk `i 305  ]
-{
-"76
-[; ;Application.c: 76:         ccp1_compare_set_value(37500);
-[e ( _ccp1_compare_set_value (1 -> -> 37500 `l `us ]
-"77
-[; ;Application.c: 77:         (CCP1CONbits.CCP1M=((uint8)(0x09)));
-[e = . . _CCP1CONbits 0 0 -> -> 9 `i `uc ]
-"78
-[; ;Application.c: 78:         kk=0;
-[e = _kk -> -> 0 `i `uc ]
-"79
-[; ;Application.c: 79:     }
-}
-[e :U 305 ]
-[e :U 304 ]
-"83
-[; ;Application.c: 83: }
-[e :UE 302 ]
-}
-"86
-[; ;Application.c: 86: void timer3_calling(void){
-[v _timer3_calling `(v ~T0 @X0 1 ef ]
-{
-[e :U _timer3_calling ]
-[f ]
-"88
-[; ;Application.c: 88: }
-[e :UE 306 ]
 }
