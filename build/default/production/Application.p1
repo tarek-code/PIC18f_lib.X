@@ -418,6 +418,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 [e :U _main ]
 [f ]
+"15
+[; ;Application.c: 15:     int x=0;
+[v _x `i ~T0 @X0 1 a ]
+[e = _x -> 0 `i ]
 "17
 [; ;Application.c: 17:     while (1) {
 [e :U 299 ]
