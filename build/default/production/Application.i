@@ -5275,20 +5275,16 @@ Std_ReturnType timer2_read(const timer2_t *ptr,uint8 *data);
 # 25 "./ECU_Layer/ecu_int.h" 2
 
 # 1 "./ECU_Layer/../MCAL_Layer/Timer3/timer3.h" 1
-# 57 "./ECU_Layer/../MCAL_Layer/Timer3/timer3.h"
+# 58 "./ECU_Layer/../MCAL_Layer/Timer3/timer3.h"
 typedef enum{
-    TIMER3_PRESCALER_OFF =0,
+    TIMER3_DIV_BY_1 =0,
             TIMER3_DIV_BY_2,
-            TIMER3_DIV_BY_4,
-            TIMER3_DIV_BY_8
+                        TIMER3_DIV_BY_4,
+
+            TIMER3_DIV_BY_8,
 }timer3_Prescaler_t;
 
 
-typedef enum{
-    TIMER3_CCP_OFF =0,
-            TIMER3_CCP2_CCP1,
-            TIMER3_CCP_on
-}timer3_ccp_mode_t;
 
 typedef struct {
 
@@ -5302,7 +5298,6 @@ typedef struct {
 
  uint8 timer3_preload_value;
 timer3_Prescaler_t timer3_Prescaler_value;
-    timer3_ccp_mode_t ccp_mode;
     uint8 timer3_syn_mode:1;
     uint8 timer3_mode:1;
 }timer3_t;
@@ -5317,7 +5312,14 @@ Std_ReturnType timer3_read(const timer3_t *ptr,uint16 *data);
 # 18 "./ECU_Layer/../MCAL_Layer/ccp1/ccp1.h"
 # 1 "./ECU_Layer/../MCAL_Layer/ccp1/ccp1_cfg.h" 1
 # 18 "./ECU_Layer/../MCAL_Layer/ccp1/ccp1.h" 2
-# 50 "./ECU_Layer/../MCAL_Layer/ccp1/ccp1.h"
+# 51 "./ECU_Layer/../MCAL_Layer/ccp1/ccp1.h"
+typedef enum{
+    DEFAULT=0,
+    CCP1_CCP2_TIMER3 =0,
+            CCP1_TIMER1_CCP2_TIMER3,
+            CCP1_CCP2_TIMER1
+}ccp1_capture_compare_timer_t;
+
 typedef enum{
     CCP1_COMPARE_MODE_SELECTED =0,
             CCP1_CAPTURE_MODE_SELECTED,
@@ -5339,8 +5341,66 @@ typedef struct {
     ccp1_modes_t ccp1_mode;
     uint8 ccp1_sub_mode;
     pin_cfg_t ccp1_pin;
+    ccp1_capture_compare_timer_t ccp1_capture_compare_timer;
 
     void (* ccp1_callback)(void);
+# 92 "./ECU_Layer/../MCAL_Layer/ccp1/ccp1.h"
+}ccp1_t;
+
+
+
+
+
+
+Std_ReturnType ccp1_int(const ccp1_t *ptr);
+Std_ReturnType ccp1_deint(const ccp1_t *ptr);
+
+
+
+
+
+
+
+    Std_ReturnType ccp1_compare_check(uint8 *statuse );
+    Std_ReturnType ccp1_compare_set_value(uint16 value );
+# 27 "./ECU_Layer/ecu_int.h" 2
+
+# 1 "./ECU_Layer/../MCAL_Layer/ccp2/ccp2.h" 1
+# 18 "./ECU_Layer/../MCAL_Layer/ccp2/ccp2.h"
+# 1 "./ECU_Layer/../MCAL_Layer/ccp2/ccp2_cfg.h" 1
+# 18 "./ECU_Layer/../MCAL_Layer/ccp2/ccp2.h" 2
+# 51 "./ECU_Layer/../MCAL_Layer/ccp2/ccp2.h"
+typedef enum{
+    dEFAULT=0,
+    cCP1_CCP2_TIMER3 =0,
+            cCP1_TIMER1_CCP2_TIMER3,
+            cCP1_CCP2_TIMER1
+}ccp2_capture_compare_timer_t;
+
+typedef enum{
+    CCP2_COMPARE_MODE_SELECTED =0,
+            CCP2_CAPTURE_MODE_SELECTED,
+            CCP2_PWM_MODE_SELECTED
+}ccp2_modes_t;
+
+typedef union {
+    struct{
+        uint8 ccp2_reg_low;
+        uint8 ccp2_reg_high ;
+    };
+    struct{
+        uint16 ccp2_16_reg;
+    };
+}ccp2_reg_t;
+
+
+typedef struct {
+    ccp2_modes_t ccp2_mode;
+    uint8 ccp2_sub_mode;
+    pin_cfg_t ccp2_pin;
+    ccp2_capture_compare_timer_t ccp2_capture_compare_timer;
+
+    void (* ccp2_callback)(void);
 
 
 
@@ -5348,21 +5408,23 @@ typedef struct {
 
 
     uint32 pwm_frq;
-    timer2_Prescaler_t timer2_pre;
-    timer2_Postscale_t timer2_post;
+    timer2_Prescaler_t ccp2_timer2_pre;
+    timer2_Postscale_t ccp2_timer2_post;
 
-}ccp1_t;
+}ccp2_t;
 
 
 
-Std_ReturnType ccp1_int(const ccp1_t *ptr);
-Std_ReturnType ccp1_deint(const ccp1_t *ptr);
-# 101 "./ECU_Layer/../MCAL_Layer/ccp1/ccp1.h"
-    Std_ReturnType ccp1_pwm_set_duty(uint8 duty );
-    Std_ReturnType ccp1_pwm_start(void );
-    Std_ReturnType ccp1_pwm_stop(void);
-# 27 "./ECU_Layer/ecu_int.h" 2
-# 37 "./ECU_Layer/ecu_int.h"
+
+
+Std_ReturnType ccp2_int(const ccp2_t *ptr);
+Std_ReturnType ccp2_deint(const ccp2_t *ptr);
+# 112 "./ECU_Layer/../MCAL_Layer/ccp2/ccp2.h"
+    Std_ReturnType ccp2_pwm_set_duty(uint8 duty );
+    Std_ReturnType ccp2_pwm_start(void );
+    Std_ReturnType ccp2_pwm_stop(void);
+# 28 "./ECU_Layer/ecu_int.h" 2
+# 38 "./ECU_Layer/ecu_int.h"
 void ecu_Int(void);
 # 13 "./Application.h" 2
 
@@ -5375,39 +5437,53 @@ void ecu_Int(void);
 
 void application_Int();
 # 7 "Application.c" 2
-# 19 "Application.c"
+
+
+
+volatile uint8 flage=0;
+
+void ccp1_calling(void);
+
+
+void timer3_calling(void);
+
+
 ccp1_t ccp1={
-  .ccp1_callback=((void*)0),
-.ccp1_mode=CCP1_PWM_MODE_SELECTED,
+  .ccp1_callback=ccp1_calling,
+.ccp1_mode=CCP1_COMPARE_MODE_SELECTED,
 .ccp1_pin.port=PORTC_INDX,
 .ccp1_pin.pin=GPIO_PIN2,
 .ccp1_pin.direction=GPIO_OUTPUT,
+.ccp1_capture_compare_timer=CCP1_CCP2_TIMER3,
+.ccp1_sub_mode=((uint8)(0x09)),
 
-.ccp1_sub_mode=((uint8)(0x0C)),
-.pwm_frq=20000,
-.timer2_post=1,
-.timer2_pre=1
 };
 
-timer2_t timer2={
-  .timer2_Postscale_value=TIMER2_DIV_BY_1,
-.timer2_Prescaler_value=TIMER2_PRE_DIV_BY_1,
-.timer2_callback=((void*)0),
-.timer2_preload_value=0
-};
 
+
+
+
+timer3_t timer3={
+  .timer3_Prescaler_value= TIMER3_DIV_BY_2,
+  .timer3_callback=timer3_calling,
+  .timer3_mode=(0),
+  .timer3_preload_value=0,
+
+};
 
 int main() {
 
+  ccp1_compare_set_value(37500);
+  ccp1_int(&ccp1);
+
+
+timer3_int(&timer3);
 
 
 
 
-ccp1_int(&ccp1);
- timer2_int(&timer2);
 
-ccp1_pwm_set_duty(98);
-ccp1_pwm_start();
+
 
     while (1) {
 
@@ -5417,5 +5493,29 @@ ccp1_pwm_start();
 }
 
 void application_Int() {
+
+}
+
+volatile uint8 kk=0;
+void ccp1_calling(void){
+     kk++;
+     timer3_write(&timer3,0);
+    if(1==kk){
+         ccp1_compare_set_value(12500);
+         (CCP1CONbits.CCP1M=((uint8) (0x08)));
+
+    }
+    else if(2==kk){
+        ccp1_compare_set_value(37500);
+        (CCP1CONbits.CCP1M=((uint8)(0x09)));
+        kk=0;
+    }
+
+
+
+}
+
+
+void timer3_calling(void){
 
 }

@@ -4792,20 +4792,16 @@ typedef enum{
 
 # 1 "MCAL_Layer/Timer3/../../MCAL_Layer/Interrupt/Interrupt_internal.h" 1
 # 17 "MCAL_Layer/Timer3/timer3.h" 2
-# 57 "MCAL_Layer/Timer3/timer3.h"
+# 58 "MCAL_Layer/Timer3/timer3.h"
 typedef enum{
-    TIMER3_PRESCALER_OFF =0,
+    TIMER3_DIV_BY_1 =0,
             TIMER3_DIV_BY_2,
-            TIMER3_DIV_BY_4,
-            TIMER3_DIV_BY_8
+                        TIMER3_DIV_BY_4,
+
+            TIMER3_DIV_BY_8,
 }timer3_Prescaler_t;
 
 
-typedef enum{
-    TIMER3_CCP_OFF =0,
-            TIMER3_CCP2_CCP1,
-            TIMER3_CCP_on
-}timer3_ccp_mode_t;
 
 typedef struct {
 
@@ -4819,7 +4815,6 @@ typedef struct {
 
  uint8 timer3_preload_value;
 timer3_Prescaler_t timer3_Prescaler_value;
-    timer3_ccp_mode_t ccp_mode;
     uint8 timer3_syn_mode:1;
     uint8 timer3_mode:1;
 }timer3_t;
@@ -4842,7 +4837,7 @@ Std_ReturnType timer3_int(const timer3_t *ptr){
     if(((void*)0)!=ptr){
 
         (T3CONbits.TMR3ON=0) ;
-        (T3CONbits.RD16=1) ;
+        (T3CONbits.RD16=0) ;
         TMR3=ptr->timer3_preload_value;
                 timer3_preload=ptr->timer3_preload_value;
         (T3CONbits.T3CKPS=ptr->timer3_Prescaler_value);
@@ -4861,24 +4856,14 @@ Std_ReturnType timer3_int(const timer3_t *ptr){
         }
         }
 
-        switch(ptr->ccp_mode){
-            case TIMER3_CCP_OFF:
-                break;
-            case TIMER3_CCP2_CCP1:
-                break;
-            case TIMER3_CCP_on:
-                break;
-            default :
 
-                break;
-        }
 
 
 
         (PIE2bits.TMR3IE=0);
         (PIR2bits.TMR3IF=0);
         timer3_callback_ptr=ptr->timer3_callback;
-# 62 "MCAL_Layer/Timer3/timer3.c"
+# 52 "MCAL_Layer/Timer3/timer3.c"
         (INTCONbits.GIE=1);
         (INTCONbits.PEIE=1);
 
@@ -4912,7 +4897,8 @@ Std_ReturnType timer3_write(const timer3_t *ptr,uint16 data){
 
         timer3_preload=data;
 
-        TMR3=data;
+        TMR3H=data>>8;
+            TMR3L =(uint8)data;
         returt_statuse=(0x00u);
     }
     return returt_statuse;
@@ -4922,7 +4908,11 @@ Std_ReturnType timer3_read(const timer3_t *ptr,uint16 *data){
     Std_ReturnType returt_statuse=(0x01u);
     if(((void*)0)!=ptr && ((void*)0)!=data){
 
-           *data=TMR3;
+           uint8 high;
+           uint8 low;
+           low=TMR3L;
+           high=TMR3H;
+           *data=(uint16)(low + (high<<8));
 
         returt_statuse=(0x00u);
     }
@@ -4933,7 +4923,9 @@ Std_ReturnType timer3_read(const timer3_t *ptr,uint16 *data){
 
 void TIMER3_ISR(void){
     (PIR2bits.TMR3IF=0);
-    TMR3=timer3_preload;
+    TMR3H=timer3_preload>>8;
+            TMR3L =(uint8)timer3_preload;
+
     if(timer3_callback_ptr){
         timer3_callback_ptr();
     }

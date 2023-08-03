@@ -11,7 +11,7 @@ Std_ReturnType timer3_int(const timer3_t *ptr){
     if(NULL!=ptr){
     
         TIMER3_OFF_CFG() ;
-        TIMER3_16_BIT_MODE__CFG() ;
+        TIMER3_16_BIT_MODE_SEPERATED_CFG() ;
         TMR3=ptr->timer3_preload_value;
                 timer3_preload=ptr->timer3_preload_value;
         TIMER3_SET_PRESCALER_CFG(ptr->timer3_Prescaler_value);
@@ -30,17 +30,7 @@ Std_ReturnType timer3_int(const timer3_t *ptr){
         }
         }
         
-        switch(ptr->ccp_mode){
-            case TIMER3_CCP_OFF:
-                break;
-            case TIMER3_CCP2_CCP1:
-                break;
-            case TIMER3_CCP_on:
-                break;
-            default :
-                // do nothing 
-                break;
-        }
+        
         
         //if interrupt enable
         #if TIMER3_ENABLE_FEATURE==ENABLE_FEATURE
@@ -92,7 +82,8 @@ Std_ReturnType timer3_write(const timer3_t *ptr,uint16 data){
     
         timer3_preload=data;
         
-        TMR3=data;
+        TMR3H=data>>8;
+            TMR3L =(uint8)data;
         returt_statuse=E_OK;
     }
     return returt_statuse;
@@ -102,7 +93,11 @@ Std_ReturnType timer3_read(const timer3_t *ptr,uint16 *data){
     Std_ReturnType returt_statuse=E_NOT_OK;
     if(NULL!=ptr && NULL!=data){
         
-           *data=TMR3;
+           uint8 high;
+           uint8 low;
+           low=TMR3L;
+           high=TMR3H;
+           *data=(uint16)(low + (high<<8));
         
         returt_statuse=E_OK;
     }
@@ -113,7 +108,9 @@ Std_ReturnType timer3_read(const timer3_t *ptr,uint16 *data){
 
 void TIMER3_ISR(void){
     TIMER3_Interrupt_CLEAR_Flag_bit();
-    TMR3=timer3_preload;
+    TMR3H=timer3_preload>>8;
+            TMR3L =(uint8)timer3_preload;
+    
     if(timer3_callback_ptr){
         timer3_callback_ptr();
     }

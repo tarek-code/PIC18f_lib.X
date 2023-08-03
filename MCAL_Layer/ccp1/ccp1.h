@@ -47,6 +47,14 @@
 
 
 /*Section Data type */
+
+typedef enum{
+    DEFAULT=0,
+    CCP1_CCP2_TIMER3 =0,
+            CCP1_TIMER1_CCP2_TIMER3,
+            CCP1_CCP2_TIMER1
+}ccp1_capture_compare_timer_t;
+
 typedef enum{
     CCP1_COMPARE_MODE_SELECTED =0,
             CCP1_CAPTURE_MODE_SELECTED,
@@ -68,6 +76,7 @@ typedef struct {
     ccp1_modes_t ccp1_mode;
     uint8 ccp1_sub_mode;
     pin_cfg_t ccp1_pin;
+    ccp1_capture_compare_timer_t ccp1_capture_compare_timer;
     #if CCP1_ENABLE_FEATURE==ENABLE_FEATURE
     void (* ccp1_callback)(void);
     #endif
@@ -77,10 +86,13 @@ typedef struct {
     #endif
 #if (CCP1_SELECT_MODE==CCP1_PWM_MODE_CFG)
     uint32 pwm_frq;
-    timer2_Prescaler_t timer2_pre;
-    timer2_Postscale_t timer2_post;
+    timer2_Prescaler_t ccp1_timer2_pre;
+    timer2_Postscale_t ccp1_timer2_post;
 #endif
 }ccp1_t;
+
+
+
 
 /*Section function declaration  */
 

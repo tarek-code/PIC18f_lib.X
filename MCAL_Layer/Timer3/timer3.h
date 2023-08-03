@@ -54,19 +54,16 @@
 
 /*Section Data type */
 
+
 typedef enum{
-    TIMER3_PRESCALER_OFF =0,
+    TIMER3_DIV_BY_1 =0,
             TIMER3_DIV_BY_2,
-            TIMER3_DIV_BY_4,
-            TIMER3_DIV_BY_8
+                        TIMER3_DIV_BY_4,
+
+            TIMER3_DIV_BY_8,
 }timer3_Prescaler_t;
 
 
-typedef enum{
-    TIMER3_CCP_OFF =0,
-            TIMER3_CCP2_CCP1,          
-            TIMER3_CCP_on
-}timer3_ccp_mode_t;
 
 typedef struct {
     #if TIMER3_ENABLE_FEATURE==ENABLE_FEATURE
@@ -80,7 +77,6 @@ typedef struct {
     #endif
  uint8 timer3_preload_value;
 timer3_Prescaler_t timer3_Prescaler_value;
-    timer3_ccp_mode_t ccp_mode;
     uint8 timer3_syn_mode:1;
     uint8 timer3_mode:1;
 }timer3_t;

@@ -35,4 +35,6 @@ ECU_Layer/../MCAL_Layer/Timer1/timer1.h  \
 ECU_Layer/../MCAL_Layer/Timer2/timer2.h  \
 ECU_Layer/../MCAL_Layer/Timer3/timer3.h  \
 ECU_Layer/../MCAL_Layer/ccp1/ccp1.h  \
-ECU_Layer/../MCAL_Layer/ccp1/ccp1_cfg.h 
+ECU_Layer/../MCAL_Layer/ccp1/ccp1_cfg.h  \
+ECU_Layer/../MCAL_Layer/ccp2/ccp2.h  \
+ECU_Layer/../MCAL_Layer/ccp2/ccp2_cfg.h 

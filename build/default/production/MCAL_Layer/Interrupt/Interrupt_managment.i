@@ -4853,7 +4853,7 @@ if((INTCONbits.RBIE==1 && INTCONbits.RBIF==1)&& (PORTBbits.RB7==1)&&(flage_7==1)
 
 
     if((PIE2bits.CCP2IE==1) && (PIR2bits.CCP2IF==1)){
-
+        CCP2_ISR();
         }
 
 }

@@ -4848,7 +4848,14 @@ Std_ReturnType timer2_deint(const timer2_t* ptr);
 Std_ReturnType timer2_write(const timer2_t *ptr,uint8 data);
 Std_ReturnType timer2_read(const timer2_t *ptr,uint8 *data);
 # 19 "MCAL_Layer/ccp1/ccp1.h" 2
-# 50 "MCAL_Layer/ccp1/ccp1.h"
+# 51 "MCAL_Layer/ccp1/ccp1.h"
+typedef enum{
+    DEFAULT=0,
+    CCP1_CCP2_TIMER3 =0,
+            CCP1_TIMER1_CCP2_TIMER3,
+            CCP1_CCP2_TIMER1
+}ccp1_capture_compare_timer_t;
+
 typedef enum{
     CCP1_COMPARE_MODE_SELECTED =0,
             CCP1_CAPTURE_MODE_SELECTED,
@@ -4870,28 +4877,28 @@ typedef struct {
     ccp1_modes_t ccp1_mode;
     uint8 ccp1_sub_mode;
     pin_cfg_t ccp1_pin;
+    ccp1_capture_compare_timer_t ccp1_capture_compare_timer;
 
     void (* ccp1_callback)(void);
-
-
-
-
-
-
-    uint32 pwm_frq;
-    timer2_Prescaler_t timer2_pre;
-    timer2_Postscale_t timer2_post;
-
+# 92 "MCAL_Layer/ccp1/ccp1.h"
 }ccp1_t;
+
+
+
 
 
 
 Std_ReturnType ccp1_int(const ccp1_t *ptr);
 Std_ReturnType ccp1_deint(const ccp1_t *ptr);
-# 101 "MCAL_Layer/ccp1/ccp1.h"
-    Std_ReturnType ccp1_pwm_set_duty(uint8 duty );
-    Std_ReturnType ccp1_pwm_start(void );
-    Std_ReturnType ccp1_pwm_stop(void);
+
+
+
+
+
+
+
+    Std_ReturnType ccp1_compare_check(uint8 *statuse );
+    Std_ReturnType ccp1_compare_set_value(uint16 value );
 # 1 "MCAL_Layer/ccp1/ccp1.c" 2
 
 
@@ -4929,6 +4936,21 @@ Std_ReturnType ccp1_int(const ccp1_t *ptr){
                     break;
             }
             gpio_pin_direction_int(&(ptr->ccp1_pin));
+            if(DEFAULT == ptr->ccp1_capture_compare_timer){
+                T3CONbits.T3CCP1=0;
+                T3CONbits.T3CCP2=1;
+            }
+            else if(CCP1_TIMER1_CCP2_TIMER3 == ptr->ccp1_capture_compare_timer){
+                T3CONbits.T3CCP1=1;
+                T3CONbits.T3CCP2=0;
+            }
+            else if(CCP1_CCP2_TIMER1 == ptr->ccp1_capture_compare_timer){
+                T3CONbits.T3CCP1=0;
+                T3CONbits.T3CCP2=0;
+            }
+            else{
+
+            }
         }
         else if(CCP1_CAPTURE_MODE_SELECTED ==ptr->ccp1_mode){
             switch(ptr->ccp1_sub_mode){
@@ -4950,20 +4972,23 @@ Std_ReturnType ccp1_int(const ccp1_t *ptr){
                     break;
             }
              gpio_pin_direction_int(&(ptr->ccp1_pin));
-        }
-
-        else if(CCP1_PWM_MODE_SELECTED ==ptr->ccp1_mode){
-            if(((uint8)(0x0C)) == ptr->ccp1_sub_mode){
-                (CCP1CONbits.CCP1M=((uint8)(0x0C)));
-                gpio_pin_direction_int(&(ptr->ccp1_pin));
-                PR2=(uint8)((8000000UL/(ptr->timer2_pre * ptr->timer2_post * ptr->pwm_frq * 4.0))-1);
+             if(DEFAULT == ptr->ccp1_capture_compare_timer){
+                T3CONbits.T3CCP1=0;
+                T3CONbits.T3CCP2=1;
+            }
+            else if(CCP1_TIMER1_CCP2_TIMER3 == ptr->ccp1_capture_compare_timer){
+                T3CONbits.T3CCP1=1;
+                T3CONbits.T3CCP2=0;
+            }
+            else if(CCP1_CCP2_TIMER1 == ptr->ccp1_capture_compare_timer){
+                T3CONbits.T3CCP1=0;
+                T3CONbits.T3CCP2=0;
             }
             else{
-                returt_statuse=(0x01u);
+
             }
-
         }
-
+# 102 "MCAL_Layer/ccp1/ccp1.c"
         else{
 
         }
@@ -4974,7 +4999,7 @@ Std_ReturnType ccp1_int(const ccp1_t *ptr){
         (PIE1bits.CCP1IE=0);
         (PIR1bits.CCP1IF=0);
         ccp1_callback_ptr=ptr->ccp1_callback;
-# 94 "MCAL_Layer/ccp1/ccp1.c"
+# 124 "MCAL_Layer/ccp1/ccp1.c"
         (INTCONbits.GIE=1);
         (INTCONbits.PEIE=1);
 
@@ -5002,42 +5027,36 @@ Std_ReturnType ccp1_deint(const ccp1_t *ptr){
 
     return returt_statuse;
 }
-# 189 "MCAL_Layer/ccp1/ccp1.c"
-    Std_ReturnType ccp1_pwm_set_duty(uint8 duty ){
+# 187 "MCAL_Layer/ccp1/ccp1.c"
+    Std_ReturnType ccp1_compare_check(uint8 *statuse ){
     Std_ReturnType returt_statuse=(0x01u);
-
-
-        uint16 l_value=0;
-        l_value=(uint16)((PR2+1)*(duty/100.0)*4);
-        CCP1CONbits.DC1B=(uint8)(l_value & 0x0003);
-        CCPR1L=(uint8)(l_value>>2);
-
+    if(((void*)0)!=statuse){
+       if((0x01) ==(PIR2bits.CCP2IF)){
+            *statuse=(0x01);
+        }
+        else{
+            *statuse=(0x00);
+        }
         returt_statuse=(0x00u);
-
+    }
 
     return returt_statuse;
 }
 
-    Std_ReturnType ccp1_pwm_start(void ){
+    Std_ReturnType ccp1_compare_set_value(uint16 value ){
     Std_ReturnType returt_statuse=(0x01u);
+    if(((void*)0)!=value){
+       ccp1_reg_t ccp1_reg={.ccp1_16_reg=0};
+       ccp1_reg.ccp1_16_reg=value;
+       CCPR1H=ccp1_reg.ccp1_reg_high;
+       CCPR1L=ccp1_reg.ccp1_reg_low;
 
-       (CCP1CONbits.CCP1M=((uint8)(0x0C)));
         returt_statuse=(0x00u);
-
+    }
 
     return returt_statuse;
 }
-
-    Std_ReturnType ccp1_pwm_stop(void){
-    Std_ReturnType returt_statuse=(0x01u);
-
-       (CCP1CONbits.CCP1M=((uint8)(0x00)));
-        returt_statuse=(0x00u);
-
-
-    return returt_statuse;
-}
-# 231 "MCAL_Layer/ccp1/ccp1.c"
+# 262 "MCAL_Layer/ccp1/ccp1.c"
 void CCP1_ISR(void){
     (PIR1bits.CCP1IF=0);
 

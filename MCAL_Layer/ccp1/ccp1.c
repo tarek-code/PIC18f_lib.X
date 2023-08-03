@@ -34,6 +34,21 @@ Std_ReturnType ccp1_int(const ccp1_t *ptr){
                     break;
             }
             gpio_pin_direction_int(&(ptr->ccp1_pin));
+            if(DEFAULT == ptr->ccp1_capture_compare_timer){
+                T3CONbits.T3CCP1=0;
+                T3CONbits.T3CCP2=1;
+            }
+            else if(CCP1_TIMER1_CCP2_TIMER3 == ptr->ccp1_capture_compare_timer){
+                T3CONbits.T3CCP1=1;
+                T3CONbits.T3CCP2=0;
+            }
+            else if(CCP1_CCP2_TIMER1 == ptr->ccp1_capture_compare_timer){
+                T3CONbits.T3CCP1=0;
+                T3CONbits.T3CCP2=0;
+            }
+            else{
+                // do nothing 
+            }
         }
         else if(CCP1_CAPTURE_MODE_SELECTED ==ptr->ccp1_mode){
             switch(ptr->ccp1_sub_mode){
@@ -55,13 +70,28 @@ Std_ReturnType ccp1_int(const ccp1_t *ptr){
                     break;
             }
              gpio_pin_direction_int(&(ptr->ccp1_pin));
+             if(DEFAULT == ptr->ccp1_capture_compare_timer){
+                T3CONbits.T3CCP1=0;
+                T3CONbits.T3CCP2=1;
+            }
+            else if(CCP1_TIMER1_CCP2_TIMER3 == ptr->ccp1_capture_compare_timer){
+                T3CONbits.T3CCP1=1;
+                T3CONbits.T3CCP2=0;
+            }
+            else if(CCP1_CCP2_TIMER1 == ptr->ccp1_capture_compare_timer){
+                T3CONbits.T3CCP1=0;
+                T3CONbits.T3CCP2=0;
+            }
+            else{
+                // do nothing 
+            }
         }
         #if (CCP1_SELECT_MODE==CCP1_PWM_MODE_CFG)
         else if(CCP1_PWM_MODE_SELECTED ==ptr->ccp1_mode){
             if(CCP1_PWM_MODE == ptr->ccp1_sub_mode){
                 CCP1_CHOOSEING_MODE(CCP1_PWM_MODE);
                 gpio_pin_direction_int(&(ptr->ccp1_pin));
-                PR2=(uint8)((_XTAL_FREQ/(ptr->timer2_pre * ptr->timer2_post * ptr->pwm_frq * 4.0))-1);
+                PR2=(uint8)((_XTAL_FREQ/(ptr->ccp1_timer2_pre * ptr->ccp1_timer2_post * ptr->pwm_frq * 4.0))-1);
             }
             else{
                 returt_statuse=E_NOT_OK;
@@ -174,8 +204,9 @@ Std_ReturnType ccp1_deint(const ccp1_t *ptr){
     if(NULL!=value){
        ccp1_reg_t ccp1_reg={.ccp1_16_reg=0};
        ccp1_reg.ccp1_16_reg=value;
-       CCPR1L=ccp1_reg.ccp1_reg_low;
        CCPR1H=ccp1_reg.ccp1_reg_high;
+       CCPR1L=ccp1_reg.ccp1_reg_low;
+       
         returt_statuse=E_OK;
     }
     

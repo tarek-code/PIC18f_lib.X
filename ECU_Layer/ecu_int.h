@@ -25,6 +25,7 @@
 #include "../MCAL_Layer/Timer2/timer2.h"
 #include "../MCAL_Layer/Timer3/timer3.h"
 #include "../MCAL_Layer/ccp1/ccp1.h"
+#include "../MCAL_Layer/ccp2/ccp2.h"
 /*Section macros */
 
 
