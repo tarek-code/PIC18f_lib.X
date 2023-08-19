@@ -264,7 +264,33 @@ TIMER3_DIV_BY_2 1
 TIMER3_DIV_BY_4 2
 TIMER3_DIV_BY_8 3
 ]
-"13 D:\Ahmed_addulghafar\02_Part 2_Microcontroller_Interfacing\PIC18f_lib.X\Application.c
+"43 D:\Ahmed_addulghafar\02_Part 2_Microcontroller_Interfacing\PIC18f_lib.X\Application.c
+[e E3519 . `uc
+EUASRT_8_BIT_ASYNCHRONOUS_LOW_SPEED 0
+EUASRT_8_BIT_ASYNCHRONOUS_HIGH_SPEED 1
+EUASRT_16_BIT_ASYNCHRONOUS_LOW_SPEED 2
+EUASRT_16_BIT_ASYNCHRONOUS_HIGH_SPEED 3
+EUASRT_8_BIT_SYNCHRONOUS 4
+EUASRT_16_BIT_SYNCHRONOUS 5
+]
+"23 D:\Ahmed_addulghafar\02_Part 2_Microcontroller_Interfacing\PIC18f_lib.X\MCAL_Layer/EUSART/eusart.c
+[e E3038 . `uc
+EUASRT_8_BIT_ASYNCHRONOUS_LOW_SPEED 0
+EUASRT_8_BIT_ASYNCHRONOUS_HIGH_SPEED 1
+EUASRT_16_BIT_ASYNCHRONOUS_LOW_SPEED 2
+EUASRT_16_BIT_ASYNCHRONOUS_HIGH_SPEED 3
+EUASRT_8_BIT_SYNCHRONOUS 4
+EUASRT_16_BIT_SYNCHRONOUS 5
+]
+"14 D:\Ahmed_addulghafar\02_Part 2_Microcontroller_Interfacing\PIC18f_lib.X\Application.c
+[v _eusart_overrunerror_calling eusart_overrunerror_calling `(v  1 e 1 0 ]
+"18
+[v _eusart_frameerror_calling eusart_frameerror_calling `(v  1 e 1 0 ]
+"23
+[v _eusart_tx_calling eusart_tx_calling `(v  1 e 1 0 ]
+"27
+[v _eusart_rx_calling eusart_rx_calling `(v  1 e 1 0 ]
+"63
 [v _main main `(i  1 e 2 0 ]
 "4 E:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\fleq.c
 [v ___fleq __fleq `(b  1 e 0 0 ]
@@ -338,6 +364,30 @@ TIMER3_DIV_BY_8 3
 [v _CCP1_ISR CCP1_ISR `(v  1 e 1 0 ]
 "261 D:\Ahmed_addulghafar\02_Part 2_Microcontroller_Interfacing\PIC18f_lib.X\MCAL_Layer/ccp2/ccp2.c
 [v _CCP2_ISR CCP2_ISR `(v  1 e 1 0 ]
+"23 D:\Ahmed_addulghafar\02_Part 2_Microcontroller_Interfacing\PIC18f_lib.X\MCAL_Layer/EUSART/eusart.c
+[v _eusart_ASYN_int eusart_ASYN_int `(uc  1 e 1 0 ]
+"83
+[v _eusart_ASYN_Write_block eusart_ASYN_Write_block `(uc  1 e 1 0 ]
+"108
+[v _eusart_ASYN_Read eusart_ASYN_Read `(uc  1 e 1 0 ]
+"111
+[v _eusart_ASYN_Write eusart_ASYN_Write `(uc  1 e 1 0 ]
+"123
+[v _eusart_ASYN_WriteString eusart_ASYN_WriteString `(uc  1 e 1 0 ]
+"131
+[v _eusart_RX_Restart eusart_RX_Restart `(uc  1 e 1 0 ]
+"137
+[v _eusart_frmeerror_Restart eusart_frmeerror_Restart `(uc  1 e 1 0 ]
+"142
+[v _eusart_rx_int eusart_rx_int `(v  1 s 1 eusart_rx_int ]
+"181
+[v _eusart_tx_int eusart_tx_int `(v  1 s 1 eusart_tx_int ]
+"215
+[v _buadrate_calculation buadrate_calculation `(v  1 s 1 buadrate_calculation ]
+"286
+[v _EUSART_TX_ISR EUSART_TX_ISR `(v  1 e 1 0 ]
+"293
+[v _EUSART_RX_ISR EUSART_RX_ISR `(v  1 e 1 0 ]
 "14 D:\Ahmed_addulghafar\02_Part 2_Microcontroller_Interfacing\PIC18f_lib.X\MCAL_Layer/GPIO/GPIO.c
 [v _gpio_pin_direction_int gpio_pin_direction_int `(uc  1 e 1 0 ]
 "67
@@ -390,6 +440,34 @@ TIMER3_DIV_BY_8 3
 [v _TIMER2_ISR TIMER2_ISR `(v  1 e 1 0 ]
 "109 D:\Ahmed_addulghafar\02_Part 2_Microcontroller_Interfacing\PIC18f_lib.X\MCAL_Layer/Timer3/timer3.c
 [v _TIMER3_ISR TIMER3_ISR `(v  1 e 1 0 ]
+"10 D:\Ahmed_addulghafar\02_Part 2_Microcontroller_Interfacing\PIC18f_lib.X\Application.c
+[v _tx_counter tx_counter `ul  1 e 4 0 ]
+"11
+[v _rx_counter rx_counter `ul  1 e 4 0 ]
+"12
+[v _overrunerror overrunerror `uc  1 e 1 0 ]
+"13
+[v _frameerror frameerror `uc  1 e 1 0 ]
+"26
+[v _data data `uc  1 e 1 0 ]
+[s S3038 . 1 `uc 1 eusrt_tx_reserved 1 0 :5:0 
+`uc 1 euasrt_tx_enable 1 0 :1:5 
+`uc 1 euasrt_interrupt_tx_enable 1 0 :1:6 
+`uc 1 euasrt_tx_9_bit_enable 1 0 :1:7 
+]
+"43
+[s S3043 . 1 `uc 1 eusrt_rx_reserved 1 0 :5:0 
+`uc 1 euasrt_rx_enable 1 0 :1:5 
+`uc 1 euasrt_interrupt_rx_enable 1 0 :1:6 
+`uc 1 euasrt_rx_9_bit_enable 1 0 :1:7 
+]
+[s S3048 . 1 `uc 1 reserved 1 0 :6:0 
+`uc 1 euasrt_ferr 1 0 :1:6 
+`uc 1 euasrt_oerr 1 0 :1:7 
+]
+[u S3052 . 1 `S3048 1 . 1 0 `uc 1 statuse 1 0 ]
+[s S3055 . 16 `*.37(v 1 EUASRT_TX_INTERRUPT_PTR 2 0 `*.37(v 1 EUASRT_RX_INTERRUPT_PTR 2 2 `*.37(v 1 EUASRT_FRAMEERR_INTERRUPT_PTR 2 4 `*.37(v 1 EUASRT_OVERERR_INTERRUPT_PTR 2 6 `ul 1 baudrate 4 8 `E3519 1 eusart_baudrate_formula 1 12 `S3038 1 euasrt_tx 1 13 `S3043 1 euasrt_rx 1 14 `S3052 1 euasrt_statuse_err 1 15 ]
+[v _eusart eusart `S3055  1 e 16 0 ]
 "53 E:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4620.h
 [v _PORTA PORTA `VEuc  1 e 1 @3968 ]
 "190
@@ -449,6 +527,27 @@ TIMER3_DIV_BY_8 3
 [v _TRISB TRISB `VEuc  1 e 1 @3987 ]
 "1825
 [v _TRISC TRISC `VEuc  1 e 1 @3988 ]
+[s S3219 . 1 `uc 1 TRISC0 1 0 :1:0 
+`uc 1 TRISC1 1 0 :1:1 
+`uc 1 TRISC2 1 0 :1:2 
+`uc 1 TRISC3 1 0 :1:3 
+`uc 1 TRISC4 1 0 :1:4 
+`uc 1 TRISC5 1 0 :1:5 
+`uc 1 TRISC6 1 0 :1:6 
+`uc 1 TRISC7 1 0 :1:7 
+]
+"1857
+[s S3228 . 1 `uc 1 RC0 1 0 :1:0 
+`uc 1 RC1 1 0 :1:1 
+`uc 1 RC2 1 0 :1:2 
+`uc 1 RC3 1 0 :1:3 
+`uc 1 RC4 1 0 :1:4 
+`uc 1 RC5 1 0 :1:5 
+`uc 1 RC6 1 0 :1:6 
+`uc 1 RC7 1 0 :1:7 
+]
+[u S3237 . 1 `S3219 1 . 1 0 `S3228 1 . 1 0 ]
+[v _TRISCbits TRISCbits `VES3237  1 e 1 @3988 ]
 "2047
 [v _TRISD TRISD `VEuc  1 e 1 @3989 ]
 "2269
@@ -538,6 +637,66 @@ TIMER3_DIV_BY_8 3
 [v _EEADR EEADR `VEuc  1 e 1 @4009 ]
 "3014
 [v _EEADRH EEADRH `VEuc  1 e 1 @4010 ]
+[s S3165 . 1 `uc 1 RX9D 1 0 :1:0 
+`uc 1 OERR 1 0 :1:1 
+`uc 1 FERR 1 0 :1:2 
+`uc 1 ADDEN 1 0 :1:3 
+`uc 1 CREN 1 0 :1:4 
+`uc 1 SREN 1 0 :1:5 
+`uc 1 RX9 1 0 :1:6 
+`uc 1 SPEN 1 0 :1:7 
+]
+"3062
+[s S3174 . 1 `uc 1 . 1 0 :3:0 
+`uc 1 ADEN 1 0 :1:3 
+]
+[s S3177 . 1 `uc 1 . 1 0 :5:0 
+`uc 1 SRENA 1 0 :1:5 
+]
+[s S3180 . 1 `uc 1 . 1 0 :6:0 
+`uc 1 RC8_9 1 0 :1:6 
+]
+[s S3183 . 1 `uc 1 . 1 0 :6:0 
+`uc 1 RC9 1 0 :1:6 
+]
+[s S3186 . 1 `uc 1 RCD8 1 0 :1:0 
+]
+[u S3188 . 1 `S3165 1 . 1 0 `S3174 1 . 1 0 `S3177 1 . 1 0 `S3180 1 . 1 0 `S3183 1 . 1 0 `S3186 1 . 1 0 ]
+[v _RCSTAbits RCSTAbits `VES3188  1 e 1 @4011 ]
+[s S3319 . 1 `uc 1 TX9D 1 0 :1:0 
+`uc 1 TRMT 1 0 :1:1 
+`uc 1 BRGH 1 0 :1:2 
+`uc 1 SENDB 1 0 :1:3 
+`uc 1 SYNC 1 0 :1:4 
+`uc 1 TXEN 1 0 :1:5 
+`uc 1 TX9 1 0 :1:6 
+`uc 1 CSRC 1 0 :1:7 
+]
+"3270
+[s S3328 . 1 `uc 1 TX9D1 1 0 :1:0 
+`uc 1 TRMT1 1 0 :1:1 
+`uc 1 BRGH1 1 0 :1:2 
+`uc 1 SENDB1 1 0 :1:3 
+`uc 1 SYNC1 1 0 :1:4 
+`uc 1 TXEN1 1 0 :1:5 
+`uc 1 TX91 1 0 :1:6 
+`uc 1 CSRC1 1 0 :1:7 
+]
+[s S3337 . 1 `uc 1 . 1 0 :6:0 
+`uc 1 TX8_9 1 0 :1:6 
+]
+[s S3340 . 1 `uc 1 TXD8 1 0 :1:0 
+]
+[u S3342 . 1 `S3319 1 . 1 0 `S3328 1 . 1 0 `S3337 1 . 1 0 `S3340 1 . 1 0 ]
+[v _TXSTAbits TXSTAbits `VES3342  1 e 1 @4012 ]
+"3487
+[v _TXREG TXREG `VEuc  1 e 1 @4013 ]
+"3499
+[v _RCREG RCREG `VEuc  1 e 1 @4014 ]
+"3511
+[v _SPBRG SPBRG `VEuc  1 e 1 @4015 ]
+"3523
+[v _SPBRGH SPBRGH `VEuc  1 e 1 @4016 ]
 [s S1179 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 NOT_T3SYNC 1 0 :1:2 
 ]
@@ -572,6 +731,26 @@ TIMER3_DIV_BY_8 3
 [v _TMR3L TMR3L `VEuc  1 e 1 @4018 ]
 "3656
 [v _TMR3H TMR3H `VEuc  1 e 1 @4019 ]
+[s S3389 . 1 `uc 1 ABDEN 1 0 :1:0 
+`uc 1 WUE 1 0 :1:1 
+`uc 1 . 1 0 :1:2 
+`uc 1 BRG16 1 0 :1:3 
+`uc 1 TXCKP 1 0 :1:4 
+`uc 1 RXDTP 1 0 :1:5 
+`uc 1 RCIDL 1 0 :1:6 
+`uc 1 ABDOVF 1 0 :1:7 
+]
+"4016
+[s S3398 . 1 `uc 1 . 1 0 :4:0 
+`uc 1 SCKP 1 0 :1:4 
+`uc 1 RXCKP 1 0 :1:5 
+`uc 1 RCMT 1 0 :1:6 
+]
+[s S3403 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 W4E 1 0 :1:1 
+]
+[u S3406 . 1 `S3389 1 . 1 0 `S3398 1 . 1 0 `S3403 1 . 1 0 ]
+[v _BAUDCONbits BAUDCONbits `VES3406  1 e 1 @4024 ]
 [s S1442 . 1 `uc 1 CCP2M 1 0 :4:0 
 `uc 1 DC2B 1 0 :2:4 
 ]
@@ -684,12 +863,12 @@ TIMER3_DIV_BY_8 3
 [v _ADRESL ADRESL `VEuc  1 e 1 @4035 ]
 "4663
 [v _ADRESH ADRESH `VEuc  1 e 1 @4036 ]
-[s S2742 . 1 `uc 1 T2CKPS 1 0 :2:0 
+[s S2750 . 1 `uc 1 T2CKPS 1 0 :2:0 
 `uc 1 TMR2ON 1 0 :1:2 
 `uc 1 TOUTPS 1 0 :4:3 
 ]
 "5058
-[s S2746 . 1 `uc 1 T2CKPS0 1 0 :1:0 
+[s S2754 . 1 `uc 1 T2CKPS0 1 0 :1:0 
 `uc 1 T2CKPS1 1 0 :1:1 
 `uc 1 . 1 0 :1:2 
 `uc 1 T2OUTPS0 1 0 :1:3 
@@ -697,17 +876,17 @@ TIMER3_DIV_BY_8 3
 `uc 1 T2OUTPS2 1 0 :1:5 
 `uc 1 T2OUTPS3 1 0 :1:6 
 ]
-[u S2754 . 1 `S2742 1 . 1 0 `S2746 1 . 1 0 ]
-[v _T2CONbits T2CONbits `VES2754  1 e 1 @4042 ]
+[u S2762 . 1 `S2750 1 . 1 0 `S2754 1 . 1 0 ]
+[v _T2CONbits T2CONbits `VES2762  1 e 1 @4042 ]
 "5108
 [v _PR2 PR2 `VEuc  1 e 1 @4043 ]
 "5218
 [v _TMR2 TMR2 `VEuc  1 e 1 @4044 ]
-[s S2555 . 1 `uc 1 . 1 0 :2:0 
+[s S2563 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 NOT_T1SYNC 1 0 :1:2 
 ]
 "5258
-[s S2558 . 1 `uc 1 TMR1ON 1 0 :1:0 
+[s S2566 . 1 `uc 1 TMR1ON 1 0 :1:0 
 `uc 1 TMR1CS 1 0 :1:1 
 `uc 1 nT1SYNC 1 0 :1:2 
 `uc 1 T1OSCEN 1 0 :1:3 
@@ -715,24 +894,24 @@ TIMER3_DIV_BY_8 3
 `uc 1 T1RUN 1 0 :1:6 
 `uc 1 RD16 1 0 :1:7 
 ]
-[s S2566 . 1 `uc 1 . 1 0 :2:0 
+[s S2574 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 T1SYNC 1 0 :1:2 
 `uc 1 . 1 0 :1:3 
 `uc 1 T1CKPS0 1 0 :1:4 
 `uc 1 T1CKPS1 1 0 :1:5 
 ]
-[s S2572 . 1 `uc 1 . 1 0 :3:0 
+[s S2580 . 1 `uc 1 . 1 0 :3:0 
 `uc 1 SOSCEN 1 0 :1:3 
 `uc 1 . 1 0 :3:4 
 `uc 1 T1RD16 1 0 :1:7 
 ]
-[u S2577 . 1 `S2555 1 . 1 0 `S2558 1 . 1 0 `S2566 1 . 1 0 `S2572 1 . 1 0 ]
-[v _T1CONbits T1CONbits `VES2577  1 e 1 @4045 ]
+[u S2585 . 1 `S2563 1 . 1 0 `S2566 1 . 1 0 `S2574 1 . 1 0 `S2580 1 . 1 0 ]
+[v _T1CONbits T1CONbits `VES2585  1 e 1 @4045 ]
 "5335
 [v _TMR1L TMR1L `VEuc  1 e 1 @4046 ]
 "5342
 [v _TMR1H TMR1H `VEuc  1 e 1 @4047 ]
-[s S2428 . 1 `uc 1 T0PS 1 0 :3:0 
+[s S2436 . 1 `uc 1 T0PS 1 0 :3:0 
 `uc 1 PSA 1 0 :1:3 
 `uc 1 T0SE 1 0 :1:4 
 `uc 1 T0CS 1 0 :1:5 
@@ -740,14 +919,14 @@ TIMER3_DIV_BY_8 3
 `uc 1 TMR0ON 1 0 :1:7 
 ]
 "5879
-[s S2435 . 1 `uc 1 T0PS0 1 0 :1:0 
+[s S2443 . 1 `uc 1 T0PS0 1 0 :1:0 
 `uc 1 T0PS1 1 0 :1:1 
 `uc 1 T0PS2 1 0 :1:2 
 `uc 1 . 1 0 :3:3 
 `uc 1 T016BIT 1 0 :1:6 
 ]
-[u S2441 . 1 `S2428 1 . 1 0 `S2435 1 . 1 0 ]
-[v _T0CONbits T0CONbits `VES2441  1 e 1 @4053 ]
+[u S2449 . 1 `S2436 1 . 1 0 `S2443 1 . 1 0 ]
+[v _T0CONbits T0CONbits `VES2449  1 e 1 @4053 ]
 "5941
 [v _TMR0L TMR0L `VEuc  1 e 1 @4054 ]
 "5948
@@ -773,11 +952,11 @@ TIMER3_DIV_BY_8 3
 ]
 [u S1850 . 1 `S1832 1 . 1 0 `S1841 1 . 1 0 ]
 [v _INTCON3bits INTCON3bits `VES1850  1 e 1 @4080 ]
-[s S2222 . 1 `uc 1 . 1 0 :7:0 
+[s S2230 . 1 `uc 1 . 1 0 :7:0 
 `uc 1 NOT_RBPU 1 0 :1:7 
 ]
 "6330
-[s S2225 . 1 `uc 1 RBIP 1 0 :1:0 
+[s S2233 . 1 `uc 1 RBIP 1 0 :1:0 
 `uc 1 . 1 0 :1:1 
 `uc 1 TMR0IP 1 0 :1:2 
 `uc 1 . 1 0 :1:3 
@@ -786,11 +965,11 @@ TIMER3_DIV_BY_8 3
 `uc 1 INTEDG0 1 0 :1:6 
 `uc 1 nRBPU 1 0 :1:7 
 ]
-[s S2234 . 1 `uc 1 . 1 0 :7:0 
+[s S2242 . 1 `uc 1 . 1 0 :7:0 
 `uc 1 RBPU 1 0 :1:7 
 ]
-[u S2237 . 1 `S2222 1 . 1 0 `S2225 1 . 1 0 `S2234 1 . 1 0 ]
-[v _INTCON2bits INTCON2bits `VES2237  1 e 1 @4081 ]
+[u S2245 . 1 `S2230 1 . 1 0 `S2233 1 . 1 0 `S2242 1 . 1 0 ]
+[v _INTCON2bits INTCON2bits `VES2245  1 e 1 @4081 ]
 [s S901 . 1 `uc 1 RBIF 1 0 :1:0 
 `uc 1 INT0IF 1 0 :1:1 
 `uc 1 TMR0IF 1 0 :1:2 
@@ -824,6 +1003,14 @@ TIMER3_DIV_BY_8 3
 [v _ccp1_callback_ptr ccp1_callback_ptr `*.37(v  1 s 2 ccp1_callback_ptr ]
 "4 D:\Ahmed_addulghafar\02_Part 2_Microcontroller_Interfacing\PIC18f_lib.X\MCAL_Layer/ccp2/ccp2.c
 [v _ccp2_callback_ptr ccp2_callback_ptr `*.37(v  1 s 2 ccp2_callback_ptr ]
+"10 D:\Ahmed_addulghafar\02_Part 2_Microcontroller_Interfacing\PIC18f_lib.X\MCAL_Layer/EUSART/eusart.c
+[v _eusart_framerr_callback_ptr eusart_framerr_callback_ptr `*.37(v  1 s 2 eusart_framerr_callback_ptr ]
+"11
+[v _eusart_overerr_callback_ptr eusart_overerr_callback_ptr `*.37(v  1 s 2 eusart_overerr_callback_ptr ]
+"13
+[v _eusart_tx_callback_ptr eusart_tx_callback_ptr `*.37(v  1 s 2 eusart_tx_callback_ptr ]
+"14
+[v _eusart_rx_callback_ptr eusart_rx_callback_ptr `*.37(v  1 s 2 eusart_rx_callback_ptr ]
 "3 D:\Ahmed_addulghafar\02_Part 2_Microcontroller_Interfacing\PIC18f_lib.X\MCAL_Layer/GPIO/GPIO.c
 [v _Port_Regs Port_Regs `[5]*.39VEuc  1 e 10 0 ]
 "4
@@ -876,15 +1063,167 @@ TIMER3_DIV_BY_8 3
 [v _timer3_callback_ptr timer3_callback_ptr `*.37(v  1 s 2 timer3_callback_ptr ]
 "7
 [v _timer3_preload timer3_preload `us  1 s 2 timer3_preload ]
-"13 D:\Ahmed_addulghafar\02_Part 2_Microcontroller_Interfacing\PIC18f_lib.X\Application.c
+"63 D:\Ahmed_addulghafar\02_Part 2_Microcontroller_Interfacing\PIC18f_lib.X\Application.c
 [v _main main `(i  1 e 2 0 ]
 {
+"75
+} 0
+"23 D:\Ahmed_addulghafar\02_Part 2_Microcontroller_Interfacing\PIC18f_lib.X\MCAL_Layer/EUSART/eusart.c
+[v _eusart_ASYN_int eusart_ASYN_int `(uc  1 e 1 0 ]
+{
+[s S3038 . 1 `uc 1 eusrt_tx_reserved 1 0 :5:0 
+`uc 1 euasrt_tx_enable 1 0 :1:5 
+`uc 1 euasrt_interrupt_tx_enable 1 0 :1:6 
+`uc 1 euasrt_tx_9_bit_enable 1 0 :1:7 
+]
+[s S3043 . 1 `uc 1 eusrt_rx_reserved 1 0 :5:0 
+`uc 1 euasrt_rx_enable 1 0 :1:5 
+`uc 1 euasrt_interrupt_rx_enable 1 0 :1:6 
+`uc 1 euasrt_rx_9_bit_enable 1 0 :1:7 
+]
+[s S3048 . 1 `uc 1 reserved 1 0 :6:0 
+`uc 1 euasrt_ferr 1 0 :1:6 
+`uc 1 euasrt_oerr 1 0 :1:7 
+]
+[u S3052 . 1 `S3048 1 . 1 0 `uc 1 statuse 1 0 ]
+[s S3055 . 16 `*.37(v 1 EUASRT_TX_INTERRUPT_PTR 2 0 `*.37(v 1 EUASRT_RX_INTERRUPT_PTR 2 2 `*.37(v 1 EUASRT_FRAMEERR_INTERRUPT_PTR 2 4 `*.37(v 1 EUASRT_OVERERR_INTERRUPT_PTR 2 6 `ul 1 baudrate 4 8 `E3519 1 eusart_baudrate_formula 1 12 `S3038 1 euasrt_tx 1 13 `S3043 1 euasrt_rx 1 14 `S3052 1 euasrt_statuse_err 1 15 ]
+[v eusart_ASYN_int@ptr ptr `*.39CS3055  1 p 2 4 ]
+"62
+} 0
+"181
+[v _eusart_tx_int eusart_tx_int `(v  1 s 1 eusart_tx_int ]
+{
+[s S3038 . 1 `uc 1 eusrt_tx_reserved 1 0 :5:0 
+`uc 1 euasrt_tx_enable 1 0 :1:5 
+`uc 1 euasrt_interrupt_tx_enable 1 0 :1:6 
+`uc 1 euasrt_tx_9_bit_enable 1 0 :1:7 
+]
+[s S3043 . 1 `uc 1 eusrt_rx_reserved 1 0 :5:0 
+`uc 1 euasrt_rx_enable 1 0 :1:5 
+`uc 1 euasrt_interrupt_rx_enable 1 0 :1:6 
+`uc 1 euasrt_rx_9_bit_enable 1 0 :1:7 
+]
+[s S3048 . 1 `uc 1 reserved 1 0 :6:0 
+`uc 1 euasrt_ferr 1 0 :1:6 
+`uc 1 euasrt_oerr 1 0 :1:7 
+]
+[u S3052 . 1 `S3048 1 . 1 0 `uc 1 statuse 1 0 ]
+[s S3055 . 16 `*.37(v 1 EUASRT_TX_INTERRUPT_PTR 2 0 `*.37(v 1 EUASRT_RX_INTERRUPT_PTR 2 2 `*.37(v 1 EUASRT_FRAMEERR_INTERRUPT_PTR 2 4 `*.37(v 1 EUASRT_OVERERR_INTERRUPT_PTR 2 6 `ul 1 baudrate 4 8 `E3519 1 eusart_baudrate_formula 1 12 `S3038 1 euasrt_tx 1 13 `S3043 1 euasrt_rx 1 14 `S3052 1 euasrt_statuse_err 1 15 ]
+[v eusart_tx_int@ptr ptr `*.39CS3055  1 p 2 14 ]
+"214
+} 0
+"142
+[v _eusart_rx_int eusart_rx_int `(v  1 s 1 eusart_rx_int ]
+{
+[s S3038 . 1 `uc 1 eusrt_tx_reserved 1 0 :5:0 
+`uc 1 euasrt_tx_enable 1 0 :1:5 
+`uc 1 euasrt_interrupt_tx_enable 1 0 :1:6 
+`uc 1 euasrt_tx_9_bit_enable 1 0 :1:7 
+]
+[s S3043 . 1 `uc 1 eusrt_rx_reserved 1 0 :5:0 
+`uc 1 euasrt_rx_enable 1 0 :1:5 
+`uc 1 euasrt_interrupt_rx_enable 1 0 :1:6 
+`uc 1 euasrt_rx_9_bit_enable 1 0 :1:7 
+]
+[s S3048 . 1 `uc 1 reserved 1 0 :6:0 
+`uc 1 euasrt_ferr 1 0 :1:6 
+`uc 1 euasrt_oerr 1 0 :1:7 
+]
+[u S3052 . 1 `S3048 1 . 1 0 `uc 1 statuse 1 0 ]
+[s S3055 . 16 `*.37(v 1 EUASRT_TX_INTERRUPT_PTR 2 0 `*.37(v 1 EUASRT_RX_INTERRUPT_PTR 2 2 `*.37(v 1 EUASRT_FRAMEERR_INTERRUPT_PTR 2 4 `*.37(v 1 EUASRT_OVERERR_INTERRUPT_PTR 2 6 `ul 1 baudrate 4 8 `E3519 1 eusart_baudrate_formula 1 12 `S3038 1 euasrt_tx 1 13 `S3043 1 euasrt_rx 1 14 `S3052 1 euasrt_statuse_err 1 15 ]
+[v eusart_rx_int@ptr ptr `*.39CS3055  1 p 2 14 ]
+"179
+} 0
+"215
+[v _buadrate_calculation buadrate_calculation `(v  1 s 1 buadrate_calculation ]
+{
+"219
+[v buadrate_calculation@baudrate_local baudrate_local `f  1 a 4 0 ]
+[s S3038 . 1 `uc 1 eusrt_tx_reserved 1 0 :5:0 
+`uc 1 euasrt_tx_enable 1 0 :1:5 
+`uc 1 euasrt_interrupt_tx_enable 1 0 :1:6 
+`uc 1 euasrt_tx_9_bit_enable 1 0 :1:7 
+]
+"215
+[s S3043 . 1 `uc 1 eusrt_rx_reserved 1 0 :5:0 
+`uc 1 euasrt_rx_enable 1 0 :1:5 
+`uc 1 euasrt_interrupt_rx_enable 1 0 :1:6 
+`uc 1 euasrt_rx_9_bit_enable 1 0 :1:7 
+]
+[s S3048 . 1 `uc 1 reserved 1 0 :6:0 
+`uc 1 euasrt_ferr 1 0 :1:6 
+`uc 1 euasrt_oerr 1 0 :1:7 
+]
+[u S3052 . 1 `S3048 1 . 1 0 `uc 1 statuse 1 0 ]
+[s S3055 . 16 `*.37(v 1 EUASRT_TX_INTERRUPT_PTR 2 0 `*.37(v 1 EUASRT_RX_INTERRUPT_PTR 2 2 `*.37(v 1 EUASRT_FRAMEERR_INTERRUPT_PTR 2 4 `*.37(v 1 EUASRT_OVERERR_INTERRUPT_PTR 2 6 `ul 1 baudrate 4 8 `E3519 1 eusart_baudrate_formula 1 12 `S3038 1 euasrt_tx 1 13 `S3043 1 euasrt_rx 1 14 `S3052 1 euasrt_statuse_err 1 15 ]
+[v buadrate_calculation@ptr ptr `*.39CS3055  1 p 2 0 ]
+"283
+} 0
+"10 E:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\xxtofl.c
+[v ___xxtofl __xxtofl `(d  1 e 4 0 ]
+{
+[v ___xxtofl@sign sign `uc  1 a 1 wreg ]
+"13
+[v ___xxtofl@arg arg `ul  1 a 4 24 ]
+"12
+[v ___xxtofl@exp exp `uc  1 a 1 23 ]
+"10
+[v ___xxtofl@sign sign `uc  1 a 1 wreg ]
+[v ___xxtofl@val val `l  1 p 4 14 ]
+"15
+[v ___xxtofl@sign sign `uc  1 a 1 22 ]
+"44
+} 0
+"43 E:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\fltol.c
+[v ___fltol __fltol `(l  1 e 4 0 ]
+{
+"45
+[v ___fltol@exp1 exp1 `uc  1 a 1 23 ]
+[v ___fltol@sign1 sign1 `uc  1 a 1 22 ]
+"43
+[v ___fltol@f1 f1 `d  1 p 4 14 ]
+"70
+} 0
+"11 E:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\sprcdiv.c
+[v ___fldiv __fldiv `(d  1 e 4 0 ]
+{
+"21
+[v ___fldiv@grs grs `ul  1 a 4 47 ]
 "22
+[v ___fldiv@rem rem `ul  1 a 4 40 ]
+"20
+[v ___fldiv@new_exp new_exp `s  1 a 2 45 ]
+"19
+[v ___fldiv@aexp aexp `uc  1 a 1 52 ]
+"18
+[v ___fldiv@bexp bexp `uc  1 a 1 51 ]
+"16
+[v ___fldiv@sign sign `uc  1 a 1 44 ]
+"11
+[v ___fldiv@b b `d  1 p 4 28 ]
+[v ___fldiv@a a `d  1 p 4 32 ]
+"185
+} 0
+"10 E:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\sprcadd.c
+[v ___fladd __fladd `(d  1 e 4 0 ]
+{
+"17
+[v ___fladd@grs grs `uc  1 a 1 68 ]
+"15
+[v ___fladd@bexp bexp `uc  1 a 1 67 ]
+"16
+[v ___fladd@aexp aexp `uc  1 a 1 66 ]
+"13
+[v ___fladd@signs signs `uc  1 a 1 65 ]
+"10
+[v ___fladd@b b `d  1 p 4 53 ]
+[v ___fladd@a a `d  1 p 4 57 ]
+"237
 } 0
 "69 D:\Ahmed_addulghafar\02_Part 2_Microcontroller_Interfacing\PIC18f_lib.X\MCAL_Layer/Interrupt/Interrupt_managment.c
 [v _InterruptManagmentHigh InterruptManagmentHigh `IIH(v  1 e 1 0 ]
 {
-"161
+"182
 } 0
 "109 D:\Ahmed_addulghafar\02_Part 2_Microcontroller_Interfacing\PIC18f_lib.X\MCAL_Layer/Timer3/timer3.c
 [v _TIMER3_ISR TIMER3_ISR `(v  1 e 1 0 ]
@@ -952,6 +1291,68 @@ TIMER3_DIV_BY_8 3
 [v _INT0_ISR INT0_ISR `(v  1 e 1 0 ]
 {
 "363
+} 0
+"286 D:\Ahmed_addulghafar\02_Part 2_Microcontroller_Interfacing\PIC18f_lib.X\MCAL_Layer/EUSART/eusart.c
+[v _EUSART_TX_ISR EUSART_TX_ISR `(v  1 e 1 0 ]
+{
+"292
+} 0
+"23 D:\Ahmed_addulghafar\02_Part 2_Microcontroller_Interfacing\PIC18f_lib.X\Application.c
+[v _eusart_tx_calling eusart_tx_calling `(v  1 e 1 0 ]
+{
+"25
+} 0
+"293 D:\Ahmed_addulghafar\02_Part 2_Microcontroller_Interfacing\PIC18f_lib.X\MCAL_Layer/EUSART/eusart.c
+[v _EUSART_RX_ISR EUSART_RX_ISR `(v  1 e 1 0 ]
+{
+"306
+} 0
+"27 D:\Ahmed_addulghafar\02_Part 2_Microcontroller_Interfacing\PIC18f_lib.X\Application.c
+[v _eusart_rx_calling eusart_rx_calling `(v  1 e 1 0 ]
+{
+"41
+} 0
+"123 D:\Ahmed_addulghafar\02_Part 2_Microcontroller_Interfacing\PIC18f_lib.X\MCAL_Layer/EUSART/eusart.c
+[v _eusart_ASYN_WriteString eusart_ASYN_WriteString `(uc  1 e 1 0 ]
+{
+"124
+[v eusart_ASYN_WriteString@counter counter `uc  1 a 1 5 ]
+"123
+[v eusart_ASYN_WriteString@value value `*.32uc  1 p 2 1 ]
+"129
+} 0
+"111
+[v _eusart_ASYN_Write eusart_ASYN_Write `(uc  1 e 1 0 ]
+{
+[v eusart_ASYN_Write@value value `uc  1 a 1 wreg ]
+[v eusart_ASYN_Write@value value `uc  1 a 1 wreg ]
+[v eusart_ASYN_Write@value value `uc  1 a 1 0 ]
+"122
+} 0
+"108
+[v _eusart_ASYN_Read eusart_ASYN_Read `(uc  1 e 1 0 ]
+{
+"110
+} 0
+"14 D:\Ahmed_addulghafar\02_Part 2_Microcontroller_Interfacing\PIC18f_lib.X\Application.c
+[v _eusart_overrunerror_calling eusart_overrunerror_calling `(v  1 e 1 0 ]
+{
+"17
+} 0
+"131 D:\Ahmed_addulghafar\02_Part 2_Microcontroller_Interfacing\PIC18f_lib.X\MCAL_Layer/EUSART/eusart.c
+[v _eusart_RX_Restart eusart_RX_Restart `(uc  1 e 1 0 ]
+{
+"136
+} 0
+"18 D:\Ahmed_addulghafar\02_Part 2_Microcontroller_Interfacing\PIC18f_lib.X\Application.c
+[v _eusart_frameerror_calling eusart_frameerror_calling `(v  1 e 1 0 ]
+{
+"21
+} 0
+"137 D:\Ahmed_addulghafar\02_Part 2_Microcontroller_Interfacing\PIC18f_lib.X\MCAL_Layer/EUSART/eusart.c
+[v _eusart_frmeerror_Restart eusart_frmeerror_Restart `(uc  1 e 1 0 ]
+{
+"139
 } 0
 "261 D:\Ahmed_addulghafar\02_Part 2_Microcontroller_Interfacing\PIC18f_lib.X\MCAL_Layer/ccp2/ccp2.c
 [v _CCP2_ISR CCP2_ISR `(v  1 e 1 0 ]

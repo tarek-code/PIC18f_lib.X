@@ -8,10 +8,7 @@
 # 2 "<built-in>" 2
 # 1 "ECU_Layer/ecu_int.c" 2
 # 1 "ECU_Layer/ecu_int.h" 1
-# 12 "ECU_Layer/ecu_int.h"
-# 1 "ECU_Layer/ecu_int.h" 1
-# 12 "ECU_Layer/ecu_int.h" 2
-
+# 13 "ECU_Layer/ecu_int.h"
 # 1 "ECU_Layer/LED/LED.h" 1
 # 14 "ECU_Layer/LED/LED.h"
 # 1 "ECU_Layer/LED/../../MCAL_Layer/GPIO/GPIO.h" 1
@@ -5416,7 +5413,77 @@ Std_ReturnType ccp2_deint(const ccp2_t *ptr);
     Std_ReturnType ccp2_pwm_start(void );
     Std_ReturnType ccp2_pwm_stop(void);
 # 28 "ECU_Layer/ecu_int.h" 2
-# 38 "ECU_Layer/ecu_int.h"
+
+# 1 "ECU_Layer/../MCAL_Layer/EUSART/eusart.h" 1
+# 18 "ECU_Layer/../MCAL_Layer/EUSART/eusart.h"
+# 1 "ECU_Layer/../MCAL_Layer/EUSART/eusart_cfg.h" 1
+# 18 "ECU_Layer/../MCAL_Layer/EUSART/eusart.h" 2
+# 108 "ECU_Layer/../MCAL_Layer/EUSART/eusart.h"
+typedef enum{
+    EUASRT_8_BIT_ASYNCHRONOUS_LOW_SPEED,
+             EUASRT_8_BIT_ASYNCHRONOUS_HIGH_SPEED,
+             EUASRT_16_BIT_ASYNCHRONOUS_LOW_SPEED,
+             EUASRT_16_BIT_ASYNCHRONOUS_HIGH_SPEED,
+             EUASRT_8_BIT_SYNCHRONOUS,
+             EUASRT_16_BIT_SYNCHRONOUS
+}eusart_baudrate_formula_cfg_t;
+
+typedef struct{
+    uint8 eusrt_tx_reserved :5;
+    uint8 euasrt_tx_enable:1;
+    uint8 euasrt_interrupt_tx_enable:1;
+    uint8 euasrt_tx_9_bit_enable:1;
+}euasrt_tx_t;
+
+typedef struct{
+    uint8 eusrt_rx_reserved :5;
+    uint8 euasrt_rx_enable:1;
+    uint8 euasrt_interrupt_rx_enable:1;
+    uint8 euasrt_rx_9_bit_enable:1;
+}euasrt_rx_t;
+
+typedef union {
+    struct{
+        uint8 reserved:6;
+        uint8 euasrt_ferr:1;
+        uint8 euasrt_oerr:1;
+    };
+    uint8 statuse;
+}euasrt_statuse_err_t;
+
+
+typedef struct{
+
+
+
+
+    void (*EUASRT_TX_INTERRUPT_PTR)(void);
+    void (*EUASRT_RX_INTERRUPT_PTR)(void);
+    void (*EUASRT_FRAMEERR_INTERRUPT_PTR)(void);
+    void (*EUASRT_OVERERR_INTERRUPT_PTR)(void);
+    uint32 baudrate;
+    eusart_baudrate_formula_cfg_t eusart_baudrate_formula;
+    euasrt_tx_t euasrt_tx;
+    euasrt_rx_t euasrt_rx;
+    euasrt_statuse_err_t euasrt_statuse_err;
+
+}euasrt_t;
+
+
+
+Std_ReturnType eusart_ASYN_int(const euasrt_t *ptr);
+Std_ReturnType eusart_RX_Restart(void);
+uint8 eusart_frmeerror_Restart(void);
+Std_ReturnType eusart_ASYN_deint(const euasrt_t *ptr);
+Std_ReturnType eusart_ASYN_Read_block(uint8 *value);
+Std_ReturnType eusart_ASYN_Write_block(uint8 value);
+Std_ReturnType eusart_ASYN_WriteString_block(uint8 *value);
+
+Std_ReturnType eusart_ASYN_Write(uint8 value);
+Std_ReturnType eusart_ASYN_WriteString(uint8 *value);
+uint8 eusart_ASYN_Read();
+# 29 "ECU_Layer/ecu_int.h" 2
+# 39 "ECU_Layer/ecu_int.h"
 void ecu_Int(void);
 # 1 "ECU_Layer/ecu_int.c" 2
 

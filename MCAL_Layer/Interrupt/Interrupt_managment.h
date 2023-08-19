@@ -49,5 +49,19 @@ void CCP1_ISR(void);
 
 /*CCP2*/
 void CCP2_ISR(void);
+
+/*
+/*eusart_tx*/
+void EUSART_TX_ISR(void);
+
+/*eusart_rx*/
+void EUSART_RX_ISR(void);
+
+/*eusart_slave*/
+//void EUSART_SLAVE_ISR(void);
+
+/*eusart_master*/
+//void EUSART_MASTER_ISR(void);
+
 #endif	/* INTERRUPT_MANAGMENT_H */
 

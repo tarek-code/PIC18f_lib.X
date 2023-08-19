@@ -4756,6 +4756,13 @@ void CCP1_ISR(void);
 
 
 void CCP2_ISR(void);
+
+
+
+void EUSART_TX_ISR(void);
+
+
+void EUSART_RX_ISR(void);
 # 1 "MCAL_Layer/Interrupt/Interrupt_managment.c" 2
 
 
@@ -4854,6 +4861,27 @@ if((INTCONbits.RBIE==1 && INTCONbits.RBIF==1)&& (PORTBbits.RB7==1)&&(flage_7==1)
 
     if((PIE2bits.CCP2IE==1) && (PIR2bits.CCP2IF==1)){
         CCP2_ISR();
+        }
+
+
+
+    if((PIE1bits.TXIE==1) && (PIR1bits.TXIF==1)){
+        EUSART_TX_ISR();
+        }
+
+
+    if((PIE1bits.RCIE==1) && (PIR1bits.RCIF==1)){
+        EUSART_RX_ISR();
+        }
+
+
+    if((PIE1bits.PSPIE==1) && (PIR1bits.PSPIF==1)){
+
+        }
+
+
+    if((PIE1bits.SSPIE==1) && (PIR1bits.SSPIF==1)){
+
         }
 
 }

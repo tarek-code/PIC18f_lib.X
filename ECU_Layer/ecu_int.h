@@ -9,7 +9,7 @@
 #define	ECU_INT_H
 
 /*Section includes */
-#include "ecu_int.h"
+
 #include "LED/LED.h"
 #include "button/button.h"
 #include "relay/relay.h"
@@ -26,6 +26,7 @@
 #include "../MCAL_Layer/Timer3/timer3.h"
 #include "../MCAL_Layer/ccp1/ccp1.h"
 #include "../MCAL_Layer/ccp2/ccp2.h"
+#include "../MCAL_Layer/EUSART/eusart.h"
 /*Section macros */
 
 
