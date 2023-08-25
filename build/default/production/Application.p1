@@ -438,9 +438,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 -> -> 0 `i `uc
 ]
 "11
-[; ;Application.c: 11: volatile uint8 slave1_counter=0;
-[v _slave1_counter `Vuc ~T0 @X0 1 e ]
-[i _slave1_counter
+[; ;Application.c: 11: volatile uint8 slave2_counter=0;
+[v _slave2_counter `Vuc ~T0 @X0 1 e ]
+[i _slave2_counter
 -> -> 0 `i `uc
 ]
 "12
@@ -450,8 +450,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U _Default ]
 [f ]
 "13
-[; ;Application.c: 13:     slave1_counter++;
-[e ++ _slave1_counter -> -> 1 `i `Vuc ]
+[; ;Application.c: 13:     slave2_counter++;
+[e ++ _slave2_counter -> -> 1 `i `Vuc ]
 "14
 [; ;Application.c: 14: }
 [e :UE 304 ]
@@ -470,7 +470,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 :U ..
 . `E3579 0
 -> -> 0 `i `uc
--> -> 96 `i `uc
+-> -> 97 `i `uc
 -> -> 1 `i `uc
 -> -> 0 `i `uc
 -> -> 0 `i `uc

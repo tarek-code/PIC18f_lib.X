@@ -5551,9 +5551,9 @@ void application_Int();
 
 
 uint8 ack=0;
-volatile uint8 slave1_counter=0;
+volatile uint8 slave2_counter=0;
 void Default(void){
-    slave1_counter++;
+    slave2_counter++;
 }
 
  i2c_t i2c={
@@ -5566,7 +5566,7 @@ void Default(void){
    .i2c_cfg.i2c_sub_mode=I2C_SLAVE_MODE_7_BIT_ADDRESS,
    .i2c_cfg.i2c_smbus_mode=(0),
    .i2c_cfg.i2c_speed_mode=(1),
-  .i2c_cfg.i2c_slave_address=0x60,
+  .i2c_cfg.i2c_slave_address=0x61,
  };
 
 
