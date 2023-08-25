@@ -305,7 +305,7 @@ void EUSART_RX_ISR(void){
     
 }
 
-
+/*
   void EUSART_SLAVE_ISR(void){
     EUSART_SLAVE_Interrupt_CLEAR_Flag_bit();
     
@@ -320,4 +320,4 @@ void EUSART_MASTER_ISR(void){
         eusart_master_callback_ptr();
     }
 }
- 
+ */

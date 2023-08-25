@@ -4763,6 +4763,12 @@ void EUSART_TX_ISR(void);
 
 
 void EUSART_RX_ISR(void);
+
+
+
+
+void MSSP_ISR(void);
+void MSSP_BC_ISR(void);
 # 1 "MCAL_Layer/Interrupt/Interrupt_managment.c" 2
 
 
@@ -4873,15 +4879,11 @@ if((INTCONbits.RBIE==1 && INTCONbits.RBIF==1)&& (PORTBbits.RB7==1)&&(flage_7==1)
     if((PIE1bits.RCIE==1) && (PIR1bits.RCIF==1)){
         EUSART_RX_ISR();
         }
-
-
-    if((PIE1bits.PSPIE==1) && (PIR1bits.PSPIF==1)){
-
+# 183 "MCAL_Layer/Interrupt/Interrupt_managment.c"
+if((PIE1bits.SSPIE==1) && (PIR1bits.SSPIF==1)){
+      MSSP_ISR();
         }
-
-
-    if((PIE1bits.SSPIE==1) && (PIR1bits.SSPIF==1)){
-
+if((PIE2bits.BCLIE==1) && (PIR2bits.BCLIF==1)){
+      MSSP_BC_ISR();
         }
-
 }

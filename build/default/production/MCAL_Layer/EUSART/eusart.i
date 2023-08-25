@@ -5139,19 +5139,3 @@ void EUSART_RX_ISR(void){
     }
 
 }
-
-
-  void EUSART_SLAVE_ISR(void){
-    (PIR1bits.PSPIF=0);
-
-    if(eusart_slave_callback_ptr){
-        eusart_slave_callback_ptr();
-    }
-}
-void EUSART_MASTER_ISR(void){
-    (PIR1bits.SSPIF=0);
-
-    if(eusart_master_callback_ptr){
-        eusart_master_callback_ptr();
-    }
-}

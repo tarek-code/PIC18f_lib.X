@@ -57,6 +57,11 @@ void EUSART_TX_ISR(void);
 /*eusart_rx*/
 void EUSART_RX_ISR(void);
 
+
+
+/*mssp*/
+void MSSP_ISR(void);
+void MSSP_BC_ISR(void);
 /*eusart_slave*/
 //void EUSART_SLAVE_ISR(void);
 

@@ -38,4 +38,5 @@ ECU_Layer/../MCAL_Layer/ccp1/ccp1_cfg.h  \
 ECU_Layer/../MCAL_Layer/ccp2/ccp2.h  \
 ECU_Layer/../MCAL_Layer/ccp2/ccp2_cfg.h  \
 ECU_Layer/../MCAL_Layer/EUSART/eusart.h  \
-ECU_Layer/../MCAL_Layer/EUSART/eusart_cfg.h 
+ECU_Layer/../MCAL_Layer/EUSART/eusart_cfg.h  \
+ECU_Layer/../MCAL_Layer/I2C/I2C.h 

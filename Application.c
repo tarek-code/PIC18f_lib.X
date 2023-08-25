@@ -4,71 +4,50 @@
  *
  * Created on April 22, 2023, 10:23 PM
  */
-
-
 #include "Application.h"
-uint32 tx_counter=0;
-uint32 rx_counter=0;
-uint8 overrunerror=0;
-uint8 frameerror=0;
-void eusart_overrunerror_calling(){
-    overrunerror++;
-    eusart_RX_Restart();
-}
-void eusart_frameerror_calling(){
-    frameerror++;
-    eusart_frmeerror_Restart();
-}
 
-void eusart_tx_calling(){
-    tx_counter++;
-}
-uint8 data=0;
-void eusart_rx_calling(){
-    rx_counter++;
-    data=eusart_ASYN_Read();
-    eusart_ASYN_Write(data);
-            eusart_ASYN_Write('\r');
-            switch(data){
-                case 'a':
-                    eusart_ASYN_WriteString("Tarek Adel");
-                    break;
-                case 'k':
-                     eusart_ASYN_WriteString("Khaled Adel");
-                     break;
-            }
-             eusart_ASYN_Write('\r');
-}
 
-euasrt_t eusart={
-  .baudrate=9600,
-  .eusart_baudrate_formula=EUASRT_8_BIT_ASYNCHRONOUS_LOW_SPEED,
-.euasrt_tx.euasrt_tx_enable=EUSART_ASYNCHRONOUS_TX_ENABLE,
-.euasrt_tx.euasrt_interrupt_tx_enable=EUSART_ASYNCHRONOUS_INTERRUPT_TX_ENABLE,
-.euasrt_tx.euasrt_tx_9_bit_enable=EUSART_ASYNCHRONOUS_TX_8_BIT_DATA_MODE,  
-  .euasrt_rx.euasrt_rx_enable=EUSART_ASYNCHRONOUS_RX_ENABLE,
-.euasrt_rx.euasrt_interrupt_rx_enable=EUSART_ASYNCHRONOUS_INTERRUPT_RX_ENABLE,
-.euasrt_rx.euasrt_rx_9_bit_enable=EUSART_ASYNCHRONOUS_RX_8_BIT_DATA_MODE,
-  .EUASRT_FRAMEERR_INTERRUPT_PTR=eusart_frameerror_calling,
-  .EUASRT_OVERERR_INTERRUPT_PTR=eusart_overrunerror_calling,
-  .EUASRT_RX_INTERRUPT_PTR=eusart_rx_calling,
-  .EUASRT_TX_INTERRUPT_PTR=eusart_tx_calling,
+#define SLAV1   0x60
+#define SLAV2   0x61
+uint8 ack=0;
+
+
+
+ i2c_t i2c={
+     .i2c_clock=100000,
+   .default_ptr=NULL,
+     .recive_overflow_ptr=NULL,
+     .write_collision_ptr=NULL,
+   .i2c_cfg.i2c_mode=I2C_MASTER,
+   .i2c_cfg.i2c_sub_mode=I2C_MASTER_MODE,
+   .i2c_cfg.i2c_smbus_mode=I2C_SMBus_DISABLE,
+   .i2c_cfg.i2c_speed_mode=I2C_SLEW_RATE_DISABLE,
   
-};
+ };
  
-
-
- uint8 value=0;
- 
+ void MSSP_I2C_MASTER_SEND_1_BYTE(uint8 address,uint8 data){
+     i2c_master_send_start();
+i2c_master_write(&i2c,address,&ack);
+i2c_master_write(&i2c,data,&ack);
+i2c_master_send_stop();
+}
 int main() {
-eusart_ASYN_int(&eusart);
+
+i2c_int(&i2c);
+
 
 
 
     while (1) {
      
- 
-
+MSSP_I2C_MASTER_SEND_1_BYTE(SLAV1,'a');
+__delay_ms(1000);
+MSSP_I2C_MASTER_SEND_1_BYTE(SLAV2,'b');
+__delay_ms(1000);
+MSSP_I2C_MASTER_SEND_1_BYTE(SLAV1,'c');
+__delay_ms(1000);
+MSSP_I2C_MASTER_SEND_1_BYTE(SLAV2,'d');
+__delay_ms(1000);
      
     }
     return (EXIT_SUCCESS);

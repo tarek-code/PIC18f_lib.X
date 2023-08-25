@@ -5483,7 +5483,50 @@ Std_ReturnType eusart_ASYN_Write(uint8 value);
 Std_ReturnType eusart_ASYN_WriteString(uint8 *value);
 uint8 eusart_ASYN_Read();
 # 29 "ECU_Layer/ecu_int.h" 2
-# 39 "ECU_Layer/ecu_int.h"
+
+# 1 "ECU_Layer/../MCAL_Layer/I2C/I2C.h" 1
+# 101 "ECU_Layer/../MCAL_Layer/I2C/I2C.h"
+typedef enum{
+    I2C_SLAVE_MODE_7_BIT_ADDRESS=6,
+            I2C_SLAVE_MODE_10_BIT_ADDRESS,
+             I2C_MASTER_MODE,
+            I2C_FIRMWARE_CONTROLLED_MASTER_MODE=11,
+            I2C_SLAVE_MODE_7_BIT_ADDRESS_INTERRUPTS_ENABLED=14,
+    I2C_SLAVE_MODE_10_BIT_ADDRESS_INTERRUPTS_ENABLED=15
+
+}i2c_submode_t;
+typedef struct{
+    i2c_submode_t i2c_sub_mode;
+    uint8 i2c_mode:1;
+    uint8 i2c_slave_address;
+    uint8 i2c_speed_mode:1;
+    uint8 i2c_smbus_mode:1;
+    uint8 i2c_general_call:1;
+    uint8 i2c_reserved:4;
+}i2c_cfg_t;
+typedef struct{
+
+
+
+
+    uint32 i2c_clock;
+    void(*write_collision_ptr)(void);
+    void(*recive_overflow_ptr)(void);
+    void(*default_ptr)(void);
+    i2c_cfg_t i2c_cfg;
+}i2c_t;
+
+
+Std_ReturnType i2c_int(const i2c_t *ptr);
+Std_ReturnType i2c_deint(const i2c_t *ptr);
+Std_ReturnType i2c_master_send_start(void);
+Std_ReturnType i2c_master_send_repet_start(void);
+Std_ReturnType i2c_master_send_stop(void);
+Std_ReturnType i2c_master_write_block(const i2c_t *ptr,uint8 data,uint8 *_ack);
+Std_ReturnType i2c_master_write(const i2c_t *ptr,uint8 data,uint8 *_ack);
+Std_ReturnType i2c_master_read_block(const i2c_t *ptr,uint8 ack ,uint8 *data);
+# 30 "ECU_Layer/ecu_int.h" 2
+# 40 "ECU_Layer/ecu_int.h"
 void ecu_Int(void);
 # 1 "ECU_Layer/ecu_int.c" 2
 

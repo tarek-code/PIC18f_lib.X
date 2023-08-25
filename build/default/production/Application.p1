@@ -1,55 +1,39 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"161 ./ECU_Layer/../MCAL_Layer/EUSART/eusart.h
-[; ;./ECU_Layer/../MCAL_Layer/EUSART/eusart.h: 161: Std_ReturnType eusart_RX_Restart(void);
-[v _eusart_RX_Restart `(uc ~T0 @X0 0 ef ]
-"162
-[; ;./ECU_Layer/../MCAL_Layer/EUSART/eusart.h: 162: uint8 eusart_frmeerror_Restart(void);
-[v _eusart_frmeerror_Restart `(uc ~T0 @X0 0 ef ]
-"170
-[; ;./ECU_Layer/../MCAL_Layer/EUSART/eusart.h: 170: uint8 eusart_ASYN_Read();
-[v _eusart_ASYN_Read `(uc ~T0 @X0 0 e? ]
-"168
-[; ;./ECU_Layer/../MCAL_Layer/EUSART/eusart.h: 168: Std_ReturnType eusart_ASYN_Write(uint8 value);
-[v _eusart_ASYN_Write `(uc ~T0 @X0 0 ef1`uc ]
-"169
-[; ;./ECU_Layer/../MCAL_Layer/EUSART/eusart.h: 169: Std_ReturnType eusart_ASYN_WriteString(uint8 *value);
-[v _eusart_ASYN_WriteString `(uc ~T0 @X0 0 ef1`*uc ]
-[v F3549 `(v ~T0 @X0 0 tf ]
-[v F3551 `(v ~T0 @X0 0 tf ]
-[v F3553 `(v ~T0 @X0 0 tf ]
-[v F3555 `(v ~T0 @X0 0 tf ]
-"43 Application.c
-[; ;Application.c: 43: euasrt_t eusart={
-[c E3519 0 1 2 3 4 5 .. ]
-[n E3519 . EUASRT_8_BIT_ASYNCHRONOUS_LOW_SPEED EUASRT_8_BIT_ASYNCHRONOUS_HIGH_SPEED EUASRT_16_BIT_ASYNCHRONOUS_LOW_SPEED EUASRT_16_BIT_ASYNCHRONOUS_HIGH_SPEED EUASRT_8_BIT_SYNCHRONOUS EUASRT_16_BIT_SYNCHRONOUS  ]
-"117 ./ECU_Layer/../MCAL_Layer/EUSART/eusart.h
-[; ;./ECU_Layer/../MCAL_Layer/EUSART/eusart.h: 117: typedef struct{
-[s S297 :5 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S297 . eusrt_tx_reserved euasrt_tx_enable euasrt_interrupt_tx_enable euasrt_tx_9_bit_enable ]
-"124
-[; ;./ECU_Layer/../MCAL_Layer/EUSART/eusart.h: 124: typedef struct{
-[s S298 :5 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S298 . eusrt_rx_reserved euasrt_rx_enable euasrt_interrupt_rx_enable euasrt_rx_9_bit_enable ]
-"132
-[; ;./ECU_Layer/../MCAL_Layer/EUSART/eusart.h: 132:     struct{
-[s S300 :6 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S300 . reserved euasrt_ferr euasrt_oerr ]
-"131
-[; ;./ECU_Layer/../MCAL_Layer/EUSART/eusart.h: 131: typedef union {
-[u S299 `S300 1 `uc 1 ]
-[n S299 . . statuse ]
-"141
-[; ;./ECU_Layer/../MCAL_Layer/EUSART/eusart.h: 141: typedef struct{
-[s S301 `*F3549 1 `*F3551 1 `*F3553 1 `*F3555 1 `ul 1 `E3519 1 `S297 1 `S298 1 `S299 1 ]
-[n S301 . EUASRT_TX_INTERRUPT_PTR EUASRT_RX_INTERRUPT_PTR EUASRT_FRAMEERR_INTERRUPT_PTR EUASRT_OVERERR_INTERRUPT_PTR baudrate eusart_baudrate_formula euasrt_tx euasrt_rx euasrt_statuse_err ]
-[v F3591 `(v ~T0 @X0 0 tf ]
-[v F3593 `(v ~T0 @X0 0 tf ]
-[v F3595 `(v ~T0 @X0 0 tf ]
-[v F3597 `(v ~T0 @X0 0 tf ]
+[v F3599 `(v ~T0 @X0 0 tf ]
+[v F3601 `(v ~T0 @X0 0 tf ]
+[v F3603 `(v ~T0 @X0 0 tf ]
+"16 Application.c
+[; ;Application.c: 16:  i2c_t i2c={
+[c E3579 6 7 8 11 14 15 .. ]
+[n E3579 . I2C_SLAVE_MODE_7_BIT_ADDRESS I2C_SLAVE_MODE_10_BIT_ADDRESS I2C_MASTER_MODE I2C_FIRMWARE_CONTROLLED_MASTER_MODE I2C_SLAVE_MODE_7_BIT_ADDRESS_INTERRUPTS_ENABLED I2C_SLAVE_MODE_10_BIT_ADDRESS_INTERRUPTS_ENABLED  ]
+"110 ./ECU_Layer/../MCAL_Layer/I2C/I2C.h
+[; ;./ECU_Layer/../MCAL_Layer/I2C/I2C.h: 110: typedef struct{
+[s S302 `E3579 1 :1 `uc 1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :4 `uc 1 ]
+[n S302 . i2c_sub_mode i2c_mode i2c_slave_address i2c_speed_mode i2c_smbus_mode i2c_general_call i2c_reserved ]
+"119
+[; ;./ECU_Layer/../MCAL_Layer/I2C/I2C.h: 119: typedef struct{
+[s S303 `ul 1 `*F3599 1 `*F3601 1 `*F3603 1 `S302 1 ]
+[n S303 . i2c_clock write_collision_ptr recive_overflow_ptr default_ptr i2c_cfg ]
+[v F3629 `(v ~T0 @X0 0 tf ]
+[v F3630 `(v ~T0 @X0 0 tf ]
+[v F3631 `(v ~T0 @X0 0 tf ]
+"134
+[; ;./ECU_Layer/../MCAL_Layer/I2C/I2C.h: 134: Std_ReturnType i2c_master_send_start(void);
+[v _i2c_master_send_start `(uc ~T0 @X0 0 ef ]
+"138
+[; ;./ECU_Layer/../MCAL_Layer/I2C/I2C.h: 138: Std_ReturnType i2c_master_write(const i2c_t *ptr,uint8 data,uint8 *_ack);
+[v _i2c_master_write `(uc ~T0 @X0 0 ef3`*CS303`uc`*uc ]
+"136
+[; ;./ECU_Layer/../MCAL_Layer/I2C/I2C.h: 136: Std_ReturnType i2c_master_send_stop(void);
+[v _i2c_master_send_stop `(uc ~T0 @X0 0 ef ]
 [p mainexit ]
-"160
-[; ;./ECU_Layer/../MCAL_Layer/EUSART/eusart.h: 160: Std_ReturnType eusart_ASYN_int(const euasrt_t *ptr);
-[v _eusart_ASYN_int `(uc ~T0 @X0 0 ef1`*CS301 ]
+"132
+[; ;./ECU_Layer/../MCAL_Layer/I2C/I2C.h: 132: Std_ReturnType i2c_int(const i2c_t *ptr);
+[v _i2c_int `(uc ~T0 @X0 0 ef1`*CS303 ]
+[v F2950 `(v ~T0 @X0 1 tf1`ul ]
+"12 E:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\builtins.h
+[v __delay `JF2950 ~T0 @X0 0 e ]
+[p i __delay ]
 "55 E:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4620.h
 [; ;E:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4620.h: 55: __asm("PORTA equ 0F80h");
 [; <" PORTA equ 0F80h ;# ">
@@ -461,211 +445,117 @@ Version 4.0 HI-TECH Software Intermediate Code
 "6716
 [; ;E:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4620.h: 6716: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
-"10 Application.c
-[; ;Application.c: 10: uint32 tx_counter=0;
-[v _tx_counter `ul ~T0 @X0 1 e ]
-[i _tx_counter
--> -> -> 0 `i `l `ul
-]
-"11
-[; ;Application.c: 11: uint32 rx_counter=0;
-[v _rx_counter `ul ~T0 @X0 1 e ]
-[i _rx_counter
--> -> -> 0 `i `l `ul
-]
-"12
-[; ;Application.c: 12: uint8 overrunerror=0;
-[v _overrunerror `uc ~T0 @X0 1 e ]
-[i _overrunerror
+"12 Application.c
+[; ;Application.c: 12: uint8 ack=0;
+[v _ack `uc ~T0 @X0 1 e ]
+[i _ack
 -> -> 0 `i `uc
 ]
-"13
-[; ;Application.c: 13: uint8 frameerror=0;
-[v _frameerror `uc ~T0 @X0 1 e ]
-[i _frameerror
--> -> 0 `i `uc
-]
-"14
-[; ;Application.c: 14: void eusart_overrunerror_calling(){
-[v _eusart_overrunerror_calling `(v ~T0 @X0 1 ef ]
-{
-[e :U _eusart_overrunerror_calling ]
-[f ]
-"15
-[; ;Application.c: 15:     overrunerror++;
-[e ++ _overrunerror -> -> 1 `i `uc ]
 "16
-[; ;Application.c: 16:     eusart_RX_Restart();
-[e ( _eusart_RX_Restart ..  ]
-"17
-[; ;Application.c: 17: }
-[e :UE 302 ]
-}
-"18
-[; ;Application.c: 18: void eusart_frameerror_calling(){
-[v _eusart_frameerror_calling `(v ~T0 @X0 1 ef ]
+[; ;Application.c: 16:  i2c_t i2c={
+[v _i2c `S303 ~T0 @X0 1 e ]
+[i _i2c
+:U ..
+:U ..
+-> -> 100000 `l `ul
+-> -> -> 0 `i `*v `*F3629
+-> -> -> 0 `i `*v `*F3630
+-> -> -> 0 `i `*v `*F3631
+:U ..
+:U ..
+. `E3579 2
+-> -> 1 `i `uc
+-> -> 0 `i `uc
+-> -> 1 `i `uc
+-> -> 0 `i `uc
+..
+..
+..
+..
+]
+"28
+[; ;Application.c: 28:  void MSSP_I2C_MASTER_SEND_1_BYTE(uint8 address,uint8 data){
+[v _MSSP_I2C_MASTER_SEND_1_BYTE `(v ~T0 @X0 1 ef2`uc`uc ]
 {
-[e :U _eusart_frameerror_calling ]
+[e :U _MSSP_I2C_MASTER_SEND_1_BYTE ]
+[v _address `uc ~T0 @X0 1 r1 ]
+[v _data `uc ~T0 @X0 1 r2 ]
 [f ]
-"19
-[; ;Application.c: 19:     frameerror++;
-[e ++ _frameerror -> -> 1 `i `uc ]
-"20
-[; ;Application.c: 20:     eusart_frmeerror_Restart();
-[e ( _eusart_frmeerror_Restart ..  ]
-"21
-[; ;Application.c: 21: }
-[e :UE 303 ]
-}
-"23
-[; ;Application.c: 23: void eusart_tx_calling(){
-[v _eusart_tx_calling `(v ~T0 @X0 1 ef ]
-{
-[e :U _eusart_tx_calling ]
-[f ]
-"24
-[; ;Application.c: 24:     tx_counter++;
-[e ++ _tx_counter -> -> -> 1 `i `l `ul ]
-"25
-[; ;Application.c: 25: }
+"29
+[; ;Application.c: 29:      i2c_master_send_start();
+[e ( _i2c_master_send_start ..  ]
+"30
+[; ;Application.c: 30: i2c_master_write(&i2c,address,&ack);
+[e ( _i2c_master_write (3 , , -> &U _i2c `*CS303 _address &U _ack ]
+"31
+[; ;Application.c: 31: i2c_master_write(&i2c,data,&ack);
+[e ( _i2c_master_write (3 , , -> &U _i2c `*CS303 _data &U _ack ]
+"32
+[; ;Application.c: 32: i2c_master_send_stop();
+[e ( _i2c_master_send_stop ..  ]
+"33
+[; ;Application.c: 33: }
 [e :UE 304 ]
 }
-"26
-[; ;Application.c: 26: uint8 data=0;
-[v _data `uc ~T0 @X0 1 e ]
-[i _data
--> -> 0 `i `uc
-]
-"27
-[; ;Application.c: 27: void eusart_rx_calling(){
-[v _eusart_rx_calling `(v ~T0 @X0 1 ef ]
-{
-[e :U _eusart_rx_calling ]
-[f ]
-"28
-[; ;Application.c: 28:     rx_counter++;
-[e ++ _rx_counter -> -> -> 1 `i `l `ul ]
-"29
-[; ;Application.c: 29:     data=eusart_ASYN_Read();
-[e = _data ( _eusart_ASYN_Read ..  ]
-"30
-[; ;Application.c: 30:     eusart_ASYN_Write(data);
-[e ( _eusart_ASYN_Write (1 _data ]
-"31
-[; ;Application.c: 31:             eusart_ASYN_Write('\r');
-[e ( _eusart_ASYN_Write (1 -> -> 13 `ui `uc ]
-"32
-[; ;Application.c: 32:             switch(data){
-[e $U 307  ]
-{
-"33
-[; ;Application.c: 33:                 case 'a':
-[e :U 308 ]
-"34
-[; ;Application.c: 34:                     eusart_ASYN_WriteString("Tarek Adel");
-[e ( _eusart_ASYN_WriteString (1 :s 1C ]
-"35
-[; ;Application.c: 35:                     break;
-[e $U 306  ]
-"36
-[; ;Application.c: 36:                 case 'k':
-[e :U 309 ]
-"37
-[; ;Application.c: 37:                      eusart_ASYN_WriteString("Khaled Adel");
-[e ( _eusart_ASYN_WriteString (1 :s 2C ]
-"38
-[; ;Application.c: 38:                      break;
-[e $U 306  ]
-"39
-[; ;Application.c: 39:             }
-}
-[e $U 306  ]
-[e :U 307 ]
-[e [\ -> _data `i , $ -> -> 97 `ui `i 308
- , $ -> -> 107 `ui `i 309
- 306 ]
-[e :U 306 ]
-"40
-[; ;Application.c: 40:              eusart_ASYN_Write('\r');
-[e ( _eusart_ASYN_Write (1 -> -> 13 `ui `uc ]
-"41
-[; ;Application.c: 41: }
-[e :UE 305 ]
-}
-"43
-[; ;Application.c: 43: euasrt_t eusart={
-[v _eusart `S301 ~T0 @X0 1 e ]
-[i _eusart
-:U ..
-:U ..
--> &U _eusart_tx_calling `*F3591
--> &U _eusart_rx_calling `*F3593
--> &U _eusart_frameerror_calling `*F3595
--> &U _eusart_overrunerror_calling `*F3597
--> -> -> 9600 `i `l `ul
-. `E3519 0
-:U ..
-:U ..
--> -> 0 `i `uc
--> -> 1 `i `uc
--> -> 1 `i `uc
--> -> 0 `i `uc
-..
-..
-:U ..
-:U ..
--> -> 0 `i `uc
--> -> 1 `i `uc
--> -> 1 `i `uc
--> -> 0 `i `uc
-..
-..
-..
-..
-]
-"61
-[; ;Application.c: 61:  uint8 value=0;
-[v _value `uc ~T0 @X0 1 e ]
-[i _value
--> -> 0 `i `uc
-]
 [v $root$_main `(v ~T0 @X0 0 e ]
-"63
-[; ;Application.c: 63: int main() {
+"34
+[; ;Application.c: 34: int main() {
 [v _main `(i ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"64
-[; ;Application.c: 64: eusart_ASYN_int(&eusart);
-[e ( _eusart_ASYN_int (1 -> &U _eusart `*CS301 ]
-"68
-[; ;Application.c: 68:     while (1) {
-[e :U 312 ]
+"36
+[; ;Application.c: 36: i2c_int(&i2c);
+[e ( _i2c_int (1 -> &U _i2c `*CS303 ]
+"41
+[; ;Application.c: 41:     while (1) {
+[e :U 307 ]
 {
-"73
-[; ;Application.c: 73:     }
+"43
+[; ;Application.c: 43: MSSP_I2C_MASTER_SEND_1_BYTE(0x60,'a');
+[e ( _MSSP_I2C_MASTER_SEND_1_BYTE (2 , -> -> 96 `i `uc -> -> 97 `ui `uc ]
+"44
+[; ;Application.c: 44: _delay((unsigned long)((1000)*(8000000UL/4000.0)));
+[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 8000000 `ul `d .4000.0 `ul ]
+"45
+[; ;Application.c: 45: MSSP_I2C_MASTER_SEND_1_BYTE(0x61,'b');
+[e ( _MSSP_I2C_MASTER_SEND_1_BYTE (2 , -> -> 97 `i `uc -> -> 98 `ui `uc ]
+"46
+[; ;Application.c: 46: _delay((unsigned long)((1000)*(8000000UL/4000.0)));
+[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 8000000 `ul `d .4000.0 `ul ]
+"47
+[; ;Application.c: 47: MSSP_I2C_MASTER_SEND_1_BYTE(0x60,'c');
+[e ( _MSSP_I2C_MASTER_SEND_1_BYTE (2 , -> -> 96 `i `uc -> -> 99 `ui `uc ]
+"48
+[; ;Application.c: 48: _delay((unsigned long)((1000)*(8000000UL/4000.0)));
+[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 8000000 `ul `d .4000.0 `ul ]
+"49
+[; ;Application.c: 49: MSSP_I2C_MASTER_SEND_1_BYTE(0x61,'d');
+[e ( _MSSP_I2C_MASTER_SEND_1_BYTE (2 , -> -> 97 `i `uc -> -> 100 `ui `uc ]
+"50
+[; ;Application.c: 50: _delay((unsigned long)((1000)*(8000000UL/4000.0)));
+[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 8000000 `ul `d .4000.0 `ul ]
+"52
+[; ;Application.c: 52:     }
 }
-[e :U 311 ]
-[e $U 312  ]
-[e :U 313 ]
-"74
-[; ;Application.c: 74:     return (0);
+[e :U 306 ]
+[e $U 307  ]
+[e :U 308 ]
+"53
+[; ;Application.c: 53:     return (0);
 [e ) -> 0 `i ]
-[e $UE 310  ]
-"75
-[; ;Application.c: 75: }
-[e :UE 310 ]
+[e $UE 305  ]
+"54
+[; ;Application.c: 54: }
+[e :UE 305 ]
 }
-"77
-[; ;Application.c: 77: void application_Int() {
+"56
+[; ;Application.c: 56: void application_Int() {
 [v _application_Int `(v ~T0 @X0 1 ef ]
 {
 [e :U _application_Int ]
 [f ]
-"79
-[; ;Application.c: 79: }
-[e :UE 314 ]
+"58
+[; ;Application.c: 58: }
+[e :UE 309 ]
 }
-[a 1C 84 97 114 101 107 32 65 100 101 108 0 ]
-[a 2C 75 104 97 108 101 100 32 65 100 101 108 0 ]

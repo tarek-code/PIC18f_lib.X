@@ -27,6 +27,7 @@
 #include "../MCAL_Layer/ccp1/ccp1.h"
 #include "../MCAL_Layer/ccp2/ccp2.h"
 #include "../MCAL_Layer/EUSART/eusart.h"
+#include "../MCAL_Layer/I2C/I2C.h"
 /*Section macros */
 
 

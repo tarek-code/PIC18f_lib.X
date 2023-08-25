@@ -24,6 +24,7 @@
 #define CCP1_ENABLE_FEATURE             ENABLE_FEATURE
 #define CCP2_ENABLE_FEATURE             ENABLE_FEATURE
 #define EUSART_ENABLE_FEATURE          ENABLE_FEATURE
+#define MSSP_ENABLE_FEATURE          ENABLE_FEATURE
 
 /*Section macros function  */
 
