@@ -7,8 +7,6 @@
 #include "Application.h"
 
 
-#define SLAV1   0x60
-#define SLAV2   0x61
 uint8 ack=0;
 volatile uint8 slave1_counter=0;
 void Default(void){

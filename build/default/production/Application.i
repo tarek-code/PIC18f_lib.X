@@ -5550,8 +5550,6 @@ void application_Int();
 
 
 
-
-
 uint8 ack=0;
 volatile uint8 slave1_counter=0;
 void Default(void){
