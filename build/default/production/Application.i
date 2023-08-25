@@ -5550,26 +5550,30 @@ void application_Int();
 
 
 
+
+
 uint8 ack=0;
-volatile uint8 slave2_counter=0;
-void Default(void){
-    slave2_counter++;
-}
+
+
 
  i2c_t i2c={
-
-   .default_ptr=Default,
+     .i2c_clock=100000,
+   .default_ptr=((void*)0),
      .recive_overflow_ptr=((void*)0),
      .write_collision_ptr=((void*)0),
-   .i2c_cfg.i2c_mode=(0),
-   .i2c_cfg.i2c_general_call=(0),
-   .i2c_cfg.i2c_sub_mode=I2C_SLAVE_MODE_7_BIT_ADDRESS,
+   .i2c_cfg.i2c_mode=(1),
+   .i2c_cfg.i2c_sub_mode=I2C_MASTER_MODE,
    .i2c_cfg.i2c_smbus_mode=(0),
    .i2c_cfg.i2c_speed_mode=(1),
-  .i2c_cfg.i2c_slave_address=0x61,
+
  };
 
-
+ void MSSP_I2C_MASTER_SEND_1_BYTE(uint8 address,uint8 data){
+     i2c_master_send_start();
+i2c_master_write(&i2c,address,&ack);
+i2c_master_write(&i2c,data,&ack);
+i2c_master_send_stop();
+}
 int main() {
 
 i2c_int(&i2c);
@@ -5579,7 +5583,14 @@ i2c_int(&i2c);
 
     while (1) {
 
-
+MSSP_I2C_MASTER_SEND_1_BYTE(0x60,'a');
+_delay((unsigned long)((1000)*(8000000UL/4000.0)));
+MSSP_I2C_MASTER_SEND_1_BYTE(0x70,'b');
+_delay((unsigned long)((1000)*(8000000UL/4000.0)));
+MSSP_I2C_MASTER_SEND_1_BYTE(0x60,'c');
+_delay((unsigned long)((1000)*(8000000UL/4000.0)));
+MSSP_I2C_MASTER_SEND_1_BYTE(0x70,'d');
+_delay((unsigned long)((1000)*(8000000UL/4000.0)));
 
     }
     return (0);

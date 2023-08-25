@@ -291,9 +291,9 @@ I2C_FIRMWARE_CONTROLLED_MASTER_MODE 11
 I2C_SLAVE_MODE_7_BIT_ADDRESS_INTERRUPTS_ENABLED 14
 I2C_SLAVE_MODE_10_BIT_ADDRESS_INTERRUPTS_ENABLED 15
 ]
-"12
-[v _Default Default `(v  1 e 1 0 ]
-"30
+"28
+[v _MSSP_I2C_MASTER_SEND_1_BYTE MSSP_I2C_MASTER_SEND_1_BYTE `(v  1 e 1 0 ]
+"34
 [v _main main `(i  1 e 2 0 ]
 "4 E:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\fleq.c
 [v ___fleq __fleq `(b  1 e 0 0 ]
@@ -393,6 +393,12 @@ I2C_SLAVE_MODE_10_BIT_ADDRESS_INTERRUPTS_ENABLED 15
 [v _gpio_pin_int gpio_pin_int `(uc  1 e 1 0 ]
 "10 D:\Ahmed_addulghafar\02_Part 2_Microcontroller_Interfacing\PIC18f_lib.X\MCAL_Layer/I2C/I2C.c
 [v _i2c_int i2c_int `(uc  1 e 1 0 ]
+"155
+[v _i2c_master_send_start i2c_master_send_start `(uc  1 e 1 0 ]
+"195
+[v _i2c_master_send_stop i2c_master_send_stop `(uc  1 e 1 0 ]
+"231
+[v _i2c_master_write i2c_master_write `(uc  1 e 1 0 ]
 "266
 [v _MSSP_ISR MSSP_ISR `(v  1 e 1 0 ]
 "273
@@ -439,8 +445,8 @@ I2C_SLAVE_MODE_10_BIT_ADDRESS_INTERRUPTS_ENABLED 15
 [v _TIMER2_ISR TIMER2_ISR `(v  1 e 1 0 ]
 "109 D:\Ahmed_addulghafar\02_Part 2_Microcontroller_Interfacing\PIC18f_lib.X\MCAL_Layer/Timer3/timer3.c
 [v _TIMER3_ISR TIMER3_ISR `(v  1 e 1 0 ]
-"11 D:\Ahmed_addulghafar\02_Part 2_Microcontroller_Interfacing\PIC18f_lib.X\Application.c
-[v _slave2_counter slave2_counter `VEuc  1 e 1 0 ]
+"12 D:\Ahmed_addulghafar\02_Part 2_Microcontroller_Interfacing\PIC18f_lib.X\Application.c
+[v _ack ack `uc  1 e 1 0 ]
 [s S2199 . 4 `E3038 1 i2c_sub_mode 1 0 `uc 1 i2c_mode 1 1 :1:0 
 `uc 1 i2c_slave_address 1 2 `uc 1 i2c_speed_mode 1 3 :1:0 
 `uc 1 i2c_smbus_mode 1 3 :1:1 
@@ -1141,10 +1147,10 @@ I2C_SLAVE_MODE_10_BIT_ADDRESS_INTERRUPTS_ENABLED 15
 [v _timer3_callback_ptr timer3_callback_ptr `*.37(v  1 s 2 timer3_callback_ptr ]
 "7
 [v _timer3_preload timer3_preload `us  1 s 2 timer3_preload ]
-"30 D:\Ahmed_addulghafar\02_Part 2_Microcontroller_Interfacing\PIC18f_lib.X\Application.c
+"34 D:\Ahmed_addulghafar\02_Part 2_Microcontroller_Interfacing\PIC18f_lib.X\Application.c
 [v _main main `(i  1 e 2 0 ]
 {
-"43
+"54
 } 0
 "10 D:\Ahmed_addulghafar\02_Part 2_Microcontroller_Interfacing\PIC18f_lib.X\MCAL_Layer/I2C/I2C.c
 [v _i2c_int i2c_int `(uc  1 e 1 0 ]
@@ -1156,7 +1162,7 @@ I2C_SLAVE_MODE_10_BIT_ADDRESS_INTERRUPTS_ENABLED 15
 `uc 1 i2c_reserved 1 3 :4:3 
 ]
 [s S2207 . 14 `ul 1 i2c_clock 4 0 `*.37(v 1 write_collision_ptr 2 4 `*.37(v 1 recive_overflow_ptr 2 6 `*.37(v 1 default_ptr 2 8 `S2199 1 i2c_cfg 4 10 ]
-[v i2c_int@ptr ptr `*.39CS2207  1 p 2 0 ]
+[v i2c_int@ptr ptr `*.39CS2207  1 p 2 91 ]
 "140
 } 0
 "10 E:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\xxtofl.c
@@ -1164,86 +1170,120 @@ I2C_SLAVE_MODE_10_BIT_ADDRESS_INTERRUPTS_ENABLED 15
 {
 [v ___xxtofl@sign sign `uc  1 a 1 wreg ]
 "13
-[v ___xxtofl@arg arg `ul  1 a 4 13 ]
+[v ___xxtofl@arg arg `ul  1 a 4 11 ]
 "12
-[v ___xxtofl@exp exp `uc  1 a 1 12 ]
+[v ___xxtofl@exp exp `uc  1 a 1 10 ]
 "10
 [v ___xxtofl@sign sign `uc  1 a 1 wreg ]
-[v ___xxtofl@val val `l  1 p 4 3 ]
+[v ___xxtofl@val val `l  1 p 4 1 ]
 "15
-[v ___xxtofl@sign sign `uc  1 a 1 11 ]
+[v ___xxtofl@sign sign `uc  1 a 1 9 ]
 "44
 } 0
 "43 E:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\fltol.c
 [v ___fltol __fltol `(l  1 e 4 0 ]
 {
 "45
-[v ___fltol@exp1 exp1 `uc  1 a 1 92 ]
-[v ___fltol@sign1 sign1 `uc  1 a 1 91 ]
+[v ___fltol@exp1 exp1 `uc  1 a 1 90 ]
+[v ___fltol@sign1 sign1 `uc  1 a 1 89 ]
 "43
-[v ___fltol@f1 f1 `d  1 p 4 83 ]
+[v ___fltol@f1 f1 `d  1 p 4 81 ]
 "70
 } 0
 "8 E:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\sprcmul.c
 [v ___flmul __flmul `(d  1 e 4 0 ]
 {
-[s S4211 . 4 `uc 1 a 1 0 `uc 1 b 1 1 `uc 1 c 1 2 `uc 1 d 1 3 ]
+[s S4222 . 4 `uc 1 a 1 0 `uc 1 b 1 1 `uc 1 c 1 2 `uc 1 d 1 3 ]
 "13
-[s S4216 . 4 `s 1 wordA 2 0 `s 1 wordB 2 2 ]
-[u S4219 . 4 `l 1 i 4 0 `d 1 f 4 0 `S4211 1 fAsBytes 4 0 `S4216 1 fAsWords 4 0 ]
-[v ___flmul@prod prod `S4219  1 a 4 36 ]
+[s S4227 . 4 `s 1 wordA 2 0 `s 1 wordB 2 2 ]
+[u S4230 . 4 `l 1 i 4 0 `d 1 f 4 0 `S4222 1 fAsBytes 4 0 `S4227 1 fAsWords 4 0 ]
+[v ___flmul@prod prod `S4230  1 a 4 34 ]
 "12
-[v ___flmul@grs grs `ul  1 a 4 30 ]
-[s S4287 . 2 `uc 1 a 1 0 `uc 1 b 1 1 ]
+[v ___flmul@grs grs `ul  1 a 4 28 ]
+[s S4298 . 2 `uc 1 a 1 0 `uc 1 b 1 1 ]
 "14
-[u S4290 . 2 `s 1 i 2 0 `us 1 n 2 0 `S4287 1 nAsBytes 2 0 ]
-[v ___flmul@temp temp `S4290  1 a 2 40 ]
+[u S4301 . 2 `s 1 i 2 0 `us 1 n 2 0 `S4298 1 nAsBytes 2 0 ]
+[v ___flmul@temp temp `S4301  1 a 2 38 ]
 "10
-[v ___flmul@bexp bexp `uc  1 a 1 35 ]
+[v ___flmul@bexp bexp `uc  1 a 1 33 ]
 "11
-[v ___flmul@aexp aexp `uc  1 a 1 34 ]
+[v ___flmul@aexp aexp `uc  1 a 1 32 ]
 "9
-[v ___flmul@sign sign `uc  1 a 1 29 ]
+[v ___flmul@sign sign `uc  1 a 1 27 ]
 "8
-[v ___flmul@b b `d  1 p 4 17 ]
-[v ___flmul@a a `d  1 p 4 21 ]
+[v ___flmul@b b `d  1 p 4 15 ]
+[v ___flmul@a a `d  1 p 4 19 ]
 "205
 } 0
 "11 E:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\sprcdiv.c
 [v ___fldiv __fldiv `(d  1 e 4 0 ]
 {
 "21
-[v ___fldiv@grs grs `ul  1 a 4 61 ]
+[v ___fldiv@grs grs `ul  1 a 4 59 ]
 "22
-[v ___fldiv@rem rem `ul  1 a 4 54 ]
+[v ___fldiv@rem rem `ul  1 a 4 52 ]
 "20
-[v ___fldiv@new_exp new_exp `s  1 a 2 59 ]
+[v ___fldiv@new_exp new_exp `s  1 a 2 57 ]
 "19
-[v ___fldiv@aexp aexp `uc  1 a 1 66 ]
+[v ___fldiv@aexp aexp `uc  1 a 1 64 ]
 "18
-[v ___fldiv@bexp bexp `uc  1 a 1 65 ]
+[v ___fldiv@bexp bexp `uc  1 a 1 63 ]
 "16
-[v ___fldiv@sign sign `uc  1 a 1 58 ]
+[v ___fldiv@sign sign `uc  1 a 1 56 ]
 "11
-[v ___fldiv@b b `d  1 p 4 42 ]
-[v ___fldiv@a a `d  1 p 4 46 ]
+[v ___fldiv@b b `d  1 p 4 40 ]
+[v ___fldiv@a a `d  1 p 4 44 ]
 "185
 } 0
 "10 E:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\sprcadd.c
 [v ___fladd __fladd `(d  1 e 4 0 ]
 {
 "17
-[v ___fladd@grs grs `uc  1 a 1 82 ]
+[v ___fladd@grs grs `uc  1 a 1 80 ]
 "15
-[v ___fladd@bexp bexp `uc  1 a 1 81 ]
+[v ___fladd@bexp bexp `uc  1 a 1 79 ]
 "16
-[v ___fladd@aexp aexp `uc  1 a 1 80 ]
+[v ___fladd@aexp aexp `uc  1 a 1 78 ]
 "13
-[v ___fladd@signs signs `uc  1 a 1 79 ]
+[v ___fladd@signs signs `uc  1 a 1 77 ]
 "10
-[v ___fladd@b b `d  1 p 4 67 ]
-[v ___fladd@a a `d  1 p 4 71 ]
+[v ___fladd@b b `d  1 p 4 65 ]
+[v ___fladd@a a `d  1 p 4 69 ]
 "237
+} 0
+"28 D:\Ahmed_addulghafar\02_Part 2_Microcontroller_Interfacing\PIC18f_lib.X\Application.c
+[v _MSSP_I2C_MASTER_SEND_1_BYTE MSSP_I2C_MASTER_SEND_1_BYTE `(v  1 e 1 0 ]
+{
+[v MSSP_I2C_MASTER_SEND_1_BYTE@address address `uc  1 a 1 wreg ]
+[v MSSP_I2C_MASTER_SEND_1_BYTE@address address `uc  1 a 1 wreg ]
+[v MSSP_I2C_MASTER_SEND_1_BYTE@data data `uc  1 p 1 6 ]
+[v MSSP_I2C_MASTER_SEND_1_BYTE@address address `uc  1 a 1 7 ]
+"33
+} 0
+"231 D:\Ahmed_addulghafar\02_Part 2_Microcontroller_Interfacing\PIC18f_lib.X\MCAL_Layer/I2C/I2C.c
+[v _i2c_master_write i2c_master_write `(uc  1 e 1 0 ]
+{
+[s S2199 . 4 `E3038 1 i2c_sub_mode 1 0 `uc 1 i2c_mode 1 1 :1:0 
+`uc 1 i2c_slave_address 1 2 `uc 1 i2c_speed_mode 1 3 :1:0 
+`uc 1 i2c_smbus_mode 1 3 :1:1 
+`uc 1 i2c_general_call 1 3 :1:2 
+`uc 1 i2c_reserved 1 3 :4:3 
+]
+[s S2207 . 14 `ul 1 i2c_clock 4 0 `*.37(v 1 write_collision_ptr 2 4 `*.37(v 1 recive_overflow_ptr 2 6 `*.37(v 1 default_ptr 2 8 `S2199 1 i2c_cfg 4 10 ]
+[v i2c_master_write@ptr ptr `*.39CS2207  1 p 2 1 ]
+[v i2c_master_write@data data `uc  1 p 1 3 ]
+[v i2c_master_write@_ack _ack `*.39uc  1 p 2 4 ]
+"245
+} 0
+"195
+[v _i2c_master_send_stop i2c_master_send_stop `(uc  1 e 1 0 ]
+{
+"213
+} 0
+"155
+[v _i2c_master_send_start i2c_master_send_start `(uc  1 e 1 0 ]
+{
+"173
 } 0
 "69 D:\Ahmed_addulghafar\02_Part 2_Microcontroller_Interfacing\PIC18f_lib.X\MCAL_Layer/Interrupt/Interrupt_managment.c
 [v _InterruptManagmentHigh InterruptManagmentHigh `IIH(v  1 e 1 0 ]
@@ -1307,12 +1347,7 @@ I2C_SLAVE_MODE_10_BIT_ADDRESS_INTERRUPTS_ENABLED 15
 {
 "271
 } 0
-"12 D:\Ahmed_addulghafar\02_Part 2_Microcontroller_Interfacing\PIC18f_lib.X\Application.c
-[v _Default Default `(v  1 e 1 0 ]
-{
-"14
-} 0
-"273 D:\Ahmed_addulghafar\02_Part 2_Microcontroller_Interfacing\PIC18f_lib.X\MCAL_Layer/I2C/I2C.c
+"273
 [v _MSSP_BC_ISR MSSP_BC_ISR `(v  1 e 1 0 ]
 {
 "278
