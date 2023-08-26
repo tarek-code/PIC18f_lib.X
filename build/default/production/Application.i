@@ -5551,7 +5551,7 @@ void application_Int();
 
 
 
-volatile uint8 slave1_data_rec=0;
+volatile uint8 slave2_data_rec=0;
 
 void Default(void){
 
@@ -5559,7 +5559,7 @@ void Default(void){
     if(((0)==(SSPSTATbits.RW))&&((0)==(SSPSTATbits.DA))){
         uint8 dummydata=SSPBUF;
         while(!(SSPSTATbits.BF));
-        slave1_data_rec=SSPBUF;
+        slave2_data_rec=SSPBUF;
     }
     else if((1)==(SSPSTATbits.RW)){
 
@@ -5585,7 +5585,7 @@ led_cfg_t led1={
    .i2c_cfg.i2c_sub_mode=I2C_SLAVE_MODE_7_BIT_ADDRESS,
    .i2c_cfg.i2c_smbus_mode=(0),
    .i2c_cfg.i2c_speed_mode=(1),
-  .i2c_cfg.i2c_slave_address=0x60,
+  .i2c_cfg.i2c_slave_address=0x70,
  };
 
 
@@ -5597,10 +5597,10 @@ led_int(&led1);
 
 
     while (1) {
-     if(slave1_data_rec=='a'){
+     if(slave2_data_rec=='b'){
          led_on(&led1);
      }
-     else if(slave1_data_rec=='c'){
+     else if(slave2_data_rec=='d'){
          led_off(&led1);
      }
      else{

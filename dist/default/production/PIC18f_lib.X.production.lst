@@ -1,7 +1,7 @@
 
 
 Microchip MPLAB XC8 Assembler V2.41 build 20230208172133 
-                                                                                               Sat Aug 26 03:08:12 2023
+                                                                                               Sat Aug 26 03:12:01 2023
 
 Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1 
      1                           	processor	18F4620
@@ -175,7 +175,7 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
    161   002B57  2A                 	db	high _Default
    162   002B58  06                 	db	6
    163   002B59  00                 	db	0
-   164   002B5A  60                 	db	96
+   164   002B5A  70                 	db	112
    165   002B5B  01                 	db	1
    166                           
    167                           	psect	idataBANK1
@@ -383,7 +383,7 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
    369   00006A                     _ADC_Interrupt_handler:
    370                           	callstack 0
    371   00006A                     	ds	2
-   372   00006C                     _slave1_data_rec:
+   372   00006C                     _slave2_data_rec:
    373                           	callstack 0
    374   00006C                     	ds	1
    375   00006D                     _timer2_preload:
@@ -841,9 +841,9 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
    822   002A3A  ECDA  F014         	call	_led_int	;wreg free
    823   002A3E                     l7772:
    824                           
-   825                           ;Application.c: 57:      if(slave1_data_rec=='a'){
-   826   002A3E  0E61               	movlw	97
-   827   002A40  186C               	xorwf	_slave1_data_rec^0,w,c	;volatile
+   825                           ;Application.c: 57:      if(slave2_data_rec=='b'){
+   826   002A3E  0E62               	movlw	98
+   827   002A40  186C               	xorwf	_slave2_data_rec^0,w,c	;volatile
    828   002A42  A4D8               	btfss	status,2,c
    829   002A44  EF26  F015         	goto	u7581
    830   002A48  EF28  F015         	goto	u7580
@@ -861,8 +861,8 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
    842                           ;Application.c: 59:      }
    843   002A5C  EF1F  F015         	goto	l7772
    844   002A60                     l7776:
-   845   002A60  0E63               	movlw	99
-   846   002A62  186C               	xorwf	_slave1_data_rec^0,w,c	;volatile
+   845   002A60  0E64               	movlw	100
+   846   002A62  186C               	xorwf	_slave2_data_rec^0,w,c	;volatile
    847   002A64  A4D8               	btfss	status,2,c
    848   002A66  EF37  F015         	goto	u7591
    849   002A6A  EF39  F015         	goto	u7590
@@ -5489,8 +5489,8 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
   5315   002AF0  EF73  F015         	goto	i2l1414
   5316   002AF4                     i2u17_40:
   5317   002AF4                     
-  5318                           ;Application.c: 19:         slave1_data_rec=SSPBUF;
-  5319   002AF4  CFC9 F06C          	movff	4041,_slave1_data_rec	;volatile
+  5318                           ;Application.c: 19:         slave2_data_rec=SSPBUF;
+  5319   002AF4  CFC9 F06C          	movff	4041,_slave2_data_rec	;volatile
   5320                           
   5321                           ;Application.c: 20:     }
   5322   002AF8  EF7F  F015         	goto	i2l1417
@@ -6822,7 +6822,7 @@ CODE                 0      0       0       0        0.0%
 
 
 Microchip Technology PIC18 Macro Assembler V2.41 build 20230208172133 
-Symbol Table                                                                                   Sat Aug 26 03:08:12 2023
+Symbol Table                                                                                   Sat Aug 26 03:12:01 2023
 
                   ___fldiv@aexp 0043                    ___fldiv@bexp 0042                    ___fldiv@sign 003B  
                    _SSPSTATbits 0FC7                             l261 29B2                             l255 293E  
@@ -7236,8 +7236,8 @@ Symbol Table                                                                    
                       i2u697_40 1AD8                        i2u689_40 1A50                        i2u697_41 1AD4  
                       i2u689_41 1A4C                        i2u698_40 1AE8                        i2u698_41 1AE4  
                       i2u699_40 1B00                        i2u699_41 1AFC                        _MSSP_ISR 2B02  
-               _slave1_data_rec 006C                      _ADCON0bits 0FC2                      _ADCON1bits 0FC1  
-                    _ADCON2bits 0FC0          _gpio_pin_direction_int 252C                     _INTCON2bits 0FF1  
+                    _ADCON0bits 0FC2                      _ADCON1bits 0FC1                      _ADCON2bits 0FC0  
+               _slave2_data_rec 006C          _gpio_pin_direction_int 252C                     _INTCON2bits 0FF1  
                    _INTCON3bits 0FF0                       copy_data0 285E                       copy_data1 287E  
                      copy_data2 289E                        _Lat_Regs 00CF                      _EECON1bits 0FA6  
                       __Hrparam 0000                        __Lrparam 0000             __end_of_MSSP_BC_ISR 2C0A  

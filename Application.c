@@ -8,7 +8,7 @@
 
 
 
-volatile uint8 slave1_data_rec=0;
+volatile uint8 slave2_data_rec=0;
 
 void Default(void){
     // enable streatching 
@@ -16,7 +16,7 @@ void Default(void){
     if((I2C_SLAVE_IN_WRITE==I2C_SLAVE_READ_WRITE_STATUSE_CFG())&&(I2C_SLAVE_RECEIVED_OR_TRANSMITTED_BYTE_WAS_ADDRESS==I2C_SLAVE_RECEIVED_OR_TRANSMITTED_BYTE_STATUSE_CFG())){
         uint8 dummydata=SSPBUF;
         while(!I2C_BUFFER_STATUSE_CFG());
-        slave1_data_rec=SSPBUF;
+        slave2_data_rec=SSPBUF;
     }
     else if(I2C_SLAVE_IN_READ==I2C_SLAVE_READ_WRITE_STATUSE_CFG()){
         
@@ -42,7 +42,7 @@ led_cfg_t led1={
    .i2c_cfg.i2c_sub_mode=I2C_SLAVE_MODE_7_BIT_ADDRESS,
    .i2c_cfg.i2c_smbus_mode=I2C_SMBus_DISABLE,
    .i2c_cfg.i2c_speed_mode=I2C_SLEW_RATE_DISABLE,
-  .i2c_cfg.i2c_slave_address=0x60,
+  .i2c_cfg.i2c_slave_address=0x70,
  };
  
 
@@ -54,10 +54,10 @@ led_int(&led1);
 
 
     while (1) {
-     if(slave1_data_rec=='a'){
+     if(slave2_data_rec=='b'){
          led_on(&led1);
      }
-     else if(slave1_data_rec=='c'){
+     else if(slave2_data_rec=='d'){
          led_off(&led1);
      }
      else{

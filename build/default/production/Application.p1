@@ -526,9 +526,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;E:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4620.h: 6716: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
 "11 Application.c
-[; ;Application.c: 11: volatile uint8 slave1_data_rec=0;
-[v _slave1_data_rec `Vuc ~T0 @X0 1 e ]
-[i _slave1_data_rec
+[; ;Application.c: 11: volatile uint8 slave2_data_rec=0;
+[v _slave2_data_rec `Vuc ~T0 @X0 1 e ]
+[i _slave2_data_rec
 -> -> 0 `i `uc
 ]
 "13
@@ -556,8 +556,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e $ ! != -> . . _SSPSTATbits 2 0 `i -> 0 `i 307  ]
 [e :U 308 ]
 "19
-[; ;Application.c: 19:         slave1_data_rec=SSPBUF;
-[e = _slave1_data_rec _SSPBUF ]
+[; ;Application.c: 19:         slave2_data_rec=SSPBUF;
+[e = _slave2_data_rec _SSPBUF ]
 "20
 [; ;Application.c: 20:     }
 }
@@ -613,7 +613,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 :U ..
 . `E3579 0
 -> -> 0 `i `uc
--> -> 96 `i `uc
+-> -> 112 `i `uc
 -> -> 1 `i `uc
 -> -> 0 `i `uc
 -> -> 0 `i `uc
@@ -640,8 +640,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U 314 ]
 {
 "57
-[; ;Application.c: 57:      if(slave1_data_rec=='a'){
-[e $ ! == -> _slave1_data_rec `ui -> 97 `ui 316  ]
+[; ;Application.c: 57:      if(slave2_data_rec=='b'){
+[e $ ! == -> _slave2_data_rec `ui -> 98 `ui 316  ]
 {
 "58
 [; ;Application.c: 58:          led_on(&led1);
@@ -651,9 +651,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 }
 [e $U 317  ]
 "60
-[; ;Application.c: 60:      else if(slave1_data_rec=='c'){
+[; ;Application.c: 60:      else if(slave2_data_rec=='d'){
 [e :U 316 ]
-[e $ ! == -> _slave1_data_rec `ui -> 99 `ui 318  ]
+[e $ ! == -> _slave2_data_rec `ui -> 100 `ui 318  ]
 {
 "61
 [; ;Application.c: 61:          led_off(&led1);
