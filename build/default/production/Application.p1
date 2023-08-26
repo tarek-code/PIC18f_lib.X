@@ -1,9 +1,94 @@
 Version 4.0 HI-TECH Software Intermediate Code
+"4738 E:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4620.h
+[; ;E:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4620.h: 4738:     struct {
+[s S185 :4 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S185 . SSPM CKP SSPEN SSPOV WCOL ]
+"4745
+[; ;E:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4620.h: 4745:     struct {
+[s S186 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S186 . SSPM0 SSPM1 SSPM2 SSPM3 ]
+"4737
+[; ;E:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4620.h: 4737: typedef union {
+[u S184 `S185 1 `S186 1 ]
+[n S184 . . . ]
+"4752
+[; ;E:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4620.h: 4752: extern volatile SSPCON1bits_t SSPCON1bits __attribute__((address(0xFC6)));
+[v _SSPCON1bits `VS184 ~T0 @X0 0 e@4038 ]
+"4808
+[; ;E:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4620.h: 4808:     struct {
+[s S188 :2 `uc 1 :1 `uc 1 ]
+[n S188 . . R_NOT_W ]
+"4812
+[; ;E:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4620.h: 4812:     struct {
+[s S189 :5 `uc 1 :1 `uc 1 ]
+[n S189 . . D_NOT_A ]
+"4816
+[; ;E:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4620.h: 4816:     struct {
+[s S190 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S190 . BF UA R_nW S P D_nA CKE SMP ]
+"4826
+[; ;E:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4620.h: 4826:     struct {
+[s S191 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S191 . . R . D ]
+"4832
+[; ;E:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4620.h: 4832:     struct {
+[s S192 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S192 . . W . A ]
+"4838
+[; ;E:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4620.h: 4838:     struct {
+[s S193 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S193 . . nW . nA ]
+"4844
+[; ;E:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4620.h: 4844:     struct {
+[s S194 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S194 . . R_W . D_A ]
+"4850
+[; ;E:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4620.h: 4850:     struct {
+[s S195 :2 `uc 1 :1 `uc 1 ]
+[n S195 . . NOT_WRITE ]
+"4854
+[; ;E:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4620.h: 4854:     struct {
+[s S196 :5 `uc 1 :1 `uc 1 ]
+[n S196 . . NOT_ADDRESS ]
+"4858
+[; ;E:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4620.h: 4858:     struct {
+[s S197 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S197 . . nWRITE . nADDRESS ]
+"4864
+[; ;E:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4620.h: 4864:     struct {
+[s S198 :2 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S198 . . RW START STOP DA ]
+"4871
+[; ;E:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4620.h: 4871:     struct {
+[s S199 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S199 . . NOT_W . NOT_A ]
+"4807
+[; ;E:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4620.h: 4807: typedef union {
+[u S187 `S188 1 `S189 1 `S190 1 `S191 1 `S192 1 `S193 1 `S194 1 `S195 1 `S196 1 `S197 1 `S198 1 `S199 1 ]
+[n S187 . . . . . . . . . . . . . ]
+"4878
+[; ;E:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4620.h: 4878: extern volatile SSPSTATbits_t SSPSTATbits __attribute__((address(0xFC7)));
+[v _SSPSTATbits `VS187 ~T0 @X0 0 e@4039 ]
+"5030
+[; ;E:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4620.h: 5030: extern volatile unsigned char SSPBUF __attribute__((address(0xFC9)));
+[v _SSPBUF `Vuc ~T0 @X0 0 e@4041 ]
+"27 ./ECU_Layer/LED/LED.h
+[; ;./ECU_Layer/LED/LED.h: 27: typedef struct{
+[s S274 :4 `uc 1 :3 `uc 1 :1 `uc 1 ]
+[n S274 . port_name pin_number led_status ]
+"30 Application.c
+[; ;Application.c: 30: led_cfg_t led1={
+[c E2992 0 1 2 3 4 .. ]
+[n E2992 . PORTA_INDX PORTB_INDX PORTC_INDX PORTD_INDX PORTE_INDX  ]
+[c E2982 0 1 2 3 4 5 6 7 .. ]
+[n E2982 . GPIO_PIN0 GPIO_PIN1 GPIO_PIN2 GPIO_PIN3 GPIO_PIN4 GPIO_PIN5 GPIO_PIN6 GPIO_PIN7  ]
+[c E3034 0 1 .. ]
+[n E3034 . LED_OFF LED_ON  ]
 [v F3599 `(v ~T0 @X0 0 tf ]
 [v F3601 `(v ~T0 @X0 0 tf ]
 [v F3603 `(v ~T0 @X0 0 tf ]
-"16 Application.c
-[; ;Application.c: 16:  i2c_t i2c={
+"35
+[; ;Application.c: 35:  i2c_t i2c={
 [c E3579 6 7 8 11 14 15 .. ]
 [n E3579 . I2C_SLAVE_MODE_7_BIT_ADDRESS I2C_SLAVE_MODE_10_BIT_ADDRESS I2C_MASTER_MODE I2C_FIRMWARE_CONTROLLED_MASTER_MODE I2C_SLAVE_MODE_7_BIT_ADDRESS_INTERRUPTS_ENABLED I2C_SLAVE_MODE_10_BIT_ADDRESS_INTERRUPTS_ENABLED  ]
 "110 ./ECU_Layer/../MCAL_Layer/I2C/I2C.h
@@ -14,26 +99,21 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;./ECU_Layer/../MCAL_Layer/I2C/I2C.h: 119: typedef struct{
 [s S303 `ul 1 `*F3599 1 `*F3601 1 `*F3603 1 `S302 1 ]
 [n S303 . i2c_clock write_collision_ptr recive_overflow_ptr default_ptr i2c_cfg ]
-[v F3629 `(v ~T0 @X0 0 tf ]
-[v F3630 `(v ~T0 @X0 0 tf ]
-[v F3631 `(v ~T0 @X0 0 tf ]
-"134
-[; ;./ECU_Layer/../MCAL_Layer/I2C/I2C.h: 134: Std_ReturnType i2c_master_send_start(void);
-[v _i2c_master_send_start `(uc ~T0 @X0 0 ef ]
-"138
-[; ;./ECU_Layer/../MCAL_Layer/I2C/I2C.h: 138: Std_ReturnType i2c_master_write(const i2c_t *ptr,uint8 data,uint8 *_ack);
-[v _i2c_master_write `(uc ~T0 @X0 0 ef3`*CS303`uc`*uc ]
-"136
-[; ;./ECU_Layer/../MCAL_Layer/I2C/I2C.h: 136: Std_ReturnType i2c_master_send_stop(void);
-[v _i2c_master_send_stop `(uc ~T0 @X0 0 ef ]
+[v F3632 `(v ~T0 @X0 0 tf ]
+[v F3633 `(v ~T0 @X0 0 tf ]
 [p mainexit ]
 "132
 [; ;./ECU_Layer/../MCAL_Layer/I2C/I2C.h: 132: Std_ReturnType i2c_int(const i2c_t *ptr);
 [v _i2c_int `(uc ~T0 @X0 0 ef1`*CS303 ]
-[v F2950 `(v ~T0 @X0 1 tf1`ul ]
-"12 E:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\builtins.h
-[v __delay `JF2950 ~T0 @X0 0 e ]
-[p i __delay ]
+"35 ./ECU_Layer/LED/LED.h
+[; ;./ECU_Layer/LED/LED.h: 35: Std_ReturnType led_int(led_cfg_t *led_cfg);
+[v _led_int `(uc ~T0 @X0 0 ef1`*S274 ]
+"36
+[; ;./ECU_Layer/LED/LED.h: 36: Std_ReturnType led_on(led_cfg_t *led_cfg);
+[v _led_on `(uc ~T0 @X0 0 ef1`*S274 ]
+"37
+[; ;./ECU_Layer/LED/LED.h: 37: Std_ReturnType led_off(led_cfg_t *led_cfg);
+[v _led_off `(uc ~T0 @X0 0 ef1`*S274 ]
 "55 E:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4620.h
 [; ;E:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4620.h: 55: __asm("PORTA equ 0F80h");
 [; <" PORTA equ 0F80h ;# ">
@@ -445,117 +525,173 @@ Version 4.0 HI-TECH Software Intermediate Code
 "6716
 [; ;E:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4620.h: 6716: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
-"12 Application.c
-[; ;Application.c: 12: uint8 ack=0;
-[v _ack `uc ~T0 @X0 1 e ]
-[i _ack
+"11 Application.c
+[; ;Application.c: 11: volatile uint8 slave1_data_rec=0;
+[v _slave1_data_rec `Vuc ~T0 @X0 1 e ]
+[i _slave1_data_rec
 -> -> 0 `i `uc
 ]
+"13
+[; ;Application.c: 13: void Default(void){
+[v _Default `(v ~T0 @X0 1 ef ]
+{
+[e :U _Default ]
+[f ]
+"15
+[; ;Application.c: 15:     (SSPCON1bits.CKP=0);
+[e = . . _SSPCON1bits 0 1 -> -> 0 `i `uc ]
 "16
-[; ;Application.c: 16:  i2c_t i2c={
+[; ;Application.c: 16:     if(((0)==(SSPSTATbits.RW))&&((0)==(SSPSTATbits.DA))){
+[e $ ! && == -> 0 `i -> . . _SSPSTATbits 10 1 `i == -> 0 `i -> . . _SSPSTATbits 10 4 `i 305  ]
+{
+"17
+[; ;Application.c: 17:         uint8 dummydata=SSPBUF;
+[v _dummydata `uc ~T0 @X0 1 a ]
+[e = _dummydata _SSPBUF ]
+"18
+[; ;Application.c: 18:         while(!(SSPSTATbits.BF));
+[e $U 306  ]
+[e :U 307 ]
+[e :U 306 ]
+[e $ ! != -> . . _SSPSTATbits 2 0 `i -> 0 `i 307  ]
+[e :U 308 ]
+"19
+[; ;Application.c: 19:         slave1_data_rec=SSPBUF;
+[e = _slave1_data_rec _SSPBUF ]
+"20
+[; ;Application.c: 20:     }
+}
+[e $U 309  ]
+"21
+[; ;Application.c: 21:     else if((1)==(SSPSTATbits.RW)){
+[e :U 305 ]
+[e $ ! == -> 1 `i -> . . _SSPSTATbits 10 1 `i 310  ]
+{
+"23
+[; ;Application.c: 23:     }
+}
+[e $U 311  ]
+"24
+[; ;Application.c: 24:     else{
+[e :U 310 ]
+{
+"26
+[; ;Application.c: 26:     }
+}
+[e :U 311 ]
+[e :U 309 ]
+"28
+[; ;Application.c: 28:     (SSPCON1bits.CKP=1);
+[e = . . _SSPCON1bits 0 1 -> -> 1 `i `uc ]
+"29
+[; ;Application.c: 29: }
+[e :UE 304 ]
+}
+"30
+[; ;Application.c: 30: led_cfg_t led1={
+[v _led1 `S274 ~T0 @X0 1 e ]
+[i _led1
+:U ..
+:U ..
+-> . `E2992 3 `uc
+-> . `E2982 0 `uc
+-> . `E3034 0 `uc
+..
+..
+]
+"35
+[; ;Application.c: 35:  i2c_t i2c={
 [v _i2c `S303 ~T0 @X0 1 e ]
 [i _i2c
 :U ..
 :U ..
--> -> 100000 `l `ul
--> -> -> 0 `i `*v `*F3629
--> -> -> 0 `i `*v `*F3630
--> -> -> 0 `i `*v `*F3631
+-> -> 0 `i `ul
+-> -> -> 0 `i `*v `*F3632
+-> -> -> 0 `i `*v `*F3633
+&U _Default
 :U ..
 :U ..
-. `E3579 2
+. `E3579 0
+-> -> 0 `i `uc
+-> -> 96 `i `uc
 -> -> 1 `i `uc
 -> -> 0 `i `uc
--> -> 1 `i `uc
 -> -> 0 `i `uc
 ..
 ..
 ..
 ..
 ]
-"28
-[; ;Application.c: 28:  void MSSP_I2C_MASTER_SEND_1_BYTE(uint8 address,uint8 data){
-[v _MSSP_I2C_MASTER_SEND_1_BYTE `(v ~T0 @X0 1 ef2`uc`uc ]
-{
-[e :U _MSSP_I2C_MASTER_SEND_1_BYTE ]
-[v _address `uc ~T0 @X0 1 r1 ]
-[v _data `uc ~T0 @X0 1 r2 ]
-[f ]
-"29
-[; ;Application.c: 29:      i2c_master_send_start();
-[e ( _i2c_master_send_start ..  ]
-"30
-[; ;Application.c: 30: i2c_master_write(&i2c,address,&ack);
-[e ( _i2c_master_write (3 , , -> &U _i2c `*CS303 _address &U _ack ]
-"31
-[; ;Application.c: 31: i2c_master_write(&i2c,data,&ack);
-[e ( _i2c_master_write (3 , , -> &U _i2c `*CS303 _data &U _ack ]
-"32
-[; ;Application.c: 32: i2c_master_send_stop();
-[e ( _i2c_master_send_stop ..  ]
-"33
-[; ;Application.c: 33: }
-[e :UE 304 ]
-}
 [v $root$_main `(v ~T0 @X0 0 e ]
-"34
-[; ;Application.c: 34: int main() {
+"49
+[; ;Application.c: 49: int main() {
 [v _main `(i ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"36
-[; ;Application.c: 36: i2c_int(&i2c);
+"51
+[; ;Application.c: 51: i2c_int(&i2c);
 [e ( _i2c_int (1 -> &U _i2c `*CS303 ]
-"41
-[; ;Application.c: 41:     while (1) {
-[e :U 307 ]
-{
-"43
-[; ;Application.c: 43: MSSP_I2C_MASTER_SEND_1_BYTE(0x60,'a');
-[e ( _MSSP_I2C_MASTER_SEND_1_BYTE (2 , -> -> 96 `i `uc -> -> 97 `ui `uc ]
-"44
-[; ;Application.c: 44: _delay((unsigned long)((1000)*(8000000UL/4000.0)));
-[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 8000000 `ul `d .4000.0 `ul ]
-"45
-[; ;Application.c: 45: MSSP_I2C_MASTER_SEND_1_BYTE(0x70,'b');
-[e ( _MSSP_I2C_MASTER_SEND_1_BYTE (2 , -> -> 112 `i `uc -> -> 98 `ui `uc ]
-"46
-[; ;Application.c: 46: _delay((unsigned long)((1000)*(8000000UL/4000.0)));
-[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 8000000 `ul `d .4000.0 `ul ]
-"47
-[; ;Application.c: 47: MSSP_I2C_MASTER_SEND_1_BYTE(0x60,'c');
-[e ( _MSSP_I2C_MASTER_SEND_1_BYTE (2 , -> -> 96 `i `uc -> -> 99 `ui `uc ]
-"48
-[; ;Application.c: 48: _delay((unsigned long)((1000)*(8000000UL/4000.0)));
-[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 8000000 `ul `d .4000.0 `ul ]
-"49
-[; ;Application.c: 49: MSSP_I2C_MASTER_SEND_1_BYTE(0x70,'d');
-[e ( _MSSP_I2C_MASTER_SEND_1_BYTE (2 , -> -> 112 `i `uc -> -> 100 `ui `uc ]
-"50
-[; ;Application.c: 50: _delay((unsigned long)((1000)*(8000000UL/4000.0)));
-[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 8000000 `ul `d .4000.0 `ul ]
 "52
-[; ;Application.c: 52:     }
-}
-[e :U 306 ]
-[e $U 307  ]
-[e :U 308 ]
-"53
-[; ;Application.c: 53:     return (0);
-[e ) -> 0 `i ]
-[e $UE 305  ]
-"54
-[; ;Application.c: 54: }
-[e :UE 305 ]
-}
+[; ;Application.c: 52: led_int(&led1);
+[e ( _led_int (1 &U _led1 ]
 "56
-[; ;Application.c: 56: void application_Int() {
+[; ;Application.c: 56:     while (1) {
+[e :U 314 ]
+{
+"57
+[; ;Application.c: 57:      if(slave1_data_rec=='a'){
+[e $ ! == -> _slave1_data_rec `ui -> 97 `ui 316  ]
+{
+"58
+[; ;Application.c: 58:          led_on(&led1);
+[e ( _led_on (1 &U _led1 ]
+"59
+[; ;Application.c: 59:      }
+}
+[e $U 317  ]
+"60
+[; ;Application.c: 60:      else if(slave1_data_rec=='c'){
+[e :U 316 ]
+[e $ ! == -> _slave1_data_rec `ui -> 99 `ui 318  ]
+{
+"61
+[; ;Application.c: 61:          led_off(&led1);
+[e ( _led_off (1 &U _led1 ]
+"62
+[; ;Application.c: 62:      }
+}
+[e $U 319  ]
+"63
+[; ;Application.c: 63:      else{
+[e :U 318 ]
+{
+"65
+[; ;Application.c: 65:      }
+}
+[e :U 319 ]
+[e :U 317 ]
+"68
+[; ;Application.c: 68:     }
+}
+[e :U 313 ]
+[e $U 314  ]
+[e :U 315 ]
+"69
+[; ;Application.c: 69:     return (0);
+[e ) -> 0 `i ]
+[e $UE 312  ]
+"70
+[; ;Application.c: 70: }
+[e :UE 312 ]
+}
+"72
+[; ;Application.c: 72: void application_Int() {
 [v _application_Int `(v ~T0 @X0 1 ef ]
 {
 [e :U _application_Int ]
 [f ]
-"58
-[; ;Application.c: 58: }
-[e :UE 309 ]
+"74
+[; ;Application.c: 74: }
+[e :UE 320 ]
 }
